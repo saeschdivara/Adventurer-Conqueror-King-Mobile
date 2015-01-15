@@ -76,17 +76,18 @@ public class Proficiency {
     static final String MYSTIC_AURA = "mystic aura";
     static final String PRESTIDIGITATION = "";
 
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
-//    static final String  = "";
+    static final String APOSTASY = "apostasy";
+    static final String BATTLE_MAGIC = "battle magic";
+    static final String COMBAT_TRICKERY_TRIP = "combat trickery (trip)";
+    static final String CONTEMPLATION = "contemplation";
+    static final String DIVINE_BLESSING = "divine blessing";
+    static final String DIVINE_HEALTH = "divine health";
+    static final String LAYING_ON_HANDS = "laying on hands";
+    static final String MARTIAL_TRAINING = "martial training";
+    static final String PROPHECY = "prophecy";
+    static final String QUIET_MAGIC = "quiet magic";
+    static final String RIGHTEOUS_TURNING = "righteous turning";
+    static final String UNFLAPPABLE_CASTING = "unflappable casting";
 //    static final String  = "";
 //    static final String  = "";
 //    static final String  = "";
@@ -114,6 +115,7 @@ public class Proficiency {
     static final ArrayList<String> GENERAL;
     static final ArrayList<String> ASSASSIN;
     static final ArrayList<String> BARD;
+    static final ArrayList<String> BLADEDANCER;
 
     static {
         // ALL GENERAL PROFICIENCIES
@@ -217,5 +219,36 @@ public class Proficiency {
         BARD.add(SWASHBUCKLING);
         BARD.add(WEAPON_FINESSE);
         BARD.add(WEAPON_FOCUS);
+
+        // ALL BLADEDANCER PROFICIENCIES
+        BLADEDANCER = new ArrayList<>();
+        BLADEDANCER.add(ACROBATICS);
+        BLADEDANCER.add(APOSTASY);
+        BLADEDANCER.add(BATTLE_MAGIC);
+        BLADEDANCER.add(BEAST_FRIENDSHIP);
+        BLADEDANCER.add(COMBAT_REFLEXES);
+        BLADEDANCER.add(COMBAT_TRICKERY_DISARM);
+        BLADEDANCER.add(COMBAT_TRICKERY_TRIP);
+        BLADEDANCER.add(CONTEMPLATION);
+        BLADEDANCER.add(DIPLOMACY);
+        BLADEDANCER.add(DIVINE_BLESSING);
+        BLADEDANCER.add(DIVINE_HEALTH);
+        BLADEDANCER.add(FIGHTING_STYLE);
+        BLADEDANCER.add(LAYING_ON_HANDS);
+        BLADEDANCER.add(MAGICAL_MUSIC);
+        BLADEDANCER.add(MARTIAL_TRAINING);
+        BLADEDANCER.add(PERFORMANCE);
+        BLADEDANCER.add(PRESTIDIGITATION);
+        BLADEDANCER.add(PROPHECY);
+        BLADEDANCER.add(QUIET_MAGIC);
+        BLADEDANCER.add(RIGHTEOUS_TURNING);
+        BLADEDANCER.add(RUNNING);
+        BLADEDANCER.add(SEDUCTION);
+        BLADEDANCER.add(SKIRMISHING);
+        BLADEDANCER.add(SWASHBUCKLING);
+        BLADEDANCER.add(THEOLOGY);
+        BLADEDANCER.add(UNFLAPPABLE_CASTING);
+        BLADEDANCER.add(WEAPON_FINESSE);
+        BLADEDANCER.add(WEAPON_FOCUS);
     }
 }
