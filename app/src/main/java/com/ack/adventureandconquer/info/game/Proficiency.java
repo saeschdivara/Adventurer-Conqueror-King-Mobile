@@ -53,5 +53,38 @@ public class Proficiency {
         GENERAL.add(ALCHEMY);
         GENERAL.add(ANIMAL_HUSBANDRY);
         GENERAL.add(ANIMAL_TRAINING);
+        GENERAL.add(BARGAINING);
+        GENERAL.add(CAVING);
+        GENERAL.add(COLLEGIATE_WIZARDRY);
+        GENERAL.add(CRAFT);
+        GENERAL.add(DIPLOMACY);
+        GENERAL.add(DISGUISE);
+        GENERAL.add(ENDURANCE);
+        GENERAL.add(ENGINEERING);
+        GENERAL.add(GAMBLING);
+        GENERAL.add(HEALING);
+        GENERAL.add(INTIMIDATION);
+        GENERAL.add(KNOWLEDGE);
+        GENERAL.add(LABOR);
+        GENERAL.add(LANGUAGE);
+        GENERAL.add(LEADERSHIP);
+        GENERAL.add(LIP_READING);
+        GENERAL.add(MANUAL_OF_ARMS);
+        GENERAL.add(MAPPING);
+        GENERAL.add(MILITARY_STRATEGY);
+        GENERAL.add(MIMICRY);
+        GENERAL.add(NATURALISM);
+        GENERAL.add(NAVIGATION);
+        GENERAL.add(PERFORMANCE);
+        GENERAL.add(PROFESSION);
+        GENERAL.add(RIDING);
+        GENERAL.add(SEAFARING);
+        GENERAL.add(SEDUCTION);
+        GENERAL.add(SIEGE_ENGINEERING);
+        GENERAL.add(SIGNALING);
+        GENERAL.add(SURVIVAL);
+        GENERAL.add(THEOLOGY);
+        GENERAL.add(TRACKING);
+        GENERAL.add(TRAPPING);
     }
 }
