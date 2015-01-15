@@ -52,7 +52,8 @@ public class Proficiency {
     static final String CAT_BURGLARY = "cat burglary";
     static final String CLIMBING = "climbing";
     static final String COMBAT_REFLEXES = "combat reflexes";
-    static final String COMBAT_TRICKERY = "combat trickery";
+    static final String COMBAT_TRICKERY_DISARM = "combat trickery (disarm)";
+    static final String COMBAT_TRICKERY_INCAPACITATE = "combat trickery (incapacitate)";
     static final String CONTORTIONISM = "contortionism";
     static final String EAVES_DROPPING = "eavesdropping";
     static final String FIGHTING_STYLE = "fighting style";
@@ -66,8 +67,53 @@ public class Proficiency {
     static final String WEAPON_FINESSE = "weapon finesse";
     static final String WEAPON_FOCUS = "weapon focus";
 
+    static final String ART = "art";
+    static final String BEAST_FRIENDSHIP = "beast friendship";
+    static final String COMMAND = "command";
+    static final String ELVEN_BLOODLINE = "elven bloodline";
+    static final String MAGICAL_ENGINEERING = "magical engineering";
+    static final String MAGICAL_MUSIC = "magical music";
+    static final String MYSTIC_AURA = "mystic aura";
+    static final String PRESTIDIGITATION = "";
+
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+//    static final String  = "";
+
     static final ArrayList<String> GENERAL;
     static final ArrayList<String> ASSASSIN;
+    static final ArrayList<String> BARD;
 
     static {
         // ALL GENERAL PROFICIENCIES
@@ -121,7 +167,8 @@ public class Proficiency {
         ASSASSIN.add(CAT_BURGLARY);
         ASSASSIN.add(CLIMBING);
         ASSASSIN.add(COMBAT_REFLEXES);
-        ASSASSIN.add(COMBAT_TRICKERY);
+        ASSASSIN.add(COMBAT_TRICKERY_DISARM);
+        ASSASSIN.add(COMBAT_TRICKERY_INCAPACITATE);
         ASSASSIN.add(CONTORTIONISM);
         ASSASSIN.add(DISGUISE);
         ASSASSIN.add(EAVES_DROPPING);
@@ -139,5 +186,36 @@ public class Proficiency {
         ASSASSIN.add(TRAP_FINDING);
         ASSASSIN.add(WEAPON_FINESSE);
         ASSASSIN.add(WEAPON_FOCUS);
+
+        // ALL BARD PROFICIENCIES
+        BARD = new ArrayList<>();
+        BARD.add(ACROBATICS);
+        BARD.add(ART);
+        BARD.add(BARGAINING);
+        BARD.add(BEAST_FRIENDSHIP);
+        BARD.add(COMBAT_TRICKERY_DISARM);
+        BARD.add(COMMAND);
+        BARD.add(DIPLOMACY);
+        BARD.add(EAVES_DROPPING);
+        BARD.add(ELVEN_BLOODLINE);
+        BARD.add(FIGHTING_STYLE);
+        BARD.add(HEALING);
+        BARD.add(KNOWLEDGE);
+        BARD.add(LANGUAGE);
+        BARD.add(LEADERSHIP);
+        BARD.add(LIP_READING);
+        BARD.add(MAGICAL_ENGINEERING);
+        BARD.add(MAGICAL_MUSIC);
+        BARD.add(MIMICRY);
+        BARD.add(MYSTIC_AURA);
+        BARD.add(PERFORMANCE);
+        BARD.add(PRECISE_SHOOTING);
+        BARD.add(PRESTIDIGITATION);
+        BARD.add(RUNNING);
+        BARD.add(SEDUCTION);
+        BARD.add(SKIRMISHING);
+        BARD.add(SWASHBUCKLING);
+        BARD.add(WEAPON_FINESSE);
+        BARD.add(WEAPON_FOCUS);
     }
 }
