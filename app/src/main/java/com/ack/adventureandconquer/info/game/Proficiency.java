@@ -44,7 +44,30 @@ public class Proficiency {
     static final String TRACKING = "tracking";
     static final String TRAPPING = "trapping";
 
+    static final String ACROBATICS = "acrobatics";
+    static final String ALERTNESS = "alertness";
+    static final String ARCANE_DABBLING = "arcane dabbling";
+    static final String BLIND_FIGHTING = "blind fighting";
+    static final String BRIBERY = "bribery";
+    static final String CAT_BURGLARY = "cat burglary";
+    static final String CLIMBING = "climbing";
+    static final String COMBAT_REFLEXES = "combat reflexes";
+    static final String COMBAT_TRICKERY = "combat trickery";
+    static final String CONTORTIONISM = "contortionism";
+    static final String EAVES_DROPPING = "eavesdropping";
+    static final String FIGHTING_STYLE = "fighting style";
+    static final String PRECISE_SHOOTING = "precise shooting";
+    static final String RUNNING = "running";
+    static final String SKIRMISHING = "skirmishing";
+    static final String SKULKING = "skulking";
+    static final String SNIPING = "sniping";
+    static final String SWASHBUCKLING = "swashbuckling";
+    static final String TRAP_FINDING = "trap finding";
+    static final String WEAPON_FINESSE = "weapon finesse";
+    static final String WEAPON_FOCUS = "weapon focus";
+
     static final ArrayList<String> GENERAL;
+    static final ArrayList<String> ASSASSIN;
 
     static {
         // ALL GENERAL PROFICIENCIES
@@ -86,5 +109,35 @@ public class Proficiency {
         GENERAL.add(THEOLOGY);
         GENERAL.add(TRACKING);
         GENERAL.add(TRAPPING);
+
+        // ALL ASSASSIN PROFICIENCIES
+        ASSASSIN = new ArrayList<>();
+        ASSASSIN.add(ACROBATICS);
+        ASSASSIN.add(ALCHEMY);
+        ASSASSIN.add(ALERTNESS);
+        ASSASSIN.add(ARCANE_DABBLING);
+        ASSASSIN.add(BLIND_FIGHTING);
+        ASSASSIN.add(BRIBERY);
+        ASSASSIN.add(CAT_BURGLARY);
+        ASSASSIN.add(CLIMBING);
+        ASSASSIN.add(COMBAT_REFLEXES);
+        ASSASSIN.add(COMBAT_TRICKERY);
+        ASSASSIN.add(CONTORTIONISM);
+        ASSASSIN.add(DISGUISE);
+        ASSASSIN.add(EAVES_DROPPING);
+        ASSASSIN.add(FIGHTING_STYLE);
+        ASSASSIN.add(GAMBLING);
+        ASSASSIN.add(INTIMIDATION);
+        ASSASSIN.add(MIMICRY);
+        ASSASSIN.add(PRECISE_SHOOTING);
+        ASSASSIN.add(RUNNING);
+        ASSASSIN.add(SEDUCTION);
+        ASSASSIN.add(SKIRMISHING);
+        ASSASSIN.add(SKULKING);
+        ASSASSIN.add(SNIPING);
+        ASSASSIN.add(SWASHBUCKLING);
+        ASSASSIN.add(TRAP_FINDING);
+        ASSASSIN.add(WEAPON_FINESSE);
+        ASSASSIN.add(WEAPON_FOCUS);
     }
 }
