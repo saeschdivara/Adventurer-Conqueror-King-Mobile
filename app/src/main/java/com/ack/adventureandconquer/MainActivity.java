@@ -1,22 +1,22 @@
 package com.ack.adventureandconquer;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.ack.adventureandconquer.info.game.adventure.Clear;
+import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
+import com.ack.adventureandconquer.info.game.adventure.Swamp;
+import com.ack.adventureandconquer.info.game.adventure.Wilderness;
 
 
 public class MainActivity extends ActionBarActivity
@@ -75,6 +75,23 @@ public class MainActivity extends ActionBarActivity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
+    }
+
+
+    public void onImageButtonClicked(View v) {
+        Wilderness wilderness = new Wilderness();
+        IsTerrain terrain = null;
+
+        switch (v.getId()) {
+            case R.id.clearing_button:
+                terrain = new Clear();
+                break;
+            case R.id.swamp_button:
+                terrain = new Swamp();
+                break;
+        }
+
+        wilderness.findEncounterByTerrain(terrain);
     }
 
 

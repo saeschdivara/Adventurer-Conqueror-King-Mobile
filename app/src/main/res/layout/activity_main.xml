@@ -7,7 +7,31 @@
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
     <FrameLayout android:id="@+id/container" android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:weightSum="1">
+
+            <ImageButton
+                android:layout_width="121dp"
+                android:layout_height="77dp"
+                android:id="@+id/swamp_button"
+                android:clickable="true"
+                android:onClick="onImageButtonClicked"
+                android:background="@drawable/swamp_icon" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="77dp"
+                android:id="@+id/clearing_button"
+                android:background="@drawable/clearing_small"
+                android:onClick="onImageButtonClicked" />
+        </LinearLayout>
+    </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
          this as a sliding drawer on the left side for left-to-right
