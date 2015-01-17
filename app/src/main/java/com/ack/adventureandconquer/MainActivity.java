@@ -1,6 +1,10 @@
 package com.ack.adventureandconquer;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,10 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.ack.adventureandconquer.info.game.adventure.Clear;
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
-import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Wilderness;
 
 
@@ -32,6 +36,45 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
+
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                         int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +88,23 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        _setImageButtonBackground(R.id.clearing_image, R.drawable.clearing_q, 100, 100);
+        _setImageButtonBackground(R.id.grass_image, R.drawable.grass_q, 100, 100);
+        _setImageButtonBackground(R.id.scrub_image, R.drawable.scrub_q, 100, 100);
+        _setImageButtonBackground(R.id.woods_image, R.drawable.woods_q, 100, 100);
+        _setImageButtonBackground(R.id.river_image, R.drawable.river_q, 100, 100);
+        _setImageButtonBackground(R.id.swamp_image, R.drawable.marsh_q, 100, 100);
+        _setImageButtonBackground(R.id.mountains_image, R.drawable.mountains_q, 100, 100);
+        _setImageButtonBackground(R.id.hills_image, R.drawable.hills_q, 100, 100);
+        _setImageButtonBackground(R.id.barren_image, R.drawable.barren_q, 100, 100);
+        _setImageButtonBackground(R.id.desert_image, R.drawable.desert_q, 100, 100);
+        _setImageButtonBackground(R.id.inhabited_image, R.drawable.inhabited_q, 100, 100);
+        _setImageButtonBackground(R.id.city_image, R.drawable.city_q, 100, 100);
+        _setImageButtonBackground(R.id.ocean_image, R.drawable.ocean_q, 100, 100);
+        _setImageButtonBackground(R.id.jungle_image, R.drawable.jungle_q, 100, 100);
     }
+
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -81,17 +140,22 @@ public class MainActivity extends ActionBarActivity
     public void onImageButtonClicked(View v) {
         Wilderness wilderness = new Wilderness();
         IsTerrain terrain = null;
+        terrain = new Clear();
 
-        switch (v.getId()) {
-            case R.id.clearing_button:
-                terrain = new Clear();
-                break;
-            case R.id.swamp_button:
-                terrain = new Swamp();
-                break;
-        }
+//        switch (v.getId()) {
+//            case R.id.clearing_button:
+//                terrain = new Clear();
+//                break;
+//            case R.id.grass_button:
+//                terrain = new Grass();
+//                break;
+//        }
 
-        wilderness.findEncounterByTerrain(terrain);
+        String encounter = wilderness.findEncounterByTerrain(terrain);
+
+        Intent intent = new Intent(this, EncounterDetailActivity.class);
+        intent.putExtra("ddd", encounter);
+        startActivity(intent);
     }
 
 
@@ -121,6 +185,15 @@ public class MainActivity extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void _setImageButtonBackground(int imageViewId, int imageResourceId, int height, int width) {
+
+        ImageView clearing_button = (ImageView) findViewById(imageViewId);
+        clearing_button.setImageBitmap(
+                decodeSampledBitmapFromResource(getResources(), imageResourceId, height, width)
+        );
     }
 
     /**
