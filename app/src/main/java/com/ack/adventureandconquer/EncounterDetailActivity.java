@@ -23,9 +23,10 @@ public class EncounterDetailActivity extends ActionBarActivity {
                     .commit();
         }
 
-        TextView textView = (TextView) findViewById(R.id.textView);
-        System.out.println(getIntent().getStringExtra("ddd"));
-//        textView.setText(getIntent().getStringExtra("ddd"));
+
+        TextView textView = (TextView) findViewById(R.id.encounter_text);
+        String encounterString = getIntent().getStringExtra("ddd");
+        textView.setText(encounterString);
     }
 
 

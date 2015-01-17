@@ -18,9 +18,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ack.adventureandconquer.info.game.adventure.Barren;
+import com.ack.adventureandconquer.info.game.adventure.City;
 import com.ack.adventureandconquer.info.game.adventure.Clear;
+import com.ack.adventureandconquer.info.game.adventure.Desert;
+import com.ack.adventureandconquer.info.game.adventure.Grass;
+import com.ack.adventureandconquer.info.game.adventure.Hills;
+import com.ack.adventureandconquer.info.game.adventure.Inhabited;
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
+import com.ack.adventureandconquer.info.game.adventure.Jungle;
+import com.ack.adventureandconquer.info.game.adventure.Mountains;
+import com.ack.adventureandconquer.info.game.adventure.Ocean;
+import com.ack.adventureandconquer.info.game.adventure.River;
+import com.ack.adventureandconquer.info.game.adventure.Scrub;
+import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Wilderness;
+import com.ack.adventureandconquer.info.game.adventure.Woods;
 
 
 public class MainActivity extends ActionBarActivity
@@ -140,16 +153,51 @@ public class MainActivity extends ActionBarActivity
     public void onImageButtonClicked(View v) {
         Wilderness wilderness = new Wilderness();
         IsTerrain terrain = null;
-        terrain = new Clear();
 
-//        switch (v.getId()) {
-//            case R.id.clearing_button:
-//                terrain = new Clear();
-//                break;
-//            case R.id.grass_button:
-//                terrain = new Grass();
-//                break;
-//        }
+        switch (v.getId()) {
+            case R.id.clearing_image:
+                terrain = new Clear();
+                break;
+            case R.id.grass_image:
+                terrain = new Grass();
+                break;
+            case R.id.scrub_image:
+                terrain = new Scrub();
+                break;
+            case R.id.woods_image:
+                terrain = new Woods();
+                break;
+            case R.id.river_image:
+                terrain = new River();
+                break;
+            case R.id.swamp_image:
+                terrain = new Swamp();
+                break;
+            case R.id.mountains_image:
+                terrain = new Mountains();
+                break;
+            case R.id.hills_image:
+                terrain = new Hills();
+                break;
+            case R.id.barren_image:
+                terrain = new Barren();
+                break;
+            case R.id.desert_image:
+                terrain = new Desert();
+                break;
+            case R.id.inhabited_image:
+                terrain = new Inhabited();
+                break;
+            case R.id.city_image:
+                terrain = new City();
+                break;
+            case R.id.ocean_image:
+                terrain = new Ocean();
+                break;
+            case R.id.jungle_image:
+                terrain = new Jungle();
+                break;
+        }
 
         String encounter = wilderness.findEncounterByTerrain(terrain);
 
