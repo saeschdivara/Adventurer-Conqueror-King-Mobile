@@ -13,6 +13,10 @@ public class D8 implements IsDice {
     @Override
     public int role() {
 
+        for (int i = 0; i < 10; i++) {
+            _random.nextInt(8);
+        }
+
         return _random.nextInt(8) + 1;
     }
 }

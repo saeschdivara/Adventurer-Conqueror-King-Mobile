@@ -1,6 +1,8 @@
 package com.ack.adventureandconquer.info.game.adventure;
 
 import com.ack.adventureandconquer.info.game.creature.IsCreatureType;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.dice.D12;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
 
@@ -10,12 +12,16 @@ import com.ack.adventureandconquer.info.game.dice.IsDice;
 public class Wilderness {
 
     public String findEncounterByTerrain(IsTerrain terrain) {
-        IsDice dice = new D8();
-        int rolledDice = dice.role();
-        IsCreatureType type = terrain.getEnemyType(rolledDice);
-        System.out.println(type);
+        IsDice diceD8 = new D8();
+        IsDice diceD12 = new D12();
 
-        String encounterDescription = "You have found: " + type.toString();
+        int rolledEnemyTypeDice = diceD8.role();
+        IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
+
+        int rolledNpcTypeDice = diceD12.role();
+        IsNpc npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
+
+        String encounterDescription = "You have found: " + creatureType.toString();
 
         return encounterDescription;
     }
