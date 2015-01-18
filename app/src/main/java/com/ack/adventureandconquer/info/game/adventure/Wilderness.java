@@ -22,6 +22,7 @@ public class Wilderness {
         IsNpc npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
 
         String encounterDescription = "You have found: " + creatureType.toString();
+        System.out.println(npcType);
 
         return encounterDescription;
     }
