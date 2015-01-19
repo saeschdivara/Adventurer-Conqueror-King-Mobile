@@ -13,10 +13,12 @@ public class D6 implements IsDice {
     @Override
     public int role() {
 
+        final int diceNumber = 6;
+
         for (int i = 0; i < 10; i++) {
-            _random.nextInt(6);
+            _random.nextInt(diceNumber);
         }
 
-        return _random.nextInt(6) + 1;
+        return _random.nextInt(diceNumber) + 1;
     }
 }
