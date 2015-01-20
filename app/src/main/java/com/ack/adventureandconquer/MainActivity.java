@@ -18,10 +18,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ack.adventureandconquer.info.game.GameController;
 import com.ack.adventureandconquer.info.game.adventure.Barren;
 import com.ack.adventureandconquer.info.game.adventure.City;
 import com.ack.adventureandconquer.info.game.adventure.Clear;
 import com.ack.adventureandconquer.info.game.adventure.Desert;
+import com.ack.adventureandconquer.info.game.adventure.Encounter;
 import com.ack.adventureandconquer.info.game.adventure.Grass;
 import com.ack.adventureandconquer.info.game.adventure.Hills;
 import com.ack.adventureandconquer.info.game.adventure.Inhabited;
@@ -199,10 +201,10 @@ public class MainActivity extends ActionBarActivity
                 break;
         }
 
-        String encounter = wilderness.findEncounterByTerrain(terrain);
+        Encounter encounter = wilderness.findEncounterByTerrain(terrain);
+        GameController.getInstance().addEncounter(encounter);
 
         Intent intent = new Intent(this, EncounterDetailActivity.class);
-        intent.putExtra("ddd", encounter);
         startActivity(intent);
     }
 

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ack.adventureandconquer.info.game.GameController;
+
 
 public class EncounterDetailActivity extends ActionBarActivity {
 
@@ -23,10 +25,13 @@ public class EncounterDetailActivity extends ActionBarActivity {
                     .commit();
         }
 
-
+        // Set top encounter text
         TextView textView = (TextView) findViewById(R.id.encounter_text);
-        String encounterString = getIntent().getStringExtra("ddd");
-        textView.setText(encounterString);
+        System.out.println(GameController.getInstance().getLastEncounter());
+//        String encounterString = getIntent().getStringExtra("ddd");
+//        textView.setText(encounterString);
+
+        // Set list view
     }
 
 

@@ -1,5 +1,6 @@
 package com.ack.adventureandconquer.info.game.creature.npc;
 
+import com.ack.adventureandconquer.info.game.creature.IsMonster;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
 
@@ -64,5 +65,81 @@ public abstract class Npc {
 
     public void setHitDice(int hitDice) {
         this.hitDice = hitDice;
+    }
+
+    public int getMinAttackThrowValue() {
+        int minAttack = 0;
+
+        if (this instanceof IsMonster) {
+            minAttack = _getMinMonsterAttackThrow();
+        }
+
+        // TODO: Implement others
+
+        return minAttack;
+    }
+
+    private int _getMinMonsterAttackThrow() {
+        int minAttack = 0;
+        int hitDice = getHitDice();
+
+        if (hitDice <= 1) {
+            minAttack = 10;
+        }
+
+        switch (hitDice) {
+            case 2:
+                minAttack = 9;
+                break;
+            case 3:
+                minAttack = 8;
+                break;
+            case 4:
+                minAttack = 7;
+                break;
+            case 5:
+                minAttack = 6;
+                break;
+            case 6:
+                minAttack = 5;
+                break;
+            case 7:
+                minAttack = 4;
+                break;
+            case 8:
+            case 9:
+                minAttack = 3;
+                break;
+            case 10:
+            case 11:
+                minAttack = 2;
+                break;
+            case 12:
+            case 13:
+                minAttack = 1;
+                break;
+            case 14:
+            case 15:
+                minAttack = 0;
+                break;
+            case 16:
+            case 17:
+                minAttack = -1;
+                break;
+            case 18:
+            case 19:
+                minAttack = -2;
+                break;
+            case 20:
+            case 21:
+                minAttack = -3;
+                break;
+        }
+
+        if (hitDice > 21) {
+            minAttack = -4;
+        }
+
+        return minAttack;
     }
 }

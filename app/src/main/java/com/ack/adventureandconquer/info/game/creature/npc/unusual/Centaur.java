@@ -18,6 +18,7 @@ public class Centaur extends Npc {
         List<Npc> pack = new ArrayList<>();
         int packSize = d10.role() + d10.role();
 
+        // Create pack
         for (int i = 1; i <= packSize; i++) {
             Centaur centaur = new Centaur();
             centaur.roleHitPoints();
@@ -25,6 +26,7 @@ public class Centaur extends Npc {
             pack.add(centaur);
         }
 
+        // Create chieftain
         Centaur chieftain = new Centaur();
         chieftain.setArmorClass(6);
         chieftain.setHitDice(5);
@@ -33,11 +35,6 @@ public class Centaur extends Npc {
         pack.add(chieftain);
 
         return pack;
-    }
-
-    @Override
-    public int getDefaultHitPoints() {
-        return 4;
     }
 
     @Override
