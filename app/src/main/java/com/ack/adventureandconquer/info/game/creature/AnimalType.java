@@ -12,7 +12,7 @@ import com.ack.adventureandconquer.info.game.adventure.Mountains;
 import com.ack.adventureandconquer.info.game.adventure.River;
 import com.ack.adventureandconquer.info.game.adventure.Scrub;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.AntelopeType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.BatType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.BlackBearType;
@@ -64,8 +64,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.animal.WolfType;
  */
 public class AnimalType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         boolean isClear = terrain instanceof Clear;
         boolean isGrass = terrain instanceof Grass;

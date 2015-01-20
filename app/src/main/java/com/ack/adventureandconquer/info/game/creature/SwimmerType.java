@@ -4,7 +4,7 @@ import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
 import com.ack.adventureandconquer.info.game.adventure.Ocean;
 import com.ack.adventureandconquer.info.game.adventure.River;
 import com.ack.adventureandconquer.info.game.adventure.Swamp;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.CrocodileType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.GiantCrabType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.GiantLeechType;
@@ -33,8 +33,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.swimmer.WhaleType;
  */
 public class SwimmerType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         if (terrain instanceof River) {
             switch (number) {

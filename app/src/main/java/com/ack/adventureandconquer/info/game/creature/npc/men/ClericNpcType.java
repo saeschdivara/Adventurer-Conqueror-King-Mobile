@@ -1,11 +1,11 @@
 package com.ack.adventureandconquer.info.game.creature.npc.men;
 
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 
 /**
  * Created by saskyrar on 17/01/15.
  */
-public class ClericNpcType implements IsNpc {
+public class ClericNpcType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
         return false;

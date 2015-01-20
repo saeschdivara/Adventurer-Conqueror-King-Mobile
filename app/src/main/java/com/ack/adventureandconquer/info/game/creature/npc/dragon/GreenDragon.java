@@ -1,11 +1,11 @@
 package com.ack.adventureandconquer.info.game.creature.npc.dragon;
 
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 
 /**
  * Created by saskyrar on 18/01/15.
  */
-public class GreenDragon implements IsNpc {
+public class GreenDragon implements IsNpcType {
     @Override
     public boolean isLair(int number) {
         return false;

@@ -7,7 +7,7 @@ import com.ack.adventureandconquer.info.game.adventure.Ocean;
 import com.ack.adventureandconquer.info.game.adventure.River;
 import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.PythonSnakeType;
 import com.ack.adventureandconquer.info.game.creature.npc.dragon.BasiliskType;
 import com.ack.adventureandconquer.info.game.creature.npc.dragon.BlackDragon;
@@ -34,8 +34,8 @@ import com.ack.adventureandconquer.info.game.dice.IsDice;
  */
 public class DragonType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         switch (number) {
             case 1:
@@ -79,8 +79,8 @@ public class DragonType implements IsCreatureType {
         return npc;
     }
 
-    private IsNpc getDragon(IsTerrain terrain) {
-        IsNpc dragon = null;
+    private IsNpcType getDragon(IsTerrain terrain) {
+        IsNpcType dragon = null;
 
         if (terrain instanceof Swamp) {
             dragon = new BlackDragon();
@@ -128,8 +128,8 @@ public class DragonType implements IsCreatureType {
         return dragon;
     }
 
-    private IsNpc getHydra(IsTerrain terrain) {
-        IsNpc hydra = null;
+    private IsNpcType getHydra(IsTerrain terrain) {
+        IsNpcType hydra = null;
 
         if (terrain instanceof Ocean) {
             hydra = new SeaHydraType();

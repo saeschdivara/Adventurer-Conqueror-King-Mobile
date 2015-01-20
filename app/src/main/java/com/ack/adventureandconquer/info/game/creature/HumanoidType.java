@@ -15,7 +15,7 @@ import com.ack.adventureandconquer.info.game.adventure.River;
 import com.ack.adventureandconquer.info.game.adventure.Scrub;
 import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.humanoid.BugbearType;
 import com.ack.adventureandconquer.info.game.creature.npc.humanoid.CloudGiantType;
 import com.ack.adventureandconquer.info.game.creature.npc.humanoid.CyclopsType;
@@ -55,8 +55,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.humanoid.WerewolfType;
  */
 public class HumanoidType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         boolean isClear = terrain instanceof Clear;
         boolean isGrass = terrain instanceof Grass;

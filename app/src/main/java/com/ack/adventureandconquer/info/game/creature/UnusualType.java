@@ -1,7 +1,7 @@
 package com.ack.adventureandconquer.info.game.creature;
 
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.dragon.BasiliskType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SkitteringMawType;
 import com.ack.adventureandconquer.info.game.creature.npc.unusual.BlinkDogType;
@@ -20,9 +20,9 @@ import com.ack.adventureandconquer.info.game.creature.npc.unusual.WhiteApeType;
  */
 public class UnusualType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
 
-        IsNpc npc = null;
+        IsNpcType npc = null;
 
         switch (number) {
             case 1:

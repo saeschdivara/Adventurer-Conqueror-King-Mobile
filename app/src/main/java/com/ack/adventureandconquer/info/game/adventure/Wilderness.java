@@ -1,11 +1,14 @@
 package com.ack.adventureandconquer.info.game.adventure;
 
 import com.ack.adventureandconquer.info.game.creature.IsCreatureType;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
+import com.ack.adventureandconquer.info.game.creature.npc.Npc;
 import com.ack.adventureandconquer.info.game.dice.D100;
 import com.ack.adventureandconquer.info.game.dice.D12;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
+
+import java.util.List;
 
 /**
  * Created by saskyrar on 15/01/15.
@@ -23,7 +26,7 @@ public class Wilderness {
 
         // Npc type
         int rolledNpcTypeDice = diceD12.role();
-        IsNpc npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
+        IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
 
         // Is monster lair
         int rolledLairDice = diceD100.role();
@@ -32,6 +35,21 @@ public class Wilderness {
         String encounterDescription = "You have found: " + creatureType.toString() + "\n";
         encounterDescription += npcType.toString() + "\n";
         encounterDescription += "is lair: " + String.valueOf(isLair) + "\n";
+
+        String encounterGroupName;
+        List<Npc> npcs;
+
+        if (isLair) {
+            encounterGroupName = npcType.getLairWildnessEncounterName();
+            npcs = npcType.getLairWildnessEncounter();
+        }
+        else {
+            encounterGroupName = npcType.getNormalWildnessEncounterName();
+            npcs = npcType.getNormalWildnessEncounter();
+        }
+
+        encounterDescription += "you encounter a " + encounterGroupName + ":\n";
+
 
         return encounterDescription;
     }

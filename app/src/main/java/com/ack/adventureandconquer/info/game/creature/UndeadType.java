@@ -1,7 +1,7 @@
 package com.ack.adventureandconquer.info.game.creature;
 
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.undead.GhoulType;
 import com.ack.adventureandconquer.info.game.creature.npc.undead.MummyType;
 import com.ack.adventureandconquer.info.game.creature.npc.undead.SkeletonType;
@@ -16,9 +16,9 @@ import com.ack.adventureandconquer.info.game.creature.npc.undead.ZombieType;
  */
 public class UndeadType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
 
-        IsNpc npc = null;
+        IsNpcType npc = null;
 
         switch (number) {
             case 1:

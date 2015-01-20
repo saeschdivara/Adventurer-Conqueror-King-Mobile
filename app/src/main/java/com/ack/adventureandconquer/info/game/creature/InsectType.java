@@ -1,7 +1,7 @@
 package com.ack.adventureandconquer.info.game.creature;
 
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.BlackWidowSpiderType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.CrabSpiderType;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.GiantCarnivFlyType;
@@ -20,8 +20,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.insect.TigerBeetleType
  */
 public class InsectType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         switch (number) {
             case 1:

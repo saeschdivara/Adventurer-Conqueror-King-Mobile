@@ -5,7 +5,7 @@ import com.ack.adventureandconquer.info.game.adventure.Desert;
 import com.ack.adventureandconquer.info.game.adventure.IsTerrain;
 import com.ack.adventureandconquer.info.game.adventure.Mountains;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.animal.VultureType;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.BatSwarmType;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.ChimeraType;
@@ -36,8 +36,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.humanoid.SpriteType;
  */
 public class FlyerType implements IsCreatureType {
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         boolean isBarren = terrain instanceof Barren;
 

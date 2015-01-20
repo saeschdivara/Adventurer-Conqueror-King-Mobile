@@ -15,7 +15,7 @@ import com.ack.adventureandconquer.info.game.adventure.River;
 import com.ack.adventureandconquer.info.game.adventure.Scrub;
 import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.men.AcolyteType;
 import com.ack.adventureandconquer.info.game.creature.npc.men.BanditType;
 import com.ack.adventureandconquer.info.game.creature.npc.men.BerserkerType;
@@ -40,8 +40,8 @@ import com.ack.adventureandconquer.info.game.creature.npc.men.VeteranType;
 public class MenType implements IsCreatureType {
 
     @Override
-    public IsNpc getNpcType(IsTerrain terrain, int number) {
-        IsNpc npc = null;
+    public IsNpcType getNpcType(IsTerrain terrain, int number) {
+        IsNpcType npc = null;
 
         boolean isClear = terrain instanceof Clear;
         boolean isGrass = terrain instanceof Grass;

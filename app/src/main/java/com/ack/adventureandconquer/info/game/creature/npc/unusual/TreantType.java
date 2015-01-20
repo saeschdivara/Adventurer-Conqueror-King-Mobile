@@ -1,11 +1,11 @@
 package com.ack.adventureandconquer.info.game.creature.npc.unusual;
 
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpc;
+import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 
 /**
  * Created by saskyrar on 18/01/15.
  */
-public class TreantType implements IsNpc {
+public class TreantType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
         return number >= 10;
