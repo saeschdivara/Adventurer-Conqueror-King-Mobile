@@ -26,14 +26,6 @@ public class Centaur extends Npc {
         List<Npc> pack = new ArrayList<>();
         int packSize = d10.role() + d10.role();
 
-        // Create pack
-        for (int i = 1; i <= packSize; i++) {
-            Centaur centaur = new Centaur();
-            centaur.roleHitPoints();
-
-            pack.add(centaur);
-        }
-
         // Create chieftain
         Centaur chieftain = new Centaur();
         chieftain.setArmorClass(6);
@@ -49,7 +41,19 @@ public class Centaur extends Npc {
 
         pack.add(chieftain);
 
+        // Create pack
+        for (int i = 1; i <= packSize; i++) {
+            Centaur centaur = new Centaur();
+            centaur.roleHitPoints();
+
+            pack.add(centaur);
+        }
+
         return pack;
+    }
+
+    public static List<Npc> getLair() {
+        return getPack();
     }
 
     @Override

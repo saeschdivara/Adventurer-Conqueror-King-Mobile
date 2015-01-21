@@ -32,7 +32,7 @@ public abstract class Npc {
         hitPoints = 0;
         IsDice d8 = new D8();
 
-        for (int index = 0; index < getHitDice(); index++) {
+        for (int index = 1; index <= getHitDice(); index++) {
             hitPoints += d8.role();
         }
     }
@@ -43,7 +43,7 @@ public abstract class Npc {
 
     public int getArmorClass() {
         if (armorClass < 0)
-            return getDefaultHitPoints();
+            return getDefaultArmorClass();
 
         return armorClass;
     }
@@ -58,7 +58,7 @@ public abstract class Npc {
 
     public int getHitDice() {
         if (hitDice < 0)
-            return getDefaultHitPoints();
+            return getDefaultHitDice();
 
         return hitDice;
     }

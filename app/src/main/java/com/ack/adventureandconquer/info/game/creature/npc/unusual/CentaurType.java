@@ -26,7 +26,7 @@ public class CentaurType implements IsNpcType {
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Centaur.getLair();
     }
 
     @Override

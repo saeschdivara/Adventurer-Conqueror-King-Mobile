@@ -8,6 +8,7 @@ import com.ack.adventureandconquer.info.game.dice.D12;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,17 +24,20 @@ public class Wilderness {
         Encounter encounter = new Encounter();
 
         // Enemy type
-        int rolledEnemyTypeDice = diceD8.role();
+//        int rolledEnemyTypeDice = diceD8.role();
+        int rolledEnemyTypeDice = 5;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
         // Npc type
-        int rolledNpcTypeDice = diceD12.role();
+//        int rolledNpcTypeDice = diceD12.role();
+        int rolledNpcTypeDice = 3;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 
         // Is monster lair
         int rolledLairDice = diceD100.role();
+        System.out.println("100d role: " + String.valueOf(rolledLairDice));
         boolean isLair = npcType.isLair(rolledLairDice);
         encounter.setLair(isLair);
 
@@ -49,27 +53,12 @@ public class Wilderness {
             npcs = npcType.getNormalWildnessEncounter();
         }
 
+        if (npcs == null) {
+            npcs = new ArrayList<>();
+        }
+
         encounter.setEncounterGroupName(encounterGroupName);
         encounter.setEncounterNpcs(npcs);
-
-//        String encounterDescription = "You have found: " + creatureType.toString() + "\n";
-//        encounterDescription += npcType.toString() + "\n";
-//        encounterDescription += "is lair: " + String.valueOf(isLair) + "\n";
-//
-//        String encounterGroupName;
-//        List<Npc> npcs;
-//
-//        if (isLair) {
-//            encounterGroupName = npcType.getLairWildnessEncounterName();
-//            npcs = npcType.getLairWildnessEncounter();
-//        }
-//        else {
-//            encounterGroupName = npcType.getNormalWildnessEncounterName();
-//            npcs = npcType.getNormalWildnessEncounter();
-//        }
-//
-//        encounterDescription += "you encounter a " + encounterGroupName + ":\n";
-//
 
         return encounter;
     }

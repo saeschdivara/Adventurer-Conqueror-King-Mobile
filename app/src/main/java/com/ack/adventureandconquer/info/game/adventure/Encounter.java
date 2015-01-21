@@ -56,4 +56,14 @@ public class Encounter {
     public void setEncounterGroupName(String encounterGroupName) {
         this.encounterGroupName = encounterGroupName;
     }
+
+    public String getDescription() {
+        String encounterDescription = "You have found: " + creatureType.getClass().getSimpleName() + "\n";
+        encounterDescription += npcType.getClass().getSimpleName() + "\n";
+        encounterDescription += "is lair: " + String.valueOf(isLair) + "\n";
+        encounterDescription += "Encounter Group Name: " + encounterGroupName + "\n";
+        encounterDescription += "Group Size: " + String.valueOf(encounterNpcs.size()) + "\n";
+
+        return encounterDescription;
+    }
 }
