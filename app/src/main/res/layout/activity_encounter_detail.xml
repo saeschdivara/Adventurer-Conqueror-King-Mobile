@@ -19,7 +19,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="337dp"
-        android:id="@+id/listView"
+        android:id="@+id/npcList"
         android:layout_gravity="center_horizontal|bottom" />
 
 </FrameLayout>

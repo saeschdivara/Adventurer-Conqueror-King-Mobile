@@ -30,5 +30,28 @@
         android:id="@+id/armorClass"
         android:layout_below="@+id/unitName"
         android:layout_toRightOf="@+id/unitIcon"
-        android:layout_toEndOf="@+id/unitIcon" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/hitDice"
+        android:layout_below="@+id/armorClass"
+        android:layout_toRightOf="@+id/unitIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/hitPoints"
+        android:layout_below="@+id/hitDice"
+        android:layout_toRightOf="@+id/unitIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
