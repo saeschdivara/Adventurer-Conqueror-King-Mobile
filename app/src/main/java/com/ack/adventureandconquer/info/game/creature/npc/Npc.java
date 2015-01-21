@@ -13,6 +13,10 @@ public abstract class Npc {
     private int hitDice = -1;
     private int hitPoints = -1;
 
+    public String getExtraInformation() {
+        return "";
+    }
+
     public int getDefaultHitPoints() {
         return 0;
     }

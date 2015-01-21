@@ -7,7 +7,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/unitIcon"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/unitName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -51,6 +51,17 @@
         android:text="Large Text"
         android:id="@+id/hitPoints"
         android:layout_below="@+id/hitDice"
+        android:layout_toRightOf="@+id/unitIcon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/extraInformation"
+        android:layout_below="@+id/hitPoints"
         android:layout_toRightOf="@+id/unitIcon"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

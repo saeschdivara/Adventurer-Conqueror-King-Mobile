@@ -114,12 +114,15 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView armorClass = (TextView) rowView.findViewById(R.id.armorClass);
             TextView hitDice = (TextView) rowView.findViewById(R.id.hitDice);
             TextView hitPoints = (TextView) rowView.findViewById(R.id.hitPoints);
+            TextView extraInformation = (TextView) rowView.findViewById(R.id.extraInformation);
 
             Npc npc = npcList.get(position);
+
             unitName.setText("Type: " + npc.getClass().getSimpleName());
             armorClass.setText("Armor: " + String.valueOf(npc.getArmorClass()));
             hitDice.setText("Hit dice: " + String.valueOf(npc.getHitDice()));
             hitPoints.setText("Hit points: " + String.valueOf(npc.getHitPoints()));
+            extraInformation.setText(npc.getExtraInformation());
 
             return rowView;
         }
