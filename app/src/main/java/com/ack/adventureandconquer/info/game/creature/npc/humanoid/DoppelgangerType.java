@@ -16,21 +16,21 @@ public class DoppelgangerType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Doppelganger.getThrong();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Throng";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Doppelganger.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }

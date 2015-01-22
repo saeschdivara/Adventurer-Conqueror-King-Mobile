@@ -1,6 +1,7 @@
 package com.ack.adventureandconquer.info.game.creature.npc;
 
 import com.ack.adventureandconquer.info.game.creature.IsMonster;
+import com.ack.adventureandconquer.info.game.dice.D6;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
 
@@ -12,6 +13,9 @@ public abstract class Npc {
     private int armorClass = -1;
     private int hitDice = -1;
     private int hitPoints = -1;
+
+    protected static IsDice d6 = new D6();
+    protected static IsDice d8 = new D8();
 
     public String getExtraInformation() {
         return "";
@@ -34,7 +38,6 @@ public abstract class Npc {
 
     public void roleHitPoints() {
         hitPoints = 0;
-        IsDice d8 = new D8();
 
         for (int index = 1; index <= getHitDice(); index++) {
             hitPoints += d8.role();

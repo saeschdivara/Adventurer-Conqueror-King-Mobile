@@ -3,7 +3,6 @@ package com.ack.adventureandconquer.info.game.creature.npc.unusual;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
 import com.ack.adventureandconquer.info.game.dice.D10;
 import com.ack.adventureandconquer.info.game.dice.D100;
-import com.ack.adventureandconquer.info.game.dice.D6;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import java.util.List;
  */
 public class Centaur extends Npc {
 
-    private static IsDice d6 = new D6();
     private static IsDice d10 = new D10();
     private static IsDice d100 = new D100();
 

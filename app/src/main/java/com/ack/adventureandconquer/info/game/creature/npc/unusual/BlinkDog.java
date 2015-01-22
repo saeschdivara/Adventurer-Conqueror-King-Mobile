@@ -1,8 +1,6 @@
 package com.ack.adventureandconquer.info.game.creature.npc.unusual;
 
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
-import com.ack.adventureandconquer.info.game.dice.D6;
-import com.ack.adventureandconquer.info.game.dice.IsDice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +9,6 @@ import java.util.List;
  * Created by saskyrar on 19/01/15.
  */
 public class BlinkDog extends Npc {
-
-    private static IsDice d6 = new D6();
 
     public static List<Npc> getPack() {
         int packSize = d6.role();
