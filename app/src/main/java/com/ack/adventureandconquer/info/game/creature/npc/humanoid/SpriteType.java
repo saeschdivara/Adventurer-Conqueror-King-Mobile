@@ -11,26 +11,26 @@ import java.util.List;
 public class SpriteType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 30;
+        return number <= 30;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Sprite.getWing();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Wing";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Sprite.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }

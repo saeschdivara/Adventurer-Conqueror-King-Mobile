@@ -11,7 +11,7 @@ import java.util.List;
 public class WereboarType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 20;
+        return number <= 20;
     }
 
     @Override

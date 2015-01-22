@@ -352,7 +352,7 @@ public class HumanoidType implements IsCreatureType {
                     npc = new DoppelgangerType();
                     break;
                 case 2:
-                    npc = new DwarfType()  ;
+                    npc = new DwarfType();
                     break;
                 case 3:
                     npc = new ElfType();

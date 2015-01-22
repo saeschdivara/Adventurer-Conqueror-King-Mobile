@@ -11,26 +11,26 @@ import java.util.List;
 public class WerebearType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 10;
+        return number <= 10;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Werebear.getSloth();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Sloth";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Werebear.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
