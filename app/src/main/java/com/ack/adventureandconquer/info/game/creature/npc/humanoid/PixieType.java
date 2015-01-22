@@ -11,26 +11,26 @@ import java.util.List;
 public class PixieType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 5;
+        return number <= 5;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Pixie.getWing();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Wing";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Pixie.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
