@@ -11,7 +11,7 @@ import java.util.List;
 public class BasiliskType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 40;
+        return number <= 40;
     }
 
     @Override

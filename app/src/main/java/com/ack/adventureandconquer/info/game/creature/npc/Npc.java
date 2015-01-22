@@ -2,6 +2,7 @@ package com.ack.adventureandconquer.info.game.creature.npc;
 
 import com.ack.adventureandconquer.info.game.creature.IsMonster;
 import com.ack.adventureandconquer.info.game.dice.D10;
+import com.ack.adventureandconquer.info.game.dice.D4;
 import com.ack.adventureandconquer.info.game.dice.D6;
 import com.ack.adventureandconquer.info.game.dice.D8;
 import com.ack.adventureandconquer.info.game.dice.IsDice;
@@ -15,6 +16,7 @@ public abstract class Npc {
     private int hitDice = -1;
     private int hitPoints = -1;
 
+    protected static D4 d4 = new D4();
     protected static IsDice d6 = new D6();
     protected static IsDice d8 = new D8();
     protected static IsDice d10 = new D10();

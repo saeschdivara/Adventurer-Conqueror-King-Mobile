@@ -11,7 +11,7 @@ import java.util.List;
 public class CentaurType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 5;
+        return number <= 5;
     }
 
     @Override

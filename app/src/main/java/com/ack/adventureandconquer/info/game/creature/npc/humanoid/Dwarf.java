@@ -16,7 +16,6 @@ import java.util.List;
  */
 public class Dwarf extends Npc {
 
-    private static D4 d4 = new D4();
     private static D12 d12 = new D12();
 
     private boolean isVaultGuard = false;

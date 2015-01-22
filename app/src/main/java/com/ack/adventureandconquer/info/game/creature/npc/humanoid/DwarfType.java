@@ -11,7 +11,7 @@ import java.util.List;
 public class DwarfType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 50;
+        return number <= 50;
     }
 
     @Override

@@ -11,26 +11,26 @@ import java.util.List;
 public class ElfType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 10;
+        return number <= 10;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Elf.getCompany();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Company";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Elf.getFastness();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Fastness";
     }
 }
