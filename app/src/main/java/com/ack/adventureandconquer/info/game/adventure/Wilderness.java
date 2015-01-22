@@ -24,20 +24,19 @@ public class Wilderness {
         Encounter encounter = new Encounter();
 
         // Enemy type
-//        int rolledEnemyTypeDice = diceD8.role();
-        int rolledEnemyTypeDice = 5;
+        int rolledEnemyTypeDice = diceD8.role();
+//        int rolledEnemyTypeDice = 3;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
         // Npc type
-//        int rolledNpcTypeDice = diceD12.role();
-        int rolledNpcTypeDice = 3;
+        int rolledNpcTypeDice = diceD12.role();
+//        int rolledNpcTypeDice = 4;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 
         // Is monster lair
         int rolledLairDice = diceD100.role();
-        System.out.println("100d role: " + String.valueOf(rolledLairDice));
         boolean isLair = npcType.isLair(rolledLairDice);
         encounter.setLair(isLair);
 
