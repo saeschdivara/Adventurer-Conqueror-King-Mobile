@@ -15,6 +15,7 @@ public abstract class Npc {
     private int armorClass = -1;
     private int hitDice = -1;
     private int hitPoints = -1;
+    private int additionalHitPoints = 0;
 
     protected static IsDice d4 = new D4();
     protected static IsDice d6 = new D6();
@@ -55,7 +56,11 @@ public abstract class Npc {
     }
 
     public int getAdditionalHitPoints() {
-        return 0;
+        return additionalHitPoints;
+    }
+
+    public void setAdditionalHitPoints(int additionalHitPoints) {
+        this.additionalHitPoints = additionalHitPoints;
     }
 
     public int getDefaultArmorClass() {

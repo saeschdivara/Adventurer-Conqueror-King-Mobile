@@ -11,26 +11,26 @@ import java.util.List;
 public class HalflingType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 90;
+        return number <= 90;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Halfling.getMeet();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Meet";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Halfling.getShire();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Shire";
     }
 }
