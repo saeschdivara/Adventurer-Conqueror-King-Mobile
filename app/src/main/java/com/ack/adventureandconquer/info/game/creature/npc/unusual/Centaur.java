@@ -46,9 +46,9 @@ public class Centaur extends Npc {
         Centaur chieftain = createChieftain();
         pack.add(chieftain);
 
-        int partMale = packSize / 3;
-        int partFemale = (packSize - partMale) / 2;
-        int partYoung = packSize - partMale - partFemale;
+        int partMale = packSize;
+        int partFemale = packSize / 2;
+        int partYoung = packSize / 2;
 
         // Create male
         for (int i = 1; i <= partMale; i++) {
