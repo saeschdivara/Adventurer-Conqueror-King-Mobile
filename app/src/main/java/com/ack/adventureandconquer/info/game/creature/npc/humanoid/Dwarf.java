@@ -76,13 +76,13 @@ public class Dwarf extends Npc {
             companies.add(priest);
         }
 
-        boolean hasAnimals = d10.role() >= 60;
+        boolean hasAnimals = d10.role() >= 6;
         if (hasAnimals) {
-            int whichAnimals = d2.role();
+            boolean isDogs = d12.role() < 6;
 
             IsDice d4 = new D4();
 
-            if (whichAnimals == 1) {
+            if (isDogs) {
                 // DOGS
                 int dogsNumber = d4.role() + d4.role() + d4.role() + d4.role() + d4.role();
 
