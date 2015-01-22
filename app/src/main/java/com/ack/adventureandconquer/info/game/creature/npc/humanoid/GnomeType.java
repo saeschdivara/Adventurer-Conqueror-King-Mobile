@@ -11,26 +11,26 @@ import java.util.List;
 public class GnomeType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 50;
+        return number <= 50;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Gnome.getCompany();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Company";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Gnome.getVault();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Vault";
     }
 }
