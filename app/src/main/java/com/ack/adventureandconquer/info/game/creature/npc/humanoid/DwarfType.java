@@ -16,21 +16,21 @@ public class DwarfType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Dwarf.getCompany();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Company";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Dwarf.getVault();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Vault";
     }
 }
