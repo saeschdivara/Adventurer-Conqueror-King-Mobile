@@ -16,21 +16,21 @@ public class BasiliskType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Basilisk.getBask();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Bask";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Basilisk.getNest();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Nest";
     }
 }

@@ -39,6 +39,12 @@ public abstract class Npc {
         for (int index = 1; index <= getHitDice(); index++) {
             hitPoints += d8.role();
         }
+
+        hitPoints += getAdditionalHitPoints();
+    }
+
+    public int getAdditionalHitPoints() {
+        return 0;
     }
 
     public int getDefaultArmorClass() {
