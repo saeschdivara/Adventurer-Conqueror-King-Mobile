@@ -16,21 +16,21 @@ public class WereboarType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Wereboar.getHerd();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Herd";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Wereboar.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
