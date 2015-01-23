@@ -29,6 +29,13 @@ public class Wereboar extends Npc {
     }
 
     @Override
+    public String getExtraInformation() {
+        return "If enraged, they will fight with a bonus of +2 to attack " +
+                "throws, and continue fighting until there are no more enemies " +
+                "or until they are killed.";
+    }
+
+    @Override
     public int getAdditionalHitPoints() {
         return 1;
     }
