@@ -11,7 +11,7 @@ import java.util.List;
 public class BugbearType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 25;
+        return number <= 25;
     }
 
     @Override
