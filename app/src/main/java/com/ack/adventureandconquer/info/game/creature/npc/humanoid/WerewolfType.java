@@ -11,26 +11,26 @@ import java.util.List;
 public class WerewolfType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 25;
+        return number <= 25;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Werewolf.getRoute();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Route";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Werewolf.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
