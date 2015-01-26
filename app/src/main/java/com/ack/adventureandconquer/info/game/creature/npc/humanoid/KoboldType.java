@@ -11,26 +11,26 @@ import java.util.List;
 public class KoboldType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 40;
+        return number <= 40;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Kobold.getWarband();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Warband";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Kobold.getVillage();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Village";
     }
 }
