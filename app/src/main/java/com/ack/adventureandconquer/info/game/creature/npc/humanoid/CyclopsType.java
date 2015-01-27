@@ -11,26 +11,26 @@ import java.util.List;
 public class CyclopsType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 20;
+        return number <= 20;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Cyclops.getGang();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Gang";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Cyclops.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
