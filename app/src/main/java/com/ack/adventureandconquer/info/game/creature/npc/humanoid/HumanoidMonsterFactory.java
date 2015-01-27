@@ -64,9 +64,14 @@ abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> {
         int villageSize = getVillageSize();
 
         for (int index = 0; index < villageSize; index++) {
-            List<Npc> warband = getWarband();
-
-            village.addAll(warband);
+            if (hasWarband()) {
+                List<Npc> warband = getWarband();
+                village.addAll(warband);
+            }
+            else {
+                List<Npc> gang = getGang();
+                village.addAll(gang);
+            }
         }
 
         MonsterClass chieftain = createChieftain();
@@ -110,6 +115,10 @@ abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> {
         }
 
         return village;
+    }
+
+    protected boolean hasWarband() {
+        return true;
     }
 
     abstract protected int getGangSize();
