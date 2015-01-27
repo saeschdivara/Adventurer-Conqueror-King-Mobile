@@ -16,8 +16,6 @@ abstract public class HumanoidGiantFactory<GiantClass extends Npc> extends Human
 
         for (int index = 0; index < gangSize; index++) {
             GiantClass monster = createMonster();
-            monster.roleHitPoints();
-
             gang.add(monster);
         }
 
@@ -30,8 +28,6 @@ abstract public class HumanoidGiantFactory<GiantClass extends Npc> extends Human
 
         for (int index = 0; index < warBandSize; index++) {
             GiantClass monster = createMonster();
-            monster.roleHitPoints();
-
             warband.add(monster);
         }
 
@@ -44,8 +40,6 @@ abstract public class HumanoidGiantFactory<GiantClass extends Npc> extends Human
 
         for (int index = 0; index < villageSize; index++) {
             GiantClass monster = createMonster();
-            monster.roleHitPoints();
-
             village.add(monster);
         }
 

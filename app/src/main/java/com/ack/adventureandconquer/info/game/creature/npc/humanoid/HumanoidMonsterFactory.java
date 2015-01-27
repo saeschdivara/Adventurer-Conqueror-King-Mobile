@@ -16,8 +16,6 @@ abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> exte
 
         for (int index = 0; index < gangSize; index++) {
             MonsterClass monster = createMonster();
-            monster.roleHitPoints();
-
             gang.add(monster);
         }
 
