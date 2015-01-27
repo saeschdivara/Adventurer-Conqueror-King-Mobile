@@ -11,7 +11,7 @@ import java.util.List;
 public class HellhoundType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 30;
+        return number <= 30;
     }
 
     @Override
