@@ -45,12 +45,12 @@ abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> {
 
     public List<Npc> getWarband() {
         List<Npc> warband = new ArrayList<>();
-        int gangSize = getWarBandSize();
+        int warBandSize = getWarBandSize();
 
-        for (int index = 0; index < gangSize; index++) {
+        for (int index = 0; index < warBandSize; index++) {
             List<Npc> gang = getGang();
 
-            gang.addAll(gang);
+            warband.addAll(gang);
         }
 
         MonsterClass subChieftain = createSubChieftain();
@@ -61,12 +61,12 @@ abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> {
 
     public List<Npc> getVillage() {
         List<Npc> village = new ArrayList<>();
-        int gangSize = getVillageSize();
+        int villageSize = getVillageSize();
 
-        for (int index = 0; index < gangSize; index++) {
-            List<Npc> gang = getGang();
+        for (int index = 0; index < villageSize; index++) {
+            List<Npc> warband = getWarband();
 
-            gang.addAll(gang);
+            village.addAll(warband);
         }
 
         MonsterClass chieftain = createChieftain();
