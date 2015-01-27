@@ -1,22 +1,11 @@
 package com.ack.adventureandconquer.info.game.dice;
 
-import java.security.SecureRandom;
-import java.util.Random;
-
 /**
  * Created by saskyrar on 16/01/15.
  */
-public class D8 implements IsDice {
-
-    private static Random _random = new SecureRandom();
-
+public class D8 extends AbstractDice {
     @Override
-    public int role() {
-
-        for (int i = 0; i < 10; i++) {
-            _random.nextInt(8);
-        }
-
-        return _random.nextInt(8) + 1;
+    protected int getDiceNumber() {
+        return 8;
     }
 }
