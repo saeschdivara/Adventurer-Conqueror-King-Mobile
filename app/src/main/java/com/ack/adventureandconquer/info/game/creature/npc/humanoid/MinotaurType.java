@@ -11,26 +11,26 @@ import java.util.List;
 public class MinotaurType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 20;
+        return number <= 20;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Minotaur.getWarband();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Warband";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Minotaur.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
