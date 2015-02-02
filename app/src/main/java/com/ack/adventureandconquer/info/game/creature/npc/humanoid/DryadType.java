@@ -11,7 +11,7 @@ import java.util.List;
 public class DryadType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 10;
+        return number <= 10;
     }
 
     @Override

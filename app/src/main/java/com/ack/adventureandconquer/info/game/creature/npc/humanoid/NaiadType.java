@@ -11,26 +11,26 @@ import java.util.List;
 public class NaiadType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 95;
+        return number <= 95;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Naiad.getSolitary();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Solitary";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Naiad.getWateryLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Watery lair";
     }
 }

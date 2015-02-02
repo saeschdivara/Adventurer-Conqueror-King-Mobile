@@ -4,6 +4,7 @@ import com.ack.adventureandconquer.info.game.creature.IsMonster;
 import com.ack.adventureandconquer.info.game.dice.D10;
 import com.ack.adventureandconquer.info.game.dice.D100;
 import com.ack.adventureandconquer.info.game.dice.D2;
+import com.ack.adventureandconquer.info.game.dice.D20;
 import com.ack.adventureandconquer.info.game.dice.D3;
 import com.ack.adventureandconquer.info.game.dice.D4;
 import com.ack.adventureandconquer.info.game.dice.D6;
@@ -26,6 +27,7 @@ public abstract class Npc {
     protected static IsDice d6 = new D6();
     protected static IsDice d8 = new D8();
     protected static IsDice d10 = new D10();
+    protected static IsDice d20 = new D20();
     protected static IsDice d100 = new D100();
 
     public String getExtraInformation() {
