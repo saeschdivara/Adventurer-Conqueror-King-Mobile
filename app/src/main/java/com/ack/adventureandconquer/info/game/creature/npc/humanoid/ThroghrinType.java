@@ -11,26 +11,26 @@ import java.util.List;
 public class ThroghrinType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 35;
+        return number <= 35;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Throghrin.getPack();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Pack";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Throghrin.getLair();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Lair";
     }
 }
