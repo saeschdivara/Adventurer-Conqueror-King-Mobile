@@ -8,16 +8,10 @@ import java.util.List;
 /**
  * Created by saskyrar on 26/01/15.
  */
-abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> extends HumanoidFactory {
+abstract class HumanoidMonsterFactory<MonsterClass extends HumanoidMonster> extends HumanoidFactory<MonsterClass> {
 
     public List<Npc> getGang() {
-        List<Npc> gang = new ArrayList<>();
-        int gangSize = getGangSize();
-
-        for (int index = 0; index < gangSize; index++) {
-            MonsterClass monster = createMonster();
-            gang.add(monster);
-        }
+        List<Npc> gang = getMonsterList(getGangSize());
 
         MonsterClass champion = createChampion();
         gang.add(champion);
