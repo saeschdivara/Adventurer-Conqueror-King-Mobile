@@ -16,21 +16,21 @@ public class DryadType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Dryad.getSolitary();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Solitary";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return Dryad.getGrove();
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Grove";
     }
 }
