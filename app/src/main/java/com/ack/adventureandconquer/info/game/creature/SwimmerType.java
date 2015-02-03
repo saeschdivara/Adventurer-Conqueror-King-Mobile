@@ -16,7 +16,7 @@ import com.ack.adventureandconquer.info.game.creature.npc.swimmer.GiantCrocodile
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.GiantOctopusType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.GiantSquidType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.InsectSwarmType;
-import com.ack.adventureandconquer.info.game.creature.npc.swimmer.LargeCrocodile;
+import com.ack.adventureandconquer.info.game.creature.npc.swimmer.LargeCrocodileType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.MermanType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.PiranhaFishType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaDragonType;
@@ -48,7 +48,7 @@ public class SwimmerType implements IsCreatureType {
                     npc = new CrocodileType();
                     break;
                 case 4:
-                    npc = new LargeCrocodile();
+                    npc = new LargeCrocodileType();
                     break;
                 case 5:
                     npc = new CatfishType();
@@ -125,7 +125,7 @@ public class SwimmerType implements IsCreatureType {
                     npc = new CrocodileType();
                     break;
                 case 3:
-                    npc = new LargeCrocodile();
+                    npc = new LargeCrocodileType();
                     break;
                 case 4:
                     npc = new GiantCrocodile();

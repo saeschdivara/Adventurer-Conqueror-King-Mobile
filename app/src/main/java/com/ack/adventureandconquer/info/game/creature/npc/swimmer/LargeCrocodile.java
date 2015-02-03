@@ -1,36 +1,18 @@
 package com.ack.adventureandconquer.info.game.creature.npc.swimmer;
 
-import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
 
-import java.util.List;
-
 /**
- * Created by saskyrar on 18/01/15.
+ * Created by saskyrar on 03/02/15.
  */
-public class LargeCrocodile implements IsNpcType {
+public class LargeCrocodile extends Npc {
     @Override
-    public boolean isLair(int number) {
-        return false;
+    public int getDefaultArmorClass() {
+        return 6;
     }
 
     @Override
-    public List<Npc> getNormalWildnessEncounter() {
-        return null;
-    }
-
-    @Override
-    public String getNormalWildnessEncounterName() {
-        return null;
-    }
-
-    @Override
-    public List<Npc> getLairWildnessEncounter() {
-        return null;
-    }
-
-    @Override
-    public String getLairWildnessEncounterName() {
-        return null;
+    public int getDefaultHitDice() {
+        return 6;
     }
 }
