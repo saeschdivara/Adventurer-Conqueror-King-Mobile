@@ -14,7 +14,7 @@ abstract public class AbstractDice implements IsDice {
     public int role() {
 
         final int diceNumber = getDiceNumber();
-        final int randomRoundCounter = _random.nextInt(4) + 1;
+        final int randomRoundCounter = _random.nextInt(2) + 1;
 
         for (int i = 0; i < randomRoundCounter; i++) {
             _random.nextInt(diceNumber);

@@ -2,26 +2,35 @@ package com.ack.adventureandconquer.info.game.creature.npc.swimmer;
 
 import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
+import com.ack.adventureandconquer.info.game.creature.npc.NpcFactory;
 
 import java.util.List;
 
 /**
  * Created by saskyrar on 18/01/15.
  */
-public class SturgeonFishType implements IsNpcType {
+public class SturgeonFishType extends NpcFactory<SturgeonFish> implements IsNpcType {
     @Override
     public boolean isLair(int number) {
         return false;
     }
 
     @Override
+    protected SturgeonFish createMonster() {
+        SturgeonFish monster = new SturgeonFish();
+        monster.roleHitPoints();
+
+        return monster;
+    }
+
+    @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return getMonsterList( 1 );
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Solitary";
     }
 
     @Override
