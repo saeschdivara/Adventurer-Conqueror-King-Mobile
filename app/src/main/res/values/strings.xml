@@ -9,6 +9,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="action_save_encounter">Save Encounter</string>
     <string name="title_activity_encounter_detail">EncounterDetailActivity</string>
     <string name="hello_world">Hello world!</string>
 

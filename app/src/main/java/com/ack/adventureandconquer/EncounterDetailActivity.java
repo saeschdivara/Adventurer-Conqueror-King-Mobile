@@ -64,6 +64,10 @@ public class EncounterDetailActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if (id == R.id.action_save_encounter) {
+            GameController.getInstance().saveEncounter();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

@@ -102,7 +102,8 @@ public class MainActivity extends ActionBarActivity
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                (DrawerLayout) findViewById(R.id.drawer_layout)
+        );
 
         _setImageButtonBackground(R.id.clearing_image, R.drawable.clearing_q, 100, 100);
         _setImageButtonBackground(R.id.grass_image, R.drawable.grass_q, 100, 100);
@@ -118,6 +119,10 @@ public class MainActivity extends ActionBarActivity
         _setImageButtonBackground(R.id.city_image, R.drawable.city_q, 100, 100);
         _setImageButtonBackground(R.id.ocean_image, R.drawable.ocean_q, 100, 100);
         _setImageButtonBackground(R.id.jungle_image, R.drawable.jungle_q, 100, 100);
+
+
+        // Load already created encounters
+        GameController.getInstance().loadEncounters();
     }
 
 

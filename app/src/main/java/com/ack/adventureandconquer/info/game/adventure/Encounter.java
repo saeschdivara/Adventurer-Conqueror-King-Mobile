@@ -58,11 +58,11 @@ public class Encounter {
     }
 
     public String getDescription() {
-        String encounterDescription = "You have found: " + creatureType.getClass().getSimpleName() + "\n";
-        encounterDescription += npcType.getClass().getSimpleName() + "\n";
+        String encounterDescription = "You have found: " + getCreatureType().getClass().getSimpleName() + "\n";
+        encounterDescription += getNpcType().getClass().getSimpleName() + "\n";
         encounterDescription += "is lair: " + String.valueOf(isLair) + "\n";
-        encounterDescription += "Encounter Group Name: " + encounterGroupName + "\n";
-        encounterDescription += "Group Size: " + String.valueOf(encounterNpcs.size()) + "\n";
+        encounterDescription += "Encounter Group Name: " + getEncounterGroupName() + "\n";
+        encounterDescription += "Group Size: " + String.valueOf(getEncounterNpcs().size()) + "\n";
 
         return encounterDescription;
     }

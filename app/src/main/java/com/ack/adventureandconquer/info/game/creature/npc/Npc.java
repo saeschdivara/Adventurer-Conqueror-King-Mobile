@@ -40,7 +40,7 @@ public abstract class Npc {
 
     public int getHitPoints() {
         if (hitPoints < 0)
-            return getDefaultHitPoints();
+            hitPoints = getDefaultHitPoints();
 
         return hitPoints;
     }
@@ -76,8 +76,9 @@ public abstract class Npc {
     }
 
     public int getArmorClass() {
-        if (armorClass < 0)
-            return getDefaultArmorClass();
+        if (armorClass < 0) {
+            armorClass = getDefaultArmorClass();
+        }
 
         return armorClass;
     }
@@ -92,7 +93,7 @@ public abstract class Npc {
 
     public int getHitDice() {
         if (hitDice < 0)
-            return getDefaultHitDice();
+            hitDice = getDefaultHitDice();
 
         return hitDice;
     }
