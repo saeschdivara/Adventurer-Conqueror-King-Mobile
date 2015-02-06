@@ -122,7 +122,7 @@ public class MainActivity extends ActionBarActivity
 
 
         // Load already created encounters
-        GameController.getInstance().loadEncounters();
+//        GameController.getInstance().loadEncounters();
     }
 
 

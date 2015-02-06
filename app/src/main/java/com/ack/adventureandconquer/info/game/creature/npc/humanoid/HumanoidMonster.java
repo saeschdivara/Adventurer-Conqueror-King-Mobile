@@ -85,6 +85,36 @@ public class HumanoidMonster extends Npc {
     public enum Type  {
         MALE,
         FEMALE,
-        YOUNG
+        YOUNG;
+
+        public Type fromString(String str) {
+            if (str.equals("FEMALE")) {
+                return FEMALE;
+            }
+            else if (str.equals("YOUNG")) {
+                return YOUNG;
+            }
+            else {
+                return MALE;
+            }
+        }
+
+        @Override
+        public String toString() {
+            if (this.equals(MALE)) {
+                return "MALE";
+            }
+            else if (this.equals(FEMALE)) {
+                return "FEMALE";
+            }
+            else if (this.equals(YOUNG)) {
+                return "YOUNG";
+            }
+            else {
+                return null;
+            }
+        }
+
+
     }
 }

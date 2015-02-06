@@ -3,6 +3,10 @@ package com.ack.adventureandconquer.info.game.adventure;
 import com.ack.adventureandconquer.info.game.creature.IsCreatureType;
 import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
+import com.ack.adventureandconquer.info.game.json.CreatureTypeAdapter;
+import com.ack.adventureandconquer.info.game.json.NpcListTypeAdapter;
+import com.ack.adventureandconquer.info.game.json.NpcTypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 
 import java.util.List;
 
@@ -11,10 +15,17 @@ import java.util.List;
  */
 public class Encounter {
 
+    @JsonAdapter(CreatureTypeAdapter.class)
     private IsCreatureType creatureType;
+
+    @JsonAdapter(NpcTypeAdapter.class)
     private IsNpcType npcType;
+
     private boolean isLair;
+
+    @JsonAdapter(NpcListTypeAdapter.class)
     private List<Npc> encounterNpcs;
+
     private String encounterGroupName;
 
     public IsCreatureType getCreatureType() {

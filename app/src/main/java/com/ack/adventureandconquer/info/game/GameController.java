@@ -84,6 +84,7 @@ public class GameController {
             file.mkdirs();
 
             DB snappydb = DBFactory.open(file.getAbsolutePath());
+            snappydb.destroy();
 
             Gson gson = new Gson();
 
@@ -99,10 +100,10 @@ public class GameController {
             System.out.println(encounterJson);
 
             // Save encounter to the db
-//            snappydb.put(encounterEntryKey, encounterJson);
+            snappydb.put(encounterEntryKey, encounterJson);
 
             // Save encounter number
-//            snappydb.putInt(DB_ENCOUNTER_COUNTER, encounterNumber);
+            snappydb.putInt(DB_ENCOUNTER_COUNTER, encounterNumber);
 
             snappydb.close();
 
