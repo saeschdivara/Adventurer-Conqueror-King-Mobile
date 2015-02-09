@@ -87,7 +87,7 @@ public class HumanoidMonster extends Npc {
         FEMALE,
         YOUNG;
 
-        public Type fromString(String str) {
+        public static Type fromString(String str) {
             if (str.equals("FEMALE")) {
                 return FEMALE;
             }

@@ -6,6 +6,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -20,10 +21,26 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
     public void write(JsonWriter out, List<Npc> value) throws IOException {
         out.beginArray();
 
+        // TODO: Needs to be faster
         for (Npc npc : value) {
             out.beginObject();
 
             Class<? extends Npc> npcClass = npc.getClass();
+
+            out.name("className");
+            out.value(npcClass.getName());
+
+            out.name("armorClass");
+            out.value(npc.getArmorClass());
+
+            out.name("hitDice");
+            out.value(npc.getHitDice());
+
+            out.name("additionalHitPoints");
+            out.value(npc.getAdditionalHitPoints());
+
+            out.name("hitPoints");
+            out.value(npc.getHitPoints());
 
             List<Field> fields = getFields(npcClass, null);
 
@@ -120,21 +137,6 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
                 }
             }
 
-            out.name("className");
-            out.value(npcClass.getName());
-
-            out.name("armorClass");
-            out.value(npc.getArmorClass());
-
-            out.name("hitDice");
-            out.value(npc.getHitDice());
-
-            out.name("additionalHitPoints");
-            out.value(npc.getAdditionalHitPoints());
-
-            out.name("hitPoints");
-            out.value(npc.getHitPoints());
-
             out.endObject();
         }
 
@@ -187,8 +189,32 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
         return getterName;
     }
 
+    private String getSetterMethodName(String fieldName) {
+
+        String setterName = "set";
+
+        int nameStartPoint = 0;
+
+        if (fieldName.startsWith("is")) {
+            nameStartPoint = 2;
+        }
+        else if (fieldName.startsWith("has")) {
+            nameStartPoint = 3;
+        }
+
+        setterName += fieldName.substring(nameStartPoint, nameStartPoint + 1).toUpperCase() +
+                      fieldName.substring(nameStartPoint + 1);
+
+        System.out.println("Setter name: " + setterName);
+
+        return setterName;
+    }
+
     @Override
     public List<Npc> read(JsonReader in) throws IOException {
+
+        List<Npc> allNpc = new ArrayList<>();
+
         in.beginArray();
 
         try {
@@ -200,31 +226,89 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
 
                 System.out.println("First type: " + propertyName);
 
-                if (!propertyName.equals("type")) {
+                if (!propertyName.equals("className")) {
                     throw new ClassNotFoundException();
                 }
 
                 String className = in.nextString();
-                Class<?> npcClass = Class.forName(className);
+                Class<? extends Npc> npcClass = (Class<? extends Npc>) Class.forName(className);
 
-                System.out.println(npcClass.getSimpleName());
+                if (npcClass != null) {
+                    System.out.println("NPC Class: " + npcClass.getSimpleName());
+                }
+                else {
+                    System.out.println("Warning: NPC Class is null");
+                }
+
+                Constructor<? extends Npc> npcClassConstructor = npcClass.getConstructor();
+                Npc npc = npcClassConstructor.newInstance();
+
+                allNpc.add(npc);
 
                 while (in.hasNext()) {
                     String key = in.nextName();
                     System.out.println("Key: " + key);
-                    in.skipValue();
+
+                    String setterMethodName = getSetterMethodName(key);
+
+                    String getterMethodName = getGetterMethodName(key);
+                    Method method = npcClass.getMethod(getterMethodName);
+
+                    System.out.println(method);
+                    System.out.println(method.getReturnType().getSimpleName());
+
+                    Class<?> fieldType = method.getReturnType();
+                    System.out.println("Field type: " + fieldType.getSimpleName());
+
+                    Method setterMethod = npc.getClass().getMethod(setterMethodName, fieldType);
+                    System.out.println("Method: " + setterMethod);
+
+                    String fieldTypeClassName = fieldType.getSimpleName();
+
+                    System.out.println(fieldType);
+                    System.out.println( fieldTypeClassName );
+
+                    if (fieldTypeClassName.equals("String")) {
+                        String value = in.nextString();
+                        setterMethod.invoke(npc, value);
+                    }
+                    else if (fieldTypeClassName.equals("int")) {
+                        int value = in.nextInt();
+                        setterMethod.invoke(npc, value);
+                    }
+                    else if (fieldTypeClassName.equals("double")) {
+                        double value = in.nextDouble();
+                        setterMethod.invoke(npc, value);
+                    }
+                    else if (fieldTypeClassName.equals("long")) {
+                        long value = in.nextLong();
+                        setterMethod.invoke(npc, value);
+                    }
+                    else if (fieldTypeClassName.equals("boolean")) {
+                        boolean value = in.nextBoolean();
+                        setterMethod.invoke(npc, value);
+                    }
+                    else if (fieldType.isEnum()) {
+                        String value = in.nextString();
+                        Method fromStringMethod = fieldType.getMethod("fromString", String.class);
+                        Object enumData = fromStringMethod.invoke(null, value);
+                        setterMethod.invoke(npc, enumData);
+                    }
+
                 }
+
                 in.endObject();
             }
         }
         catch(Exception e) {
 
             System.out.println(e.getCause());
+            e.printStackTrace();
 
             in.endArray();
         }
 
 
-        return new ArrayList<>();
+        return allNpc;
     }
 }

@@ -207,6 +207,8 @@ public class MainActivity extends ActionBarActivity
                 break;
         }
 
+        GameController.getInstance().destroyData();
+
         Encounter encounter = wilderness.findEncounterByTerrain(terrain);
         GameController.getInstance().addEncounter(encounter);
 

@@ -38,6 +38,21 @@ public class GameController {
         return lastEncounter;
     }
 
+    public void destroyData() {
+        File file = new File(
+                Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DCIM
+                ),
+                "ack"
+        );
+        try {
+            DB snappydb = DBFactory.open(file.getAbsolutePath());
+            snappydb.destroy();
+        }
+        catch (SnappydbException exc) {
+        }
+    }
+
     public void loadEncounters() {
         try {
             File file = new File(
@@ -57,7 +72,10 @@ public class GameController {
 //                snappydb.findKeysBetween("enc:0", "enc:3");
                 String encounterString = snappydb.get("enc:1");
                 System.out.printf("New json: " + encounterString);
-                System.out.println(gson.fromJson(encounterString, Encounter.class));
+
+                // TODO: This should probably be done in a different thread
+                Encounter enc = gson.fromJson(encounterString, Encounter.class);
+                System.out.println(enc);
             }
             else {
                 snappydb.putInt(DB_ENCOUNTER_COUNTER, 0);
