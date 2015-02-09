@@ -55,6 +55,9 @@ public class GameController {
 
             if (snappydb.countKeys(DB_ENCOUNTER_COUNTER) != 0) {
 //                snappydb.findKeysBetween("enc:0", "enc:3");
+                String encounterString = snappydb.get("enc:1");
+                System.out.printf("New json: " + encounterString);
+                System.out.println(gson.fromJson(encounterString, Encounter.class));
             }
             else {
                 snappydb.putInt(DB_ENCOUNTER_COUNTER, 0);
@@ -63,12 +66,8 @@ public class GameController {
             snappydb.close();
 
         } catch (SnappydbException e) {
+            System.out.println("Exception: " + e.getMessage());
         }
-
-//        List<Encounter> encounters = gson.fro
-
-//        System.out.println(gson.toJson(encounters));
-//        gson.toJson(lastEncounter);
     }
 
     public void saveEncounter() {
@@ -84,9 +83,12 @@ public class GameController {
             file.mkdirs();
 
             DB snappydb = DBFactory.open(file.getAbsolutePath());
-            snappydb.destroy();
 
             Gson gson = new Gson();
+
+            if (snappydb.countKeys(DB_ENCOUNTER_COUNTER) == 0) {
+                snappydb.putInt(DB_ENCOUNTER_COUNTER, 0);
+            }
 
             int encounterNumber = snappydb.getInt(DB_ENCOUNTER_COUNTER);
 
@@ -108,6 +110,7 @@ public class GameController {
             snappydb.close();
 
         } catch (SnappydbException e) {
+            System.out.println("Exception: " + e.getMessage());
         }
     }
 }

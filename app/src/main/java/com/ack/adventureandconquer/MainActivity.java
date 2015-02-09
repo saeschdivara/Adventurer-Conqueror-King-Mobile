@@ -119,10 +119,6 @@ public class MainActivity extends ActionBarActivity
         _setImageButtonBackground(R.id.city_image, R.drawable.city_q, 100, 100);
         _setImageButtonBackground(R.id.ocean_image, R.drawable.ocean_q, 100, 100);
         _setImageButtonBackground(R.id.jungle_image, R.drawable.jungle_q, 100, 100);
-
-
-        // Load already created encounters
-//        GameController.getInstance().loadEncounters();
     }
 
 
@@ -133,6 +129,11 @@ public class MainActivity extends ActionBarActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+
+        if (position == 1) {
+            Intent intent = new Intent(this, EncounterListActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void onSectionAttached(int number) {

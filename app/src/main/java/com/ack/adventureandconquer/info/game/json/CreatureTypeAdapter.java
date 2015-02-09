@@ -1,5 +1,6 @@
 package com.ack.adventureandconquer.info.game.json;
 
+import com.ack.adventureandconquer.info.game.creature.HumanoidType;
 import com.ack.adventureandconquer.info.game.creature.IsCreatureType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
@@ -19,6 +20,10 @@ public class CreatureTypeAdapter extends TypeAdapter<IsCreatureType> {
 
     @Override
     public IsCreatureType read(JsonReader in) throws IOException {
-        return null;
+
+        in.beginObject();
+        in.endObject();
+
+        return new HumanoidType();
     }
 }

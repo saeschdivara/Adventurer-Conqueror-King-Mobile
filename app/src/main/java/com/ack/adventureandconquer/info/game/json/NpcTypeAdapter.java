@@ -1,6 +1,7 @@
 package com.ack.adventureandconquer.info.game.json;
 
 import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
+import com.ack.adventureandconquer.info.game.creature.npc.humanoid.LizardManType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -19,6 +20,10 @@ public class NpcTypeAdapter extends TypeAdapter<IsNpcType> {
 
     @Override
     public IsNpcType read(JsonReader in) throws IOException {
-        return null;
+
+        in.beginObject();
+        in.endObject();
+
+        return new LizardManType();
     }
 }

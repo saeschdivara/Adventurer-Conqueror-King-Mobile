@@ -189,6 +189,42 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
 
     @Override
     public List<Npc> read(JsonReader in) throws IOException {
-        return null;
+        in.beginArray();
+
+        try {
+
+            while (true) {
+                in.beginObject();
+
+                String propertyName = in.nextName();
+
+                System.out.println("First type: " + propertyName);
+
+                if (!propertyName.equals("type")) {
+                    throw new ClassNotFoundException();
+                }
+
+                String className = in.nextString();
+                Class<?> npcClass = Class.forName(className);
+
+                System.out.println(npcClass.getSimpleName());
+
+                while (in.hasNext()) {
+                    String key = in.nextName();
+                    System.out.println("Key: " + key);
+                    in.skipValue();
+                }
+                in.endObject();
+            }
+        }
+        catch(Exception e) {
+
+            System.out.println(e.getCause());
+
+            in.endArray();
+        }
+
+
+        return new ArrayList<>();
     }
 }
