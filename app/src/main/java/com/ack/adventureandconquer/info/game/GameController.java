@@ -9,6 +9,8 @@ import com.snappydb.DBFactory;
 import com.snappydb.SnappydbException;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by saskyrar on 20/01/15.
@@ -53,7 +55,10 @@ public class GameController {
         }
     }
 
-    public void loadEncounters() {
+    public List<Encounter> loadEncounters() {
+
+        List<Encounter> encounters = new ArrayList<>();
+
         try {
             File file = new File(
                     Environment.getExternalStoragePublicDirectory(
@@ -69,12 +74,12 @@ public class GameController {
             Gson gson = new Gson();
 
             if (snappydb.countKeys(DB_ENCOUNTER_COUNTER) != 0) {
-//                snappydb.findKeysBetween("enc:0", "enc:3");
                 String encounterString = snappydb.get("enc:1");
                 System.out.printf("New json: " + encounterString);
 
                 // TODO: This should probably be done in a different thread
                 Encounter enc = gson.fromJson(encounterString, Encounter.class);
+                encounters.add(enc);
                 System.out.println(enc);
             }
             else {
@@ -86,6 +91,8 @@ public class GameController {
         } catch (SnappydbException e) {
             System.out.println("Exception: " + e.getMessage());
         }
+
+        return encounters;
     }
 
     public void saveEncounter() {

@@ -1,11 +1,15 @@
 package com.ack.adventureandconquer;
 
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ack.adventureandconquer.info.game.GameController;
+import com.ack.adventureandconquer.info.game.adventure.Encounter;
+
+import java.util.List;
 
 
 public class EncounterListActivity extends ActionBarActivity {
@@ -16,7 +20,24 @@ public class EncounterListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_encounter_list);
 
         // Load already created encounters
-        GameController.getInstance().loadEncounters();
+        System.out.println("Before task");
+        new LoadEncountersTask().execute("");
+    }
+
+    private class LoadEncountersTask extends AsyncTask<String, Void, List<Encounter>> {
+        /** The system calls this to perform work in a worker thread and
+         * delivers it the parameters given to AsyncTask.execute() */
+        protected List<Encounter> doInBackground(String... urls) {
+            System.out.println("Loading in background");
+            return GameController.getInstance().loadEncounters();
+        }
+
+        /** The system calls this to perform work in the UI thread and delivers
+         * the result from doInBackground() */
+        protected void onPostExecute(List<Encounter> result) {
+            System.out.println("Finish in ui thread");
+            System.out.println(result);
+        }
     }
 
 

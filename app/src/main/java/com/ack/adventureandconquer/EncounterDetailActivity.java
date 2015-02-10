@@ -1,6 +1,7 @@
 package com.ack.adventureandconquer;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -65,11 +66,28 @@ public class EncounterDetailActivity extends ActionBarActivity {
             return true;
         }
         else if (id == R.id.action_save_encounter) {
-            GameController.getInstance().saveEncounter();
+            new SaveEncounterTask().execute("");
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class SaveEncounterTask extends AsyncTask<String, Void, Void> {
+        /** The system calls this to perform work in a worker thread and
+         * delivers it the parameters given to AsyncTask.execute() */
+        protected Void doInBackground(String... urls) {
+            System.out.println("Saving in background");
+            GameController.getInstance().saveEncounter();
+
+            return null;
+        }
+
+        /** The system calls this to perform work in the UI thread and delivers
+         * the result from doInBackground() */
+        protected void onPostExecute() {
+            System.out.println("Finish in ui thread");
+        }
     }
 
     /**
