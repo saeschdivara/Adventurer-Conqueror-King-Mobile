@@ -24,7 +24,7 @@ import com.ack.adventureandconquer.info.game.creature.npc.dragon.WhiteDragon;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.ChimeraType;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.SphinxType;
 import com.ack.adventureandconquer.info.game.creature.npc.flyer.WyvernType;
-import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaDragonType;
+import com.ack.adventureandconquer.info.game.creature.npc.dragon.SeaDragonType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaHydraType;
 import com.ack.adventureandconquer.info.game.dice.D6;
 import com.ack.adventureandconquer.info.game.dice.IsDice;

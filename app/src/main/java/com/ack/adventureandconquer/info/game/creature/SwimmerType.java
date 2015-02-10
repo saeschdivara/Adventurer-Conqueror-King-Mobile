@@ -19,7 +19,7 @@ import com.ack.adventureandconquer.info.game.creature.npc.swimmer.InsectSwarmTyp
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.LargeCrocodileType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.MermanType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.PiranhaFishType;
-import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaDragonType;
+import com.ack.adventureandconquer.info.game.creature.npc.dragon.SeaDragonType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaHydraType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaSerpentType;
 import com.ack.adventureandconquer.info.game.creature.npc.swimmer.SeaSnakeType;

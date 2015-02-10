@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.info.game.creature.npc.swimmer;
+package com.ack.adventureandconquer.info.game.creature.npc.dragon;
 
 import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
