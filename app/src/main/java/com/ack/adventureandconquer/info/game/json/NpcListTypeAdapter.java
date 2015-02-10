@@ -219,7 +219,7 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
 
         try {
 
-            while (true) {
+            while (in.hasNext()) {
                 in.beginObject();
 
                 String propertyName = in.nextName();
@@ -301,13 +301,10 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
             }
         }
         catch(Exception e) {
-
-            System.out.println(e.getCause());
             e.printStackTrace();
-
-            in.endArray();
         }
 
+        in.endArray();
 
         return allNpc;
     }
