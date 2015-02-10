@@ -1,5 +1,6 @@
 package com.ack.adventureandconquer;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -74,9 +75,21 @@ public class EncounterDetailActivity extends ActionBarActivity {
     }
 
     private class SaveEncounterTask extends AsyncTask<String, Void, Void> {
+
+        ProgressDialog ringProgressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            ringProgressDialog = ProgressDialog.show(
+                    EncounterDetailActivity.this,
+                    "Please wait ...",
+                    "Saving encounter ...", true);
+        }
+
         /** The system calls this to perform work in a worker thread and
          * delivers it the parameters given to AsyncTask.execute() */
-        protected Void doInBackground(String... urls) {
+        @Override
+         protected Void doInBackground(String... urls) {
             System.out.println("Saving in background");
             GameController.getInstance().saveEncounter();
 
@@ -85,8 +98,10 @@ public class EncounterDetailActivity extends ActionBarActivity {
 
         /** The system calls this to perform work in the UI thread and delivers
          * the result from doInBackground() */
-        protected void onPostExecute() {
+        @Override
+        protected void onPostExecute(Void aVoid) {
             System.out.println("Finish in ui thread");
+            ringProgressDialog.dismiss();
         }
     }
 

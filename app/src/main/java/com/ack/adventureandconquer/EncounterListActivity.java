@@ -1,5 +1,6 @@
 package com.ack.adventureandconquer;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -25,6 +26,17 @@ public class EncounterListActivity extends ActionBarActivity {
     }
 
     private class LoadEncountersTask extends AsyncTask<String, Void, List<Encounter>> {
+
+        ProgressDialog ringProgressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            ringProgressDialog = ProgressDialog.show(
+                    EncounterListActivity.this,
+                    "Please wait ...",
+                    "Load encounter ...", true);
+        }
+
         /** The system calls this to perform work in a worker thread and
          * delivers it the parameters given to AsyncTask.execute() */
         protected List<Encounter> doInBackground(String... urls) {
@@ -37,6 +49,7 @@ public class EncounterListActivity extends ActionBarActivity {
         protected void onPostExecute(List<Encounter> result) {
             System.out.println("Finish in ui thread");
             System.out.println(result);
+            ringProgressDialog.dismiss();
         }
     }
 
