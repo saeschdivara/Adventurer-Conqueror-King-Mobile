@@ -2,35 +2,44 @@ package com.ack.adventureandconquer.info.game.creature.npc.undead;
 
 import com.ack.adventureandconquer.info.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.info.game.creature.npc.Npc;
+import com.ack.adventureandconquer.info.game.creature.npc.NpcFactory;
 
 import java.util.List;
 
 /**
  * Created by saskyrar on 18/01/15.
  */
-public class WightType implements IsNpcType {
+public class WightType extends NpcFactory<Wight> implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 70;
+        return number <= 70;
+    }
+
+    @Override
+    protected Wight createMonster() {
+        Wight monster = new Wight();
+        monster.roleHitPoints();
+
+        return monster;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return getMonsterList( d8.role() );
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Horde";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return getMonsterList( d8.role() );
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Barrow";
     }
 }
