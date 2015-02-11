@@ -2,6 +2,7 @@ package com.ack.adventureandconquer.info.game.creature.npc;
 
 import com.ack.adventureandconquer.info.game.dice.D10;
 import com.ack.adventureandconquer.info.game.dice.D100;
+import com.ack.adventureandconquer.info.game.dice.D12;
 import com.ack.adventureandconquer.info.game.dice.D2;
 import com.ack.adventureandconquer.info.game.dice.D20;
 import com.ack.adventureandconquer.info.game.dice.D3;
@@ -24,6 +25,7 @@ abstract public class NpcFactory<NpcClass extends Npc> {
     protected static IsDice d6 = new D6();
     protected static IsDice d8 = new D8();
     protected static IsDice d10 = new D10();
+    protected static IsDice d12 = new D12();
     protected static IsDice d20 = new D20();
     protected static IsDice d100 = new D100();
 
