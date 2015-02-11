@@ -90,7 +90,6 @@ public class EncounterDetailActivity extends ActionBarActivity {
          * delivers it the parameters given to AsyncTask.execute() */
         @Override
          protected Void doInBackground(String... urls) {
-            System.out.println("Saving in background");
             GameController.getInstance().saveEncounter();
 
             return null;
@@ -100,7 +99,6 @@ public class EncounterDetailActivity extends ActionBarActivity {
          * the result from doInBackground() */
         @Override
         protected void onPostExecute(Void aVoid) {
-            System.out.println("Finish in ui thread");
             ringProgressDialog.dismiss();
         }
     }

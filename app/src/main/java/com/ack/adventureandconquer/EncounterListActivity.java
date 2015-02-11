@@ -40,15 +40,12 @@ public class EncounterListActivity extends ActionBarActivity {
         /** The system calls this to perform work in a worker thread and
          * delivers it the parameters given to AsyncTask.execute() */
         protected List<Encounter> doInBackground(String... urls) {
-            System.out.println("Loading in background");
             return GameController.getInstance().loadEncounters();
         }
 
         /** The system calls this to perform work in the UI thread and delivers
          * the result from doInBackground() */
         protected void onPostExecute(List<Encounter> result) {
-            System.out.println("Finish in ui thread");
-            System.out.println(result);
             ringProgressDialog.dismiss();
         }
     }
