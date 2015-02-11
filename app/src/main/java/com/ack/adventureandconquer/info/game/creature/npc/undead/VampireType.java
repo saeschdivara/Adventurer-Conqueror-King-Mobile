@@ -25,21 +25,21 @@ public class VampireType extends NpcFactory<Vampire> implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return getMonsterList( d6.role() );
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Coven";
     }
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return null;
+        return getMonsterList( d6.role() );
     }
 
     @Override
     public String getLairWildnessEncounterName() {
-        return null;
+        return "Sanctum";
     }
 }
