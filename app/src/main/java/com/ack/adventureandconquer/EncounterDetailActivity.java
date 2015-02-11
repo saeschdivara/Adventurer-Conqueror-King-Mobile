@@ -37,7 +37,6 @@ public class EncounterDetailActivity extends ActionBarActivity {
         // Set top encounter text
         TextView textView = (TextView) findViewById(R.id.encounter_text);
         Encounter encounter = GameController.getInstance().getLastEncounter();
-        System.out.println(encounter);
 
         StableArrayAdapter arrayAdapter = new StableArrayAdapter(this, encounter.getEncounterNpcs());
         ListView npcList = (ListView) findViewById(R.id.npcList);

@@ -1,11 +1,18 @@
 package com.ack.adventureandconquer;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ack.adventureandconquer.info.game.GameController;
 import com.ack.adventureandconquer.info.game.adventure.Encounter;
@@ -46,6 +53,10 @@ public class EncounterListActivity extends ActionBarActivity {
         /** The system calls this to perform work in the UI thread and delivers
          * the result from doInBackground() */
         protected void onPostExecute(List<Encounter> result) {
+            StableArrayAdapter arrayAdapter = new StableArrayAdapter(EncounterListActivity.this, result);
+            ListView encounterList = (ListView) findViewById(R.id.encounterList);
+            encounterList.setAdapter(arrayAdapter);
+
             ringProgressDialog.dismiss();
         }
     }
@@ -71,5 +82,41 @@ public class EncounterListActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class StableArrayAdapter extends ArrayAdapter<Encounter> {
+        private final Context context;
+        private List<Encounter> encounterList;
+
+        public StableArrayAdapter(Context context, List<Encounter> objects) {
+            super(context, R.layout.encounter_list_layout, objects);
+            this.context = context;
+            this.encounterList = objects;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            Encounter item = getItem(position);
+            return encounterList.indexOf(item);
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View rowView = inflater.inflate(R.layout.encounter_list_layout, parent, false);
+
+            Encounter encounter = encounterList.get(position);
+
+            TextView descriptionView = (TextView) rowView.findViewById(R.id.descriptionTextView);
+            descriptionView.setText(encounter.getDescription());
+
+            return rowView;
+        }
     }
 }
