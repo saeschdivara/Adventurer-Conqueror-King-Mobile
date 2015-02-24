@@ -9,6 +9,7 @@ import java.util.List;
  * Created by saskyrar on 18/01/15.
  */
 public class SharkType implements IsNpcType {
+    // TODO: Find out how to define which comes
     @Override
     public boolean isLair(int number) {
         return false;
