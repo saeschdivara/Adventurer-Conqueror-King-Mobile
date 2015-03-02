@@ -122,7 +122,8 @@ abstract public class Proficiency {
     public static final String TRANSMOGRIFICATION = "transmogrification";
 
     public static final String LOCKPICKING = "lockpicking";
-//    public static final String  = "";
+
+    public static final String COMBAT_TRICKERY = "combat trickery";
 //    public static final String  = "";
 //    public static final String  = "";
 //    public static final String  = "";
