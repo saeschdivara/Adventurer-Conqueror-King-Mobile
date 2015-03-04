@@ -6,148 +6,139 @@ package com.ack.adventureandconquer.info.game.klass;
 public class AntiPaladin extends CharacterClass {
 
     @Override
-    public int getLevel() {
-
-        long experience = getExperience();
-
-        if (experience == 0) {
-            return 1;
-        }
-        else if (experience >= 1850 && experience < 3700) {
-            return 2;
-        }
-        else if (experience >= 3700 && experience < 7400) {
-            return 3;
-        }
-        else if (experience >= 7400 && experience < 14800) {
-            return 4;
-        }
-        else if (experience >= 14800 && experience < 29600) {
-            return 5;
-        }
-        else if (experience >= 29600 && experience < 60000) {
-            return 6;
-        }
-        else if (experience >= 60000 && experience < 120000) {
-            return 7;
-        }
-        else if (experience >= 120000 && experience < 240000) {
-            return 8;
-        }
-        else if (experience >= 240000 && experience < 360000) {
-            return 9;
-        }
-        else if (experience >= 360000 && experience < 480000) {
-            return 10;
-        }
-        else if (experience >= 480000 && experience < 600000) {
-            return 11;
-        }
-        else if (experience >= 600000 && experience < 720000) {
-            return 12;
-        }
-        else if (experience >= 720000 && experience < 840000) {
-            return 13;
-        }
-        else {
-            return 14;
-        }
+    protected long getLevel2Experience() {
+        return 1850;
     }
 
     @Override
-    public void setLevel(int level) {
-
-        if (level == 1) {
-            setExperience(0);
-        }
-        else if (level == 2) {
-            setExperience(1850);
-        }
-        else if (level == 3) {
-            setExperience(3700);
-        }
-        else if (level == 4) {
-            setExperience(7400);
-        }
-        else if (level == 5) {
-            setExperience(14800);
-        }
-        else if (level == 6) {
-            setExperience(29600);
-        }
-        else if (level == 7) {
-            setExperience(60000);
-        }
-        else if (level == 8) {
-            setExperience(120000);
-        }
-        else if (level == 9) {
-            setExperience(240000);
-        }
-        else if (level == 10) {
-            setExperience(360000);
-        }
-        else if (level == 11) {
-            setExperience(480000);
-        }
-        else if (level == 12) {
-            setExperience(600000);
-        }
-        else if (level == 13) {
-            setExperience(720000);
-        }
-        else {
-            setExperience(840000);
-        }
+    protected long getLevel3Experience() {
+        return 3700;
     }
 
     @Override
-    public String getTitle() {
-
-        int level = getLevel();
-
-        if (level == 1) {
-            return "Miscreant";
-        }
-        else if (level == 2) {
-            return "Despoiler";
-        }
-        else if (level == 3) {
-            return "Avenger";
-        }
-        else if (level == 4) {
-            return "Defiler";
-        }
-        else if (level == 5) {
-            return "Blackguard";
-        }
-        else if (level == 6) {
-            return "Destroyer";
-        }
-        else if (level == 7) {
-            return "Warduke";
-        }
-        else if (level == 8) {
-            return "Malefactor";
-        }
-        else if (level == 9) {
-            return "Malefactor Lord";
-        }
-        else if (level == 10) {
-            return "Malefactor Lord (X)";
-        }
-        else if (level == 11) {
-            return "Malefactor Lord (XI)";
-        }
-        else if (level == 12) {
-            return "Malefactor Lord (XII)";
-        }
-        else if (level == 13) {
-            return "Malefactor Lord (XIII)";
-        }
-        else {
-            return "Dark Lord of Malefaction";
-        }
+    protected long getLevel4Experience() {
+        return 7400;
     }
+
+    @Override
+    protected long getLevel5Experience() {
+        return 14800;
+    }
+
+    @Override
+    protected long getLevel6Experience() {
+        return 29600;
+    }
+
+    @Override
+    protected long getLevel7Experience() {
+        return 60000;
+    }
+
+    @Override
+    protected long getLevel8Experience() {
+        return 120000;
+    }
+
+    @Override
+    protected long getLevel9Experience() {
+        return 240000;
+    }
+
+    @Override
+    protected long getLevel10Experience() {
+        return 360000;
+    }
+
+    @Override
+    protected long getLevel11Experience() {
+        return 480000;
+    }
+
+    @Override
+    protected long getLevel12Experience() {
+        return 600000;
+    }
+
+    @Override
+    protected long getLevel13Experience() {
+        return 720000;
+    }
+
+    @Override
+    protected long getLevel14Experience() {
+        return 840000;
+    }
+
+    @Override
+    protected String getLevel1Title() {
+        return "Miscreant";
+    }
+
+    @Override
+    protected String getLevel2Title() {
+        return "Despoiler";
+    }
+
+    @Override
+    protected String getLevel3Title() {
+        return "Avenger";
+    }
+
+    @Override
+    protected String getLevel4Title() {
+        return "Defiler";
+    }
+
+    @Override
+    protected String getLevel5Title() {
+        return "Blackguard";
+    }
+
+    @Override
+    protected String getLevel6Title() {
+        return "Destroyer";
+    }
+
+    @Override
+    protected String getLevel7Title() {
+        return "Warduke";
+    }
+
+    @Override
+    protected String getLevel8Title() {
+        return "Malefactor";
+    }
+
+    @Override
+    protected String getLevel9Title() {
+        return "Malefactor Lord";
+    }
+
+    @Override
+    protected String getLevel10Title() {
+        return "Malefactor Lord (X)";
+    }
+
+    @Override
+    protected String getLevel11Title() {
+        return "Malefactor Lord (XI)";
+    }
+
+    @Override
+    protected String getLevel12Title() {
+        return "Malefactor Lord (XII)";
+    }
+
+    @Override
+    protected String getLevel13Title() {
+        return "Malefactor Lord (XIII)";
+    }
+
+    @Override
+    protected String getLevel14Title() {
+        return "Dark Lord of Malefaction";
+    }
+
 }
 

@@ -6,152 +6,138 @@ package com.ack.adventureandconquer.info.game.klass;
 public class Cleric extends CharacterClass {
 
     @Override
-    public int getDefaultHitPoints() {
-        return super.getDefaultHitPoints();
+    protected long getLevel2Experience() {
+        return 1500;
     }
 
     @Override
-    public void setLevel(int level) {
-
-        if (level == 1) {
-            setExperience(0);
-        }
-        else if (level == 2) {
-            setExperience(1500);
-        }
-        else if (level == 3) {
-            setExperience(3000);
-        }
-        else if (level == 4) {
-            setExperience(6000);
-        }
-        else if (level == 5) {
-            setExperience(12000);
-        }
-        else if (level == 6) {
-            setExperience(24000);
-        }
-        else if (level == 7) {
-            setExperience(50000);
-        }
-        else if (level == 8) {
-            setExperience(100000);
-        }
-        else if (level == 9) {
-            setExperience(200000);
-        }
-        else if (level == 10) {
-            setExperience(300000);
-        }
-        else if (level == 11) {
-            setExperience(400000);
-        }
-        else if (level == 12) {
-            setExperience(500000);
-        }
-        else if (level == 13) {
-            setExperience(600000);
-        }
-        else if (level == 14) {
-            setExperience(700000);
-        }
+    protected long getLevel3Experience() {
+        return 3000;
     }
 
     @Override
-    public int getLevel() {
-
-        long experience = getExperience();
-
-        if (experience >= 0 && experience < 1500) {
-            return 1;
-        }
-        else if (experience >= 1500 && experience < 3000) {
-            return 2;
-        }
-        else if (experience >= 3000 && experience < 6000) {
-            return 3;
-        }
-        else if (experience >= 6000 && experience < 12000) {
-            return 4;
-        }
-        else if (experience >= 12000 && experience < 24000) {
-            return 5;
-        }
-        else if (experience >= 24000 && experience < 50000) {
-            return 6;
-        }
-        else if (experience >= 50000 && experience < 100000) {
-            return 7;
-        }
-        else if (experience >= 100000 && experience < 200000) {
-            return 8;
-        }
-        else if (experience >= 200000 && experience < 300000) {
-            return 9;
-        }
-        else if (experience >= 300000 && experience < 400000) {
-            return 10;
-        }
-        else if (experience >= 400000 && experience < 500000) {
-            return 11;
-        }
-        else if (experience >= 500000 && experience < 600000) {
-            return 12;
-        }
-        else if (experience >= 600000 && experience < 700000) {
-            return 13;
-        }
-        else {
-            return 14;
-        }
+    protected long getLevel4Experience() {
+        return 6000;
     }
 
     @Override
-    public String getTitle() {
-
-        int level = getLevel();
-
-        if (level == 1) {
-            return "Catechist";
-        }
-        else if (level == 2) {
-            return "Acolyte";
-        }
-        else if (level == 3) {
-            return "Priest";
-        }
-        else if (level == 4) {
-            return "Curate";
-        }
-        else if (level == 5) {
-            return "Vicar";
-        }
-        else if (level == 6) {
-            return "Rector";
-        }
-        else if (level == 7) {
-            return "Prelate";
-        }
-        else if (level == 8) {
-            return "Bishop";
-        }
-        else if (level == 9) {
-            return "Patriarch";
-        }
-        else if (level == 10) {
-            return "Patriarch (X)";
-        }
-        else if (level == 11) {
-            return "Patriarch (XI)";
-        }
-        else if (level == 12) {
-            return "Patriarch (XII)";
-        }
-        else if (level == 13) {
-            return "Patriarch (XIII)";
-        }
-        else {
-            return "Theocrat";
-        }
+    protected long getLevel5Experience() {
+        return 12000;
     }
+
+    @Override
+    protected long getLevel6Experience() {
+        return 24000;
+    }
+
+    @Override
+    protected long getLevel7Experience() {
+        return 50000;
+    }
+
+    @Override
+    protected long getLevel8Experience() {
+        return 100000;
+    }
+
+    @Override
+    protected long getLevel9Experience() {
+        return 200000;
+    }
+
+    @Override
+    protected long getLevel10Experience() {
+        return 300000;
+    }
+
+    @Override
+    protected long getLevel11Experience() {
+        return 400000;
+    }
+
+    @Override
+    protected long getLevel12Experience() {
+        return 500000;
+    }
+
+    @Override
+    protected long getLevel13Experience() {
+        return 600000;
+    }
+
+    @Override
+    protected long getLevel14Experience() {
+        return 700000;
+    }
+
+    @Override
+    protected String getLevel1Title() {
+        return "Catechist";
+    }
+
+    @Override
+    protected String getLevel2Title() {
+        return "Acolyte";
+    }
+
+    @Override
+    protected String getLevel3Title() {
+        return "Priest";
+    }
+
+    @Override
+    protected String getLevel4Title() {
+        return "Curate";
+    }
+
+    @Override
+    protected String getLevel5Title() {
+        return "Vicar";
+    }
+
+    @Override
+    protected String getLevel6Title() {
+        return "Rector";
+    }
+
+    @Override
+    protected String getLevel7Title() {
+        return "Prelate";
+    }
+
+    @Override
+    protected String getLevel8Title() {
+        return "Bishop";
+    }
+
+    @Override
+    protected String getLevel9Title() {
+        return "Patriarch";
+    }
+
+    @Override
+    protected String getLevel10Title() {
+        return "Patriarch (X)";
+    }
+
+    @Override
+    protected String getLevel11Title() {
+        return "Patriarch (XI)";
+    }
+
+    @Override
+    protected String getLevel12Title() {
+        return "Patriarch (XII)";
+    }
+
+    @Override
+    protected String getLevel13Title() {
+        return "Patriarch (XIII)";
+    }
+
+    @Override
+    protected String getLevel14Title() {
+        return "Theocrat";
+    }
+
 }
