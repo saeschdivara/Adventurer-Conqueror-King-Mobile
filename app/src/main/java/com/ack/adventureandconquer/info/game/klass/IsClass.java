@@ -8,5 +8,6 @@ public interface IsClass {
     public String getTitle();
 
     public int getLevel();
+    public void setLevel(int level);
 
 }
