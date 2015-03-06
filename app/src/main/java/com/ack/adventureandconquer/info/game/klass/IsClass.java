@@ -10,4 +10,12 @@ public interface IsClass {
     public int getLevel();
     public void setLevel(int level);
 
+    public int getPetrificationParalysisSaving();
+    public int getPoisonDeathSaving();
+    public int getBlastBreathSaving();
+    public int getStaffsWandsSaving();
+    public int getSpellsSaving();
+
+    public int getAttackThrow();
+
 }

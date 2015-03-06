@@ -138,4 +138,59 @@ public class ElvenNightblade extends CharacterClass {
     protected String getLevel14Title() {
         return null;
     }
+
+    @Override
+    public int getPetrificationParalysisSaving() {
+        return getSaving(12);
+    }
+
+    @Override
+    public int getPoisonDeathSaving() {
+        return getSaving(13);
+    }
+
+    @Override
+    public int getBlastBreathSaving() {
+        return getSaving(16);
+    }
+
+    @Override
+    public int getStaffsWandsSaving() {
+        return getSaving(14);
+    }
+
+    @Override
+    public int getSpellsSaving() {
+        return getSaving(14);
+    }
+
+    @Override
+    public int getAttackThrow() {
+        return getSaving(10);
+    }
+
+    private int getSaving(int startingPoint) {
+
+        switch (getLevel()) {
+            case 1:
+            case 2:
+                return startingPoint;
+            case 3:
+            case 4:
+                return startingPoint - 1;
+            case 5:
+            case 6:
+                return startingPoint - 2;
+            case 7:
+            case 8:
+                return startingPoint - 3;
+            case 9:
+            case 10:
+                return startingPoint - 4;
+            case 11:
+                return startingPoint - 5;
+            default:
+                return -1;
+        }
+    }
 }

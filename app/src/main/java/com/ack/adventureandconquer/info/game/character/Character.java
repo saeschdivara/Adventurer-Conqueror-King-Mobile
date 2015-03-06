@@ -30,32 +30,32 @@ public class Character implements IsCharacter {
     }
 
     @Override
-    public int getPetrificationParalysisSaving(int level) {
-        return 0;
+    public int getPetrificationParalysisSaving() {
+        return classStrategy.getPetrificationParalysisSaving();
     }
 
     @Override
-    public int getPoisonDeathSaving(int level) {
-        return 0;
+    public int getPoisonDeathSaving() {
+        return classStrategy.getPoisonDeathSaving();
     }
 
     @Override
-    public int getBlastBreathSaving(int level) {
-        return 0;
+    public int getBlastBreathSaving() {
+        return classStrategy.getBlastBreathSaving();
     }
 
     @Override
-    public int getStaffsWandsSaving(int level) {
-        return 0;
+    public int getStaffsWandsSaving() {
+        return classStrategy.getStaffsWandsSaving();
     }
 
     @Override
-    public int getSpellsSaving(int level) {
-        return 0;
+    public int getSpellsSaving() {
+        return classStrategy.getSpellsSaving();
     }
 
     @Override
-    public int getAttackThrow(int level) {
-        return 0;
+    public int getAttackThrow() {
+        return classStrategy.getAttackThrow();
     }
 }

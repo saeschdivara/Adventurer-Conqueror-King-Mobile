@@ -138,4 +138,58 @@ public class Warlock extends CharacterClass {
     protected String getLevel14Title() {
         return "Dread King";
     }
+
+    @Override
+    public int getPetrificationParalysisSaving() {
+        return getSaving(13);
+    }
+
+    @Override
+    public int getPoisonDeathSaving() {
+        return getSaving(13);
+    }
+
+    @Override
+    public int getBlastBreathSaving() {
+        return getSaving(15);
+    }
+
+    @Override
+    public int getStaffsWandsSaving() {
+        return getSaving(11);
+    }
+
+    @Override
+    public int getSpellsSaving() {
+        return getSaving(12);
+    }
+
+    @Override
+    public int getAttackThrow() {
+        return getSaving(10);
+    }
+
+    private int getSaving(int startingPoint) {
+
+        switch (getLevel()) {
+            case 1:
+            case 2:
+            case 3:
+                return startingPoint;
+            case 4:
+            case 5:
+            case 6:
+                return startingPoint - 1;
+            case 7:
+            case 8:
+            case 9:
+                return startingPoint - 2;
+            case 10:
+            case 11:
+            case 12:
+                return startingPoint - 3;
+            default:
+                return -1;
+        }
+    }
 }
