@@ -15,6 +15,16 @@ public class Character implements IsCharacter {
     }
 
     @Override
+    public long getExperience() {
+        return classStrategy.getExperience();
+    }
+
+    @Override
+    public void setExperience(long experience) {
+        classStrategy.setExperience(experience);
+    }
+
+    @Override
     public String getTitle() {
         return classStrategy.getTitle();
     }

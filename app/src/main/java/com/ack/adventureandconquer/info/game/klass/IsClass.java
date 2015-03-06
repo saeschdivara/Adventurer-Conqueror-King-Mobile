@@ -10,6 +10,9 @@ public interface IsClass {
     public int getLevel();
     public void setLevel(int level);
 
+    public long getExperience();
+    public void setExperience(long experience);
+
     public int getPetrificationParalysisSaving();
     public int getPoisonDeathSaving();
     public int getBlastBreathSaving();

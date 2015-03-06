@@ -6,10 +6,12 @@ package com.ack.adventureandconquer.info.game.klass;
 public abstract class CharacterClass implements IsClass {
     private long experience;
 
+    @Override
     public long getExperience() {
         return experience;
     }
 
+    @Override
     public void setExperience(long experience) {
         this.experience = experience;
     }
