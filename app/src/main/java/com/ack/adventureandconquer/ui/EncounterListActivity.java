@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer;
+package com.ack.adventureandconquer.ui;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.ack.adventureandconquer.R;
 import com.ack.adventureandconquer.info.game.GameController;
 import com.ack.adventureandconquer.info.game.adventure.Encounter;
 

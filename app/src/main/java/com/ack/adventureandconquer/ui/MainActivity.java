@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer;
+package com.ack.adventureandconquer.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.ack.adventureandconquer.R;
 import com.ack.adventureandconquer.info.game.GameController;
 import com.ack.adventureandconquer.info.game.adventure.Barren;
 import com.ack.adventureandconquer.info.game.adventure.City;
