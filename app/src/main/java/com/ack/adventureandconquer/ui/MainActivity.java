@@ -37,6 +37,7 @@ import com.ack.adventureandconquer.info.game.adventure.Scrub;
 import com.ack.adventureandconquer.info.game.adventure.Swamp;
 import com.ack.adventureandconquer.info.game.adventure.Wilderness;
 import com.ack.adventureandconquer.info.game.adventure.Woods;
+import com.ack.adventureandconquer.ui.character.LoginActivity;
 
 
 public class MainActivity extends ActionBarActivity
@@ -133,6 +134,10 @@ public class MainActivity extends ActionBarActivity
 
         if (position == 1) {
             Intent intent = new Intent(this, EncounterListActivity.class);
+            startActivity(intent);
+        }
+        if (position == 2) {
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
     }
