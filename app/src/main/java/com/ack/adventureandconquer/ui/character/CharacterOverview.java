@@ -65,7 +65,7 @@ public class CharacterOverview extends ActionBarActivity
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
 
-        if (position == 2) {
+        if (position == 1) {
             Intent intent = new Intent(this, CreateCharacterActivity.class);
             startActivity(intent);
         }
