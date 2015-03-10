@@ -165,6 +165,11 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         return password.length() > 4;
     }
 
+    public void onLocalCharactersClicked(View v) {
+        Intent intent = new Intent(LoginActivity.this, CharacterOverview.class);
+        startActivity(intent);
+    }
+
     /**
      * Shows the progress UI and hides the login form.
      */

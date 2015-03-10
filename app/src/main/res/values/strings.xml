@@ -18,5 +18,6 @@
     <string name="title_character_list">Characters</string>
     <string name="title_character_detail">Character Detail</string>
     <string name="title_activity_character_overview">CharacterOverview</string>
+    <string name="title_activity_create_character">CreateCharacterActivity</string>
 
 </resources>

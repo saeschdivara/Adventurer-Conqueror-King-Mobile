@@ -3,6 +3,7 @@ package com.ack.adventureandconquer.ui.character;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -63,6 +64,11 @@ public class CharacterOverview extends ActionBarActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+
+        if (position == 2) {
+            Intent intent = new Intent(this, CreateCharacterActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void onSectionAttached(int number) {

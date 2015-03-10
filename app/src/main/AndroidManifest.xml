@@ -52,6 +52,14 @@
             android:name=".ui.character.CharacterOverview"
             android:label="@string/title_activity_character_overview" >
         </activity>
+        <activity
+            android:name=".ui.character.CreateCharacterActivity"
+            android:label="@string/title_activity_create_character"
+            android:parentActivityName=".ui.character.CharacterOverview" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ack.adventureandconquer.ui.character.CharacterOverview" />
+        </activity>
     </application>
 
 </manifest>

@@ -35,6 +35,14 @@
                 android:layout_marginTop="16dp" android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Use only local Characters"
+                android:id="@+id/localCharactersButton"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onLocalCharactersClicked" />
+
         </LinearLayout>
     </ScrollView>
 
