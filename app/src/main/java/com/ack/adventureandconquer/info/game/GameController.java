@@ -60,16 +60,8 @@ public class GameController {
         List<Encounter> encounters = new ArrayList<>();
 
         try {
-            File file = new File(
-                    Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_DCIM
-                    ),
-                    "ack"
-            );
 
-            file.mkdirs();
-
-            DB snappydb = DBFactory.open(file.getAbsolutePath());
+            DB snappydb = getDatabase();
 
             Gson gson = new Gson();
 
@@ -98,16 +90,7 @@ public class GameController {
     public void saveEncounter() {
 
         try {
-            File file = new File(
-                    Environment.getExternalStoragePublicDirectory(
-                            Environment.DIRECTORY_DCIM
-                    ),
-                    "ack"
-            );
-
-            file.mkdirs();
-
-            DB snappydb = DBFactory.open(file.getAbsolutePath());
+            DB snappydb = getDatabase();
 
             Gson gson = new Gson();
 
@@ -137,5 +120,23 @@ public class GameController {
         } catch (SnappydbException e) {
             System.out.println("Exception: " + e.getMessage());
         }
+
+    }
+
+    private DB getDatabase() throws SnappydbException{
+
+        File file = new File(
+                Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_DCIM
+                ),
+                "ack"
+        );
+
+        file.mkdirs();
+
+        DB snappydb = DBFactory.open(file.getAbsolutePath());
+        return snappydb;
+
+
     }
 }
