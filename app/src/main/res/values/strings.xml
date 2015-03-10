@@ -17,5 +17,6 @@
     <string name="title_activity_encounter_list">EncounterListActivity</string>
     <string name="title_character_list">Characters</string>
     <string name="title_character_detail">Character Detail</string>
+    <string name="title_activity_character_overview">CharacterOverview</string>
 
 </resources>

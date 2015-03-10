@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="character_drawer_title_1">Characters Overview</string>
+    <string name="character_drawer_title_2">Create Character</string>
+</resources>
