@@ -8,6 +8,15 @@ import com.ack.adventureandconquer.info.game.klass.IsClass;
 public class Character implements IsCharacter {
 
     private IsClass classStrategy;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public void setClassStrategy(IsClass classStrategy) {

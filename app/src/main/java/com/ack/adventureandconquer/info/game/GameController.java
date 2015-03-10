@@ -3,6 +3,9 @@ package com.ack.adventureandconquer.info.game;
 import android.os.Environment;
 
 import com.ack.adventureandconquer.info.game.adventure.Encounter;
+import com.ack.adventureandconquer.info.game.character.Character;
+import com.ack.adventureandconquer.info.game.character.PlayerCharacter;
+import com.ack.adventureandconquer.info.game.klass.Mage;
 import com.google.gson.Gson;
 import com.snappydb.DB;
 import com.snappydb.DBFactory;
@@ -19,6 +22,7 @@ public class GameController {
     private static GameController instance = null;
 
     private final static String DB_ENCOUNTER_COUNTER = "encounters";
+    private final static String DB_ENCOUNTER_PREFIX = "enc:";
 
     private Encounter lastEncounter = null;
 
@@ -41,14 +45,8 @@ public class GameController {
     }
 
     public void destroyData() {
-        File file = new File(
-                Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_DCIM
-                ),
-                "ack"
-        );
         try {
-            DB snappydb = DBFactory.open(file.getAbsolutePath());
+            DB snappydb = getDatabase();
             snappydb.destroy();
         }
         catch (SnappydbException exc) {
@@ -103,7 +101,7 @@ public class GameController {
             // We count this new one already
             encounterNumber++;
 
-            String encounterEntryKey = "enc:" + String.valueOf(encounterNumber);
+            String encounterEntryKey = DB_ENCOUNTER_PREFIX + String.valueOf(encounterNumber);
             String encounterJson = gson.toJson(lastEncounter);
 
             System.out.println(encounterEntryKey);
@@ -121,6 +119,28 @@ public class GameController {
             System.out.println("Exception: " + e.getMessage());
         }
 
+    }
+
+    public List<Character> loadCharacterList() {
+
+        List<Character> characters = new ArrayList<>();
+
+        PlayerCharacter pl1 = new PlayerCharacter();
+        pl1.setName("Conen");
+        pl1.setClassStrategy(new Mage());
+        pl1.setExperience(20000);
+
+        characters.add(pl1);
+
+        try {
+            DB snappydb = getDatabase();
+
+            snappydb.close();
+        }
+        catch (SnappydbException exc) {
+        }
+
+        return characters;
     }
 
     private DB getDatabase() throws SnappydbException{

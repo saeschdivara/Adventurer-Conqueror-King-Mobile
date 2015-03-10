@@ -1,6 +1,9 @@
 package com.ack.adventureandconquer.ui.character;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,8 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ack.adventureandconquer.R;
+import com.ack.adventureandconquer.info.game.GameController;
+import com.ack.adventureandconquer.info.game.character.Character;
+
+import java.util.List;
 
 public class CharacterOverview extends ActionBarActivity
         implements CharacterNavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -41,6 +51,9 @@ public class CharacterOverview extends ActionBarActivity
         mCharacterNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+
+        new LoadEncountersTask().execute("");
     }
 
     @Override
@@ -136,6 +149,75 @@ public class CharacterOverview extends ActionBarActivity
             super.onAttach(activity);
             ((CharacterOverview) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
+        }
+    }
+
+
+    private class LoadEncountersTask extends AsyncTask<String, Void, List<Character>> {
+
+        ProgressDialog ringProgressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            ringProgressDialog = ProgressDialog.show(
+                    CharacterOverview.this,
+                    "Please wait ...",
+                    "Load characters ...", true);
+        }
+
+        /** The system calls this to perform work in a worker thread and
+         * delivers it the parameters given to AsyncTask.execute() */
+        protected List<Character> doInBackground(String... urls) {
+            return GameController.getInstance().loadCharacterList();
+        }
+
+        /** The system calls this to perform work in the UI thread and delivers
+         * the result from doInBackground() */
+        protected void onPostExecute(List<Character> result) {
+            StableArrayAdapter arrayAdapter = new StableArrayAdapter(CharacterOverview.this, result);
+            ListView encounterList = (ListView) findViewById(R.id.characterList);
+            encounterList.setAdapter(arrayAdapter);
+
+            ringProgressDialog.dismiss();
+        }
+    }
+
+    private class StableArrayAdapter extends ArrayAdapter<Character> {
+        private final Context context;
+        private List<Character> characterList;
+
+        public StableArrayAdapter(Context context, List<Character> objects) {
+            super(context, R.layout.character_list_layout, objects);
+            this.context = context;
+            this.characterList = objects;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            Character item = getItem(position);
+            return characterList.indexOf(item);
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View rowView = inflater.inflate(R.layout.character_list_layout, parent, false);
+
+            Character character = characterList.get(position);
+
+            TextView descriptionView = (TextView) rowView.findViewById(R.id.textView);
+
+            descriptionView.setText(
+                    character.getName() + " [" + character.getLevel() + "] " + "(" + character.getTitle() + ")\n"
+            );
+
+            return rowView;
         }
     }
 
