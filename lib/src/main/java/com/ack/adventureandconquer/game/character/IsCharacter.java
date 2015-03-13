@@ -8,4 +8,5 @@ import com.ack.adventureandconquer.game.klass.IsClass;
 public interface IsCharacter extends IsClass {
 
     public void setClassStrategy(IsClass classStrategy);
+    public IsClass getClassStrategy();
 }
