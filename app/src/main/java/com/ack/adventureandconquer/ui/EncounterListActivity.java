@@ -15,8 +15,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.ack.adventureandconquer.R;
-import com.ack.adventureandconquer.info.game.GameController;
-import com.ack.adventureandconquer.info.game.adventure.Encounter;
+import com.ack.adventureandconquer.info.GameController;
+import com.ack.adventureandconquer.game.adventure.Encounter;
 
 import java.util.List;
 
