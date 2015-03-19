@@ -24,8 +24,12 @@ public class CharacterBuilderTestCase extends TestCase {
                 1, // Male
         }));
 
-        diceSet.setD12(new FakeDice(new int[]{
-                6, // Cleric
+        diceSet.setD4(new FakeDice(new int[]{
+                3, // Cleric Type
+        }));
+
+        diceSet.setD2(new FakeDice(new int[]{
+                1, // Cleric
         }));
 
         CharacterBuilder builder = new CharacterBuilder(new PlayerCharacter());

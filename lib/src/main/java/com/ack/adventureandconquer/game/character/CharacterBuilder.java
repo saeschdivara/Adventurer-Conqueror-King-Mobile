@@ -7,6 +7,7 @@ import com.ack.adventureandconquer.game.klass.AntiPaladin;
 import com.ack.adventureandconquer.game.klass.Assassin;
 import com.ack.adventureandconquer.game.klass.Barbarian;
 import com.ack.adventureandconquer.game.klass.Bard;
+import com.ack.adventureandconquer.game.klass.Bladedancer;
 import com.ack.adventureandconquer.game.klass.Cleric;
 import com.ack.adventureandconquer.game.klass.Explorer;
 import com.ack.adventureandconquer.game.klass.Fighter;
@@ -14,8 +15,12 @@ import com.ack.adventureandconquer.game.klass.IsClass;
 import com.ack.adventureandconquer.game.klass.Mage;
 import com.ack.adventureandconquer.game.klass.Mystic;
 import com.ack.adventureandconquer.game.klass.Paladin;
+import com.ack.adventureandconquer.game.klass.Priestess;
+import com.ack.adventureandconquer.game.klass.Shaman;
 import com.ack.adventureandconquer.game.klass.Thief;
 import com.ack.adventureandconquer.game.klass.Venturer;
+import com.ack.adventureandconquer.game.klass.Warlock;
+import com.ack.adventureandconquer.game.klass.Witch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,35 +89,83 @@ public class CharacterBuilder {
             }
             // Special classes
             else if (raceClassRole == 6) {
-                //
+                // Mystic, Tharrasian Gladiator, Nubiran Wonderworker, Zaharan RuianGuard
             }
             // Human classes
             else {
                 int genderRole = d6.role();
+
+                IsDice d4 = dices.getD4Dice();
+                int proficencyTypeRole = d4.role();
+
                 // Male
                 if (genderRole <= 3) {
-                    List<IsClass> maleClassList = new ArrayList<>();
-                    maleClassList.add(new Explorer());
-                    maleClassList.add(new Thief());
-                    maleClassList.add(new Mystic());
-                    maleClassList.add(new Assassin());
-                    maleClassList.add(new Bard());
-                    maleClassList.add(new Cleric());
-                    maleClassList.add(new AntiPaladin());
-                    maleClassList.add(new Fighter());
-                    maleClassList.add(new Mage());
-                    maleClassList.add(new Paladin());
-                    maleClassList.add(new Barbarian());
-                    maleClassList.add(new Venturer());
 
-                    IsDice d12 = dices.getD12Dice();
-                    int classRole = d12.role() - 1;
+                    // Fighter
+                    if (proficencyTypeRole == 1) {
+                        IsClass[] maleFighters = {
+                                new Fighter(),
+                                new Barbarian(),
+                                new Explorer(),
+                                new AntiPaladin(),
+                                new Assassin(),
+                                new Paladin(),
+                        };
 
-                    preferredClass = maleClassList.get(classRole);
+                        preferredClass = maleFighters[d6.role() - 1];
+                    }
+                    // Mage
+                    else if (proficencyTypeRole == 2) {
+                        IsClass[] maleMages = {
+                                new Mage(),
+                                new Warlock(),
+                        };
+
+                        IsDice d2 = dices.getD2Dice();
+                        preferredClass = maleMages[d2.role() - 1];
+                    }
+                    // Cleric
+                    else if (proficencyTypeRole == 3) {
+                        IsClass[] maleClerics = {
+                                new Cleric(),
+                                new Shaman(),
+                        };
+
+                        IsDice d2 = dices.getD2Dice();
+                        preferredClass = maleClerics[d2.role() - 1];
+                    }
+                    // Thief
+                    else if (proficencyTypeRole == 4) {
+                        IsClass[] maleThiefs = {
+                                new Thief(),
+                                new Bard(),
+                                new Venturer(),
+                        };
+
+                        IsDice d3 = dices.getD3Dice();
+                        preferredClass = maleThiefs[d3.role() - 1];
+                    }
                 }
                 // Female
                 else {
-                    //
+                    List<IsClass> femaleClassList = new ArrayList<>();
+                    femaleClassList.add(new Explorer());
+                    femaleClassList.add(new Thief());
+                    femaleClassList.add(new Mystic());
+                    femaleClassList.add(new Assassin());
+                    femaleClassList.add(new Bard());
+                    femaleClassList.add(new Cleric());
+                    femaleClassList.add(new AntiPaladin());
+                    femaleClassList.add(new Fighter());
+                    femaleClassList.add(new Bladedancer());
+                    femaleClassList.add(new Mage());
+                    femaleClassList.add(new Paladin());
+                    femaleClassList.add(new Barbarian());
+                    femaleClassList.add(new Priestess());
+                    femaleClassList.add(new Shaman());
+                    femaleClassList.add(new Warlock());
+                    femaleClassList.add(new Witch());
+                    femaleClassList.add(new Venturer());
                 }
             }
         }
