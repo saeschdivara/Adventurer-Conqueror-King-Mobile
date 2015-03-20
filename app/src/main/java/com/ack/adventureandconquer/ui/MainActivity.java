@@ -3,7 +3,6 @@ package com.ack.adventureandconquer.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -17,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.ack.adventureandconquer.R;
-import com.ack.adventureandconquer.info.GameController;
 import com.ack.adventureandconquer.game.adventure.Barren;
 import com.ack.adventureandconquer.game.adventure.City;
 import com.ack.adventureandconquer.game.adventure.Clear;
@@ -35,10 +33,9 @@ import com.ack.adventureandconquer.game.adventure.Scrub;
 import com.ack.adventureandconquer.game.adventure.Swamp;
 import com.ack.adventureandconquer.game.adventure.Wilderness;
 import com.ack.adventureandconquer.game.adventure.Woods;
+import com.ack.adventureandconquer.info.GameController;
 import com.ack.adventureandconquer.ui.character.LoginActivity;
 import com.ack.adventureandconquer.ui.helper.image.ImageSizeHelper;
-
-import java.io.File;
 
 
 public class MainActivity extends ActionBarActivity
@@ -180,15 +177,6 @@ public class MainActivity extends ActionBarActivity
 
         Encounter encounter = wilderness.findEncounterByTerrain(terrain);
         GameController.getInstance().addEncounter(encounter);
-
-        File file = new File(
-                Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_DCIM
-                ),
-                "ack"
-        );
-
-        GameController.getInstance().setPath(file);
 
         Intent intent = new Intent(this, EncounterDetailActivity.class);
         startActivity(intent);

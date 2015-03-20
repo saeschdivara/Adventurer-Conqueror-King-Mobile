@@ -1,5 +1,7 @@
 package com.ack.adventureandconquer.info;
 
+import android.os.Environment;
+
 import com.ack.adventureandconquer.game.adventure.Encounter;
 import com.ack.adventureandconquer.game.character.Character;
 import com.ack.adventureandconquer.game.character.PlayerCharacter;
@@ -30,6 +32,15 @@ public class GameController {
     public static GameController getInstance() {
         if (instance == null) {
             instance = new GameController();
+
+            File file = new File(
+                    Environment.getExternalStoragePublicDirectory(
+                            Environment.DIRECTORY_DCIM
+                    ),
+                    "ack"
+            );
+
+            instance.setPath(file);
         }
 
         return instance;
