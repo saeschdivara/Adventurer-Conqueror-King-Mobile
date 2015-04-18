@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * Created by saskyrar on 17/01/15.
+ *
  */
 public class AntelopeType implements IsNpcType {
     @Override
@@ -16,12 +17,12 @@ public class AntelopeType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Antelope.getHerd();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Herd";
     }
 
     @Override
