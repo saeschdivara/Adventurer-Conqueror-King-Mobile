@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * Created by saskyrar on 15/01/15.
+ * Modified by Florian Hübner
  */
 public class Wilderness {
 
@@ -25,13 +26,13 @@ public class Wilderness {
 
         // Enemy type => Needs to be looked up in a terrain (i.e. Grass)
 //        int rolledEnemyTypeDice = diceD8.role();
-        int rolledEnemyTypeDice = 3;
+        int rolledEnemyTypeDice = 4;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
         // Npc type => Needs to be looked up in a npc type (i.e. Humanoid)
 //        int rolledNpcTypeDice = diceD12.role();
-        int rolledNpcTypeDice = 5;
+        int rolledNpcTypeDice = 1;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 

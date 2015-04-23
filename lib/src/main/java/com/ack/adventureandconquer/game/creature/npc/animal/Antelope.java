@@ -3,6 +3,7 @@ package com.ack.adventureandconquer.game.creature.npc.animal;
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,9 +25,12 @@ public class Antelope extends Npc {
         for (int i = 1; i <= packSize; i++) {
             Antelope ant = new Antelope();
             ant.roleHitPoints();
+            ant.getAttackRoutine();
+
             if (d4.role()==1){
                 ant.getAdditionalHitPoints();
-     //           ant.getMinAttackThrowValue();
+                ant.getAlternateAttackRoutine();
+//                ant.getMinAttackThrowValue();
             }
 
             pack.add(ant);
@@ -45,7 +49,17 @@ public class Antelope extends Npc {
         return 1;
     }
 
+    @Override
     public int getAdditionalHitPoints(){return d4.role();}
+
+    public ArrayList getAttackRoutine() {
+        return new ArrayList<>(Arrays.asList(""));
+    }
+
+    public ArrayList getAlternateAttackRoutine() {
+        return new ArrayList<>(Arrays.asList("Butt 1D6"));
+
+    }
 
 //    public int getMinAttackThrowValue(){return }
 }

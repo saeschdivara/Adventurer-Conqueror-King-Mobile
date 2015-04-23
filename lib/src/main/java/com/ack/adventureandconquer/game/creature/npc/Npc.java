@@ -11,8 +11,11 @@ import com.ack.adventureandconquer.game.dice.D6;
 import com.ack.adventureandconquer.game.dice.D8;
 import com.ack.adventureandconquer.game.dice.IsDice;
 
+import java.util.ArrayList;
+
 /**
  * Created by saskyrar on 19/01/15.
+ * Modified by Florian Hübner
  */
 public abstract class Npc {
 
@@ -20,6 +23,9 @@ public abstract class Npc {
     private int hitDice = -1;
     private int hitPoints = -1;
     private int additionalHitPoints = 0;
+    ArrayList<String> attackRoutine = null;
+    ArrayList<String> alternateAttackRoutine =  null;
+
 
     protected static IsDice d2 = new D2();
     protected static IsDice d3 = new D3();
@@ -114,15 +120,36 @@ public abstract class Npc {
         return minAttack;
     }
 
+    public ArrayList getAttackRoutine(){
+        return attackRoutine;
+    }
+
+    public ArrayList getAlternateAttackRoutine(){
+        return alternateAttackRoutine;
+    }
+
+    public void setAttackRoutine(String description) {
+        this.attackRoutine = new ArrayList<>();
+        this.attackRoutine.add(description);
+    }
+
+    public void setAlternateAttackRoutine(String description) {
+        this.alternateAttackRoutine = new ArrayList<>();
+        this.alternateAttackRoutine.add(description);
+    }
+
     private int _getMinMonsterAttackThrow() {
         int minAttack = 0;
         int hitDice = getHitDice();
 
-        if (hitDice <= 1) {
-            minAttack = 10;
+        if (hitDice < 1) {
+            minAttack = 11;
         }
 
         switch (hitDice) {
+            case 1:
+                minAttack = 10;
+                break;
             case 2:
                 minAttack = 9;
                 break;
@@ -177,4 +204,19 @@ public abstract class Npc {
 
         return minAttack;
     }
+
+ /*   public static class Attack{
+        int key;
+        String value;
+
+        public Attack(int key,String value){
+            this.key= key;
+            this.value=value;
+        }
+
+        public Attack() {
+            key = 0;
+            value = "";
+        }
+    }*/
 }
