@@ -74,35 +74,6 @@ public class EncounterDetailActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private class SaveEncounterTask extends AsyncTask<String, Void, Void> {
-
-        ProgressDialog ringProgressDialog;
-
-        @Override
-        protected void onPreExecute() {
-            ringProgressDialog = ProgressDialog.show(
-                    EncounterDetailActivity.this,
-                    "Please wait ...",
-                    "Saving encounter ...", true);
-        }
-
-        /** The system calls this to perform work in a worker thread and
-         * delivers it the parameters given to AsyncTask.execute() */
-        @Override
-         protected Void doInBackground(String... urls) {
-            GameController.getInstance().saveEncounter();
-
-            return null;
-        }
-
-        /** The system calls this to perform work in the UI thread and delivers
-         * the result from doInBackground() */
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            ringProgressDialog.dismiss();
-        }
-    }
-
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -116,6 +87,39 @@ public class EncounterDetailActivity extends ActionBarActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_encounter_detail, container, false);
             return rootView;
+        }
+    }
+
+    private class SaveEncounterTask extends AsyncTask<String, Void, Void> {
+
+        ProgressDialog ringProgressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            ringProgressDialog = ProgressDialog.show(
+                    EncounterDetailActivity.this,
+                    "Please wait ...",
+                    "Saving encounter ...", true);
+        }
+
+        /**
+         * The system calls this to perform work in a worker thread and
+         * delivers it the parameters given to AsyncTask.execute()
+         */
+        @Override
+        protected Void doInBackground(String... urls) {
+            GameController.getInstance().saveEncounter();
+
+            return null;
+        }
+
+        /**
+         * The system calls this to perform work in the UI thread and delivers
+         * the result from doInBackground()
+         */
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            ringProgressDialog.dismiss();
         }
     }
 
@@ -149,7 +153,11 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView armorClass = (TextView) rowView.findViewById(R.id.armorClass);
             TextView hitDice = (TextView) rowView.findViewById(R.id.hitDice);
             TextView hitPoints = (TextView) rowView.findViewById(R.id.hitPoints);
+            TextView attacksDamage = (TextView) rowView.findViewById(R.id.attacksDamage);
             TextView extraInformation = (TextView) rowView.findViewById(R.id.extraInformation);
+            TextView save = (TextView) rowView.findViewById(R.id.saves);
+            TextView morale = (TextView) rowView.findViewById(R.id.morale);
+
 
             Npc npc = npcList.get(position);
 
@@ -157,6 +165,9 @@ public class EncounterDetailActivity extends ActionBarActivity {
             armorClass.setText("Armor: " + String.valueOf(npc.getArmorClass()));
             hitDice.setText("Hit dice: " + String.valueOf(npc.getHitDice()));
             hitPoints.setText("Hit points: " + String.valueOf(npc.getHitPoints()));
+            attacksDamage.setText("Attacks: " + String.valueOf(npc.getAttackRoutine()));
+            save.setText("Saves: " + String.valueOf(""));
+            morale.setText("Morale: " + String.valueOf(""));
             extraInformation.setText(npc.getExtraInformation());
 
             return rowView;
