@@ -24,15 +24,13 @@ public class Antelope extends Npc {
 
         for (int i = 1; i <= packSize; i++) {
             Antelope ant = new Antelope();
-            ant.roleHitPoints();
-            ant.getAttackRoutine();
-
             if (d4.role()==1){
-                ant.getAdditionalHitPoints();
-                ant.getAlternateAttackRoutine();
-//                ant.getMinAttackThrowValue();
+                ant.setAdditionalHitPoints(d4.role());
+                ant.setAttackRoutine("Butt 1D6");
+            }else{
+                ant.setAttackRoutine("Doesn't Fight");
             }
-
+            ant.roleHitPoints();
             pack.add(ant);
         }
 
@@ -49,17 +47,17 @@ public class Antelope extends Npc {
         return 1;
     }
 
-    @Override
-    public int getAdditionalHitPoints(){return d4.role();}
+//    @Override
+//    public int getAdditionalHitPoints(){return d4.role();}
 
-    public ArrayList getAttackRoutine() {
-        return new ArrayList<>(Arrays.asList(""));
-    }
-
-    public ArrayList getAlternateAttackRoutine() {
-        return new ArrayList<>(Arrays.asList("Butt 1D6"));
-
-    }
+//    public ArrayList getAttackRoutine() {
+//        return new ArrayList<>(Arrays.asList("Doesn't Fight"));
+//    }
+//
+//    public ArrayList getAlternateAttackRoutine() {
+//        return new ArrayList<>(Arrays.asList("Butt 1D6"));
+//
+//    }
 
 //    public int getMinAttackThrowValue(){return }
 }

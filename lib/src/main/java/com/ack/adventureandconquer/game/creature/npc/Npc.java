@@ -121,22 +121,29 @@ public abstract class Npc {
     }
 
     public ArrayList getAttackRoutine(){
+//        attackRoutine.addAll(this.alternateAttackRoutine);
+//           if (attackRoutine.isEmpty()&&!alternateAttackRoutine.isEmpty()){
+//               attackRoutine = alternateAttackRoutine;
+//           }else if (!attackRoutine.isEmpty()&&!alternateAttackRoutine.isEmpty()){
+//               attackRoutine.add(" or ");
+//               attackRoutine.addAll(alternateAttackRoutine);
+//           }
         return attackRoutine;
     }
 
-    public ArrayList getAlternateAttackRoutine(){
-        return alternateAttackRoutine;
-    }
+//    public ArrayList getAlternateAttackRoutine(){
+//        return alternateAttackRoutine;
+//    }
 
     public void setAttackRoutine(String description) {
         this.attackRoutine = new ArrayList<>();
         this.attackRoutine.add(description);
     }
 
-    public void setAlternateAttackRoutine(String description) {
-        this.alternateAttackRoutine = new ArrayList<>();
-        this.alternateAttackRoutine.add(description);
-    }
+//    public void setAlternateAttackRoutine(String description) {
+//        this.alternateAttackRoutine = new ArrayList<>();
+//        this.alternateAttackRoutine.add(description);
+//    }
 
     private int _getMinMonsterAttackThrow() {
         int minAttack = 0;
