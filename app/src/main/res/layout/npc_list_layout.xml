@@ -68,12 +68,23 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/attacksDamage"
+        android:id="@+id/attackThrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/extraInformation"
+        android:layout_toRightOf="@+id/unitIcon"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/attacksDamage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/attackThrow"
         android:layout_toRightOf="@+id/unitIcon"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />

@@ -22,7 +22,9 @@ public abstract class Npc {
     private int armorClass = -1;
     private int hitDice = -1;
     private int hitPoints = -1;
+    private int morale = -5;
     private int additionalHitPoints = 0;
+    private String saves = "";
     ArrayList<String> attackRoutine = null;
     ArrayList<String> alternateAttackRoutine =  null;
 
@@ -104,6 +106,34 @@ public abstract class Npc {
         return hitDice;
     }
 
+    public int getMorale(){
+        if (morale < -4)
+            morale = getDefaultMorale();
+        return morale;
+    }
+
+    public int getDefaultMorale(){
+        return 0;
+    }
+
+    public void setMorale (int morale){
+        this.morale = morale;
+    }
+
+    public String getSaves() {
+        if (saves.isEmpty()){
+            saves =  getDefaultSaves();
+        }
+        return _findSaves(saves);
+    }
+
+    public String getDefaultSaves() {
+        return "F1";
+    }
+
+    public void setSaves(String saves){this.saves = saves;}
+
+
     public void setHitDice(int hitDice) {
         this.hitDice = hitDice;
     }
@@ -111,9 +141,9 @@ public abstract class Npc {
     public int getMinAttackThrowValue() {
         int minAttack = 0;
 
-        if (this instanceof IsMonster) {
+//        if (this instanceof IsMonster) {
             minAttack = _getMinMonsterAttackThrow();
-        }
+//        }
 
         // TODO: Implement others
 
@@ -121,32 +151,36 @@ public abstract class Npc {
     }
 
     public ArrayList getAttackRoutine(){
-//        attackRoutine.addAll(this.alternateAttackRoutine);
-//           if (attackRoutine.isEmpty()&&!alternateAttackRoutine.isEmpty()){
-//               attackRoutine = alternateAttackRoutine;
-//           }else if (!attackRoutine.isEmpty()&&!alternateAttackRoutine.isEmpty()){
-//               attackRoutine.add(" or ");
-//               attackRoutine.addAll(alternateAttackRoutine);
-//           }
         return attackRoutine;
     }
 
-//    public ArrayList getAlternateAttackRoutine(){
-//        return alternateAttackRoutine;
-//    }
 
     public void setAttackRoutine(String description) {
         this.attackRoutine = new ArrayList<>();
         this.attackRoutine.add(description);
     }
 
-//    public void setAlternateAttackRoutine(String description) {
-//        this.alternateAttackRoutine = new ArrayList<>();
-//        this.alternateAttackRoutine.add(description);
-//    }
+    private String _findSaves(String saveClass){
+        String saves = "";
+        switch (saveClass){
+            case "F0":
+                saves = "Paralysis 16+, Death 15+,  Breath 17+, Wands 17+, Spells 18+";
+                break;
+            case "F1":
+                saves = "Paralysis 15+, Death 14+,  Breath 16+, Wands 16+, Spells 17+";
+                break;
+            case "F2":
+            case "F3":
+                saves = "Paralysis 14+, Death 13+,  Breath 15+, Wands 15+, Spells 16+";
+                break;
+        }
+
+
+        return saves;
+    }
 
     private int _getMinMonsterAttackThrow() {
-        int minAttack = 0;
+        int minAttack = 12;
         int hitDice = getHitDice();
 
         if (hitDice < 1) {
@@ -212,18 +246,5 @@ public abstract class Npc {
         return minAttack;
     }
 
- /*   public static class Attack{
-        int key;
-        String value;
 
-        public Attack(int key,String value){
-            this.key= key;
-            this.value=value;
-        }
-
-        public Attack() {
-            key = 0;
-            value = "";
-        }
-    }*/
 }

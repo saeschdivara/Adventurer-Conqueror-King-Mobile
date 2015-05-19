@@ -42,14 +42,17 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
             out.name("hitPoints");
             out.value(npc.getHitPoints());
 
+            out.name("attackThrow");
+            out.value(npc.getMinAttackThrowValue());
+
             out.name("attackRoutine");
             out.value(npc.getAttackRoutine().toString());
 
-//            out.name("saves");
-//            out.value(npc.getSaves());
-//
-//            out.name("morale");
-//            out.value(npc.getMorale());
+            out.name("saves");
+            out.value(npc.getSaves());
+
+            out.name("morale");
+            out.value(npc.getMorale());
 
             List<Field> fields = getFields(npcClass, null);
 
