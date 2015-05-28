@@ -158,7 +158,8 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView extraInformation = (TextView) rowView.findViewById(R.id.extraInformation);
             TextView save = (TextView) rowView.findViewById(R.id.saves);
             TextView morale = (TextView) rowView.findViewById(R.id.morale);
-
+            TextView movement = (TextView) rowView.findViewById(R.id.movement);
+            TextView extramovement = (TextView) rowView.findViewById(R.id.extramovement);
 
             Npc npc = npcList.get(position);
 
@@ -171,7 +172,10 @@ public class EncounterDetailActivity extends ActionBarActivity {
             save.setText("Saves: " + String.valueOf(npc.getSaves()));
             morale.setText("Morale: " + String.valueOf(npc.getMorale()));
             extraInformation.setText(npc.getExtraInformation());
-
+            movement.setText("Movement: " + String.valueOf(npc.getMovement()));
+            if (!npc.getExtraMovementType().isEmpty()) {
+                extramovement.setText(String.valueOf("   " + npc.getExtraMovementType()) + ": " + String.valueOf(npc.getExtraMovement()));
+            }
             return rowView;
         }
     }

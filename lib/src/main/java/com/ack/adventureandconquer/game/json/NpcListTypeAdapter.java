@@ -54,6 +54,15 @@ public class NpcListTypeAdapter extends TypeAdapter< List<Npc> > {
             out.name("morale");
             out.value(npc.getMorale());
 
+            out.name("movement");
+            out.value(npc.getMovement());
+
+            out.name("extramovement");
+            out.value(npc.getExtraMovement());
+
+            out.name("extramovementtype");
+            out.value(npc.getExtraMovementType());
+
             List<Field> fields = getFields(npcClass, null);
 
             for (Field field : fields) {

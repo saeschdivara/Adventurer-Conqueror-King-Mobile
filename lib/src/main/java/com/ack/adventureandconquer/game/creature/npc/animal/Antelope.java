@@ -59,7 +59,4 @@ public class Antelope extends Npc {
     }
 
 
-//    public int getMinAttackThrowValue() {
-//        return 0;
-//    }
 }

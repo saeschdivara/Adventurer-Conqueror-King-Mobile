@@ -27,7 +27,9 @@ public abstract class Npc {
     private String saves = "";
     ArrayList<String> attackRoutine = null;
     ArrayList<String> alternateAttackRoutine =  null;
-
+    private String extrainformation = "";
+    private int movement = -1;
+    private int extraMovement = -1;
 
     protected static IsDice d2 = new D2();
     protected static IsDice d3 = new D3();
@@ -39,7 +41,11 @@ public abstract class Npc {
     protected static IsDice d100 = new D100();
 
     public String getExtraInformation() {
-        return "";
+        return extrainformation;
+    }
+
+    public void setExtraInformation(String extrainformation) {
+        this.extrainformation = extrainformation;
     }
 
     public int getDefaultHitPoints() {
@@ -133,6 +139,23 @@ public abstract class Npc {
 
     public void setSaves(String saves){this.saves = saves;}
 
+    public int getDefaultMovement(){return 120;}
+
+    public String getMovement(){
+        int combat = getDefaultMovement() / 3;
+        String move = getDefaultMovement() +"("+combat+")";
+        return move;
+    }
+
+    public int getDefaultExtraMovement(){return 120;}
+
+    public String getExtraMovement(){
+        int combat = getDefaultExtraMovement() / 3;
+        String move = getDefaultExtraMovement() +"("+combat+")";
+        return move;
+    }
+
+    public String getExtraMovementType() {return "Fly";}
 
     public void setHitDice(int hitDice) {
         this.hitDice = hitDice;
@@ -184,7 +207,7 @@ public abstract class Npc {
         int hitDice = getHitDice();
 
         if (hitDice < 1) {
-            minAttack = 11;
+            minAttack = 10;
         }
 
         switch (hitDice) {
