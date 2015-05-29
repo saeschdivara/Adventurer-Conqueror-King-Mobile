@@ -153,11 +153,13 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView armorClass = (TextView) rowView.findViewById(R.id.armorClass);
             TextView hitDice = (TextView) rowView.findViewById(R.id.hitDice);
             TextView hitPoints = (TextView) rowView.findViewById(R.id.hitPoints);
+            TextView attackThrow = (TextView) rowView.findViewById(R.id.attackThrow);
             TextView attacksDamage = (TextView) rowView.findViewById(R.id.attacksDamage);
             TextView extraInformation = (TextView) rowView.findViewById(R.id.extraInformation);
             TextView save = (TextView) rowView.findViewById(R.id.saves);
             TextView morale = (TextView) rowView.findViewById(R.id.morale);
-
+            TextView movement = (TextView) rowView.findViewById(R.id.movement);
+            TextView extramovement = (TextView) rowView.findViewById(R.id.extramovement);
 
             Npc npc = npcList.get(position);
 
@@ -165,11 +167,15 @@ public class EncounterDetailActivity extends ActionBarActivity {
             armorClass.setText("Armor: " + String.valueOf(npc.getArmorClass()));
             hitDice.setText("Hit dice: " + String.valueOf(npc.getHitDice()));
             hitPoints.setText("Hit points: " + String.valueOf(npc.getHitPoints()));
+            attackThrow.setText("Attack Throw: " + String.valueOf(npc.getMinAttackThrowValue()) + "+");
             attacksDamage.setText("Attacks: " + String.valueOf(npc.getAttackRoutine()));
-            save.setText("Saves: " + String.valueOf(""));
-            morale.setText("Morale: " + String.valueOf(""));
+            save.setText("Saves: " + String.valueOf(npc.getSaves()));
+            morale.setText("Morale: " + String.valueOf(npc.getMorale()));
             extraInformation.setText(npc.getExtraInformation());
-
+            movement.setText("Movement: " + String.valueOf(npc.getMovement()));
+            if (!npc.getExtraMovementType().isEmpty()) {
+                extramovement.setText(String.valueOf("   " + npc.getExtraMovementType()) + ": " + String.valueOf(npc.getExtraMovement()));
+            }
             return rowView;
         }
     }

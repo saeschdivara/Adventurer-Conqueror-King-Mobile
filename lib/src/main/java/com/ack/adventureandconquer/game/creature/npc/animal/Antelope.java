@@ -47,17 +47,16 @@ public class Antelope extends Npc {
         return 1;
     }
 
-//    @Override
-//    public int getAdditionalHitPoints(){return d4.role();}
+    @Override
+    public int getDefaultMorale() {
+        return -3;
+    }
 
-//    public ArrayList getAttackRoutine() {
-//        return new ArrayList<>(Arrays.asList("Doesn't Fight"));
-//    }
-//
-//    public ArrayList getAlternateAttackRoutine() {
-//        return new ArrayList<>(Arrays.asList("Butt 1D6"));
-//
-//    }
 
-//    public int getMinAttackThrowValue(){return }
+    @Override
+    public String getDefaultSaves() {
+        return "F2";
+    }
+
+
 }

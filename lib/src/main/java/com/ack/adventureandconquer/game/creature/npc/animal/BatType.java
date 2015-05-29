@@ -2,6 +2,8 @@ package com.ack.adventureandconquer.game.creature.npc.animal;
 
 import com.ack.adventureandconquer.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.game.creature.npc.Npc;
+import com.ack.adventureandconquer.game.dice.D6;
+import com.ack.adventureandconquer.game.dice.IsDice;
 
 import java.util.List;
 
@@ -11,17 +13,23 @@ import java.util.List;
 public class BatType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 35;
+        return number <= 35;
     }
+    protected static IsDice d6 = new D6();
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        if (d6.role()<=4) {
+            return Bat.getFlock();
+        }else {
+            return GiantBat.getFlock();
+        }
     }
+
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flock";
     }
 
     @Override
