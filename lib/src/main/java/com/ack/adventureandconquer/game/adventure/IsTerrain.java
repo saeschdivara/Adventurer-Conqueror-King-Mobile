@@ -8,4 +8,6 @@ import com.ack.adventureandconquer.game.creature.IsCreatureType;
 public interface IsTerrain {
 
     public IsCreatureType getEnemyType(int number);
+
+    public String getTerrainName();
 }
