@@ -46,4 +46,9 @@ public class Jungle implements IsTerrain {
 
         return creatureType;
     }
+
+    @Override
+    public String getTerrainName(){
+        return this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".")+1);
+    }
 }

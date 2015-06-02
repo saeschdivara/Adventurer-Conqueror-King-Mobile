@@ -26,13 +26,13 @@ public class Wilderness {
 
         // Enemy type => Needs to be looked up in a terrain (i.e. Grass)
 //        int rolledEnemyTypeDice = diceD8.role();
-        int rolledEnemyTypeDice = 4;
+        int rolledEnemyTypeDice = 6;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
         // Npc type => Needs to be looked up in a npc type (i.e. Humanoid)
 //        int rolledNpcTypeDice = diceD12.role();
-        int rolledNpcTypeDice = 1;
+        int rolledNpcTypeDice = 2;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 
@@ -59,6 +59,7 @@ public class Wilderness {
 
         encounter.setEncounterGroupName(encounterGroupName);
         encounter.setEncounterNpcs(npcs);
+        encounter.setWildernessType(terrain.getTerrainName());
 
         return encounter;
     }
