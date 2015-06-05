@@ -57,5 +57,12 @@ public class Bat extends Npc {
         return "F0";
     }
 
+    @Override
+    public int getDefaultMovement(){return 9;}
 
+    @Override
+    public int getDefaultExtraMovement(){return 120;}
+
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 }

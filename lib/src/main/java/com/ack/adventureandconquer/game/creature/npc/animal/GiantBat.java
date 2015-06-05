@@ -49,4 +49,7 @@ public class GiantBat extends Npc {
 
     @Override
     public int getDefaultExtraMovement(){return 180;}
+
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 }

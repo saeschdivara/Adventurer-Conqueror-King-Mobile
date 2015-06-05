@@ -155,7 +155,7 @@ public abstract class Npc {
         return move;
     }
 
-    public String getExtraMovementType() {return "Fly";}
+    public String getExtraMovementType() {return "";}
 
     public void setHitDice(int hitDice) {
         this.hitDice = hitDice;

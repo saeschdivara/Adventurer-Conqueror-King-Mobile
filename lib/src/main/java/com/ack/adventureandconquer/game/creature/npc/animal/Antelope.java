@@ -24,11 +24,14 @@ public class Antelope extends Npc {
 
         for (int i = 1; i <= packSize; i++) {
             Antelope ant = new Antelope();
-            if (d4.role()==1){
+            if (d10.role()<=2){
                 ant.setAdditionalHitPoints(d4.role());
-                ant.setAttackRoutine("Butt 1D6");
+                ant.setAttackRoutine("Butt 1D4");
             }else{
                 ant.setAttackRoutine("Doesn't Fight");
+                if (d10.role()<=4){
+                    ant.setExtraInformation("Young animal, reduce HP by 50%");
+                }
             }
             ant.roleHitPoints();
             pack.add(ant);
@@ -44,7 +47,7 @@ public class Antelope extends Npc {
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return d2.role();
     }
 
     @Override
@@ -52,11 +55,13 @@ public class Antelope extends Npc {
         return -3;
     }
 
-
     @Override
     public String getDefaultSaves() {
-        return "F2";
+        return "F1";
     }
+
+    @Override
+    public int getDefaultMovement(){return 240;}
 
 
 }

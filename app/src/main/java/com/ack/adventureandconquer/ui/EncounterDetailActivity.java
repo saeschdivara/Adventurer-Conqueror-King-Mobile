@@ -146,6 +146,8 @@ public class EncounterDetailActivity extends ActionBarActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            Npc npc = npcList.get(position);
+
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View rowView = inflater.inflate(R.layout.npc_list_layout, parent, false);
@@ -159,9 +161,8 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView save = (TextView) rowView.findViewById(R.id.saves);
             TextView morale = (TextView) rowView.findViewById(R.id.morale);
             TextView movement = (TextView) rowView.findViewById(R.id.movement);
-            TextView extramovement = (TextView) rowView.findViewById(R.id.extramovement);
+            TextView extramovement = extramovement = (TextView) rowView.findViewById(R.id.extramovement);
 
-            Npc npc = npcList.get(position);
 
             unitName.setText("Type: " + npc.getClass().getSimpleName());
             armorClass.setText("Armor: " + String.valueOf(npc.getArmorClass()));
@@ -175,6 +176,8 @@ public class EncounterDetailActivity extends ActionBarActivity {
             movement.setText("Movement: " + String.valueOf(npc.getMovement()));
             if (!npc.getExtraMovementType().isEmpty()) {
                 extramovement.setText(String.valueOf("   " + npc.getExtraMovementType()) + ": " + String.valueOf(npc.getExtraMovement()));
+            } else {
+                extramovement.setText(" ");
             }
             return rowView;
         }
