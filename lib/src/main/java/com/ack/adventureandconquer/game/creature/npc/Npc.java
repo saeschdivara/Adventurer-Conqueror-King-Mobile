@@ -196,6 +196,33 @@ public abstract class Npc {
             case "F3":
                 saves = "Paralysis 14+, Death 13+,  Breath 15+, Wands 15+, Spells 16+";
                 break;
+            case "F4":
+                saves = "Paralysis 13+, Death 12+,  Breath 14+, Wands 14+, Spells 15+";
+                break;
+            case "F5":
+            case "F6":
+                saves = "Paralysis 12+, Death 11+,  Breath 13+, Wands 13+, Spells 14+";
+                break;
+            case "F7":
+                saves = "Paralysis 11+, Death 10+,  Breath 12+, Wands 12+, Spells 13+";
+                break;
+            case "F8":
+            case "F9":
+                saves = "Paralysis 10+, Death 9+,  Breath 11+, Wands 11+, Spells 12+";
+                break;
+            case "F10":
+                saves = "Paralysis 9+, Death 8+,  Breath 10+, Wands 10+, Spells 11+";
+                break;
+            case "F11":
+            case "F12":
+                saves = "Paralysis 8+, Death 7+,  Breath 9+, Wands 9+, Spells 10+";
+                break;
+            case "F13":
+                saves = "Paralysis 7+, Death 6+,  Breath 8+, Wands 8+, Spells 9+";
+                break;
+            case "F14":
+                saves = "Paralysis 6+, Death 5+,  Breath 7+, Wands 7+, Spells 8+";
+                break;
         }
 
 

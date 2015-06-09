@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.animal;
+package com.ack.adventureandconquer.game.creature.npc.unusual;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by saskyrar on 25/01/15.
+ * Created by flhuebner on 20.05.2015.
  */
-public class Boar extends Npc {
+public class Template extends Npc {
+
+
     public static List<Npc> getGroup() {
         int groupSize = d6.role();
         return createMonster(groupSize);
@@ -19,9 +21,9 @@ public class Boar extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Boar monster = new Boar();
+            Template monster = new Template();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Tusk 2D4");
+            monster.setAttackRoutine("Claw D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -33,16 +35,16 @@ public class Boar extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 2;
+        return 0;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 3;
+        return 1;
     }
 
     @Override
-    public int getDefaultMovement(){return 150;}
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -52,11 +54,11 @@ public class Boar extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return +2;
+        return 0;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F2";
+        return "F1";
     }
 }
