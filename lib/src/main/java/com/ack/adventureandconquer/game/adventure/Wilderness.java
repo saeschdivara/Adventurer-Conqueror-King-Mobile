@@ -26,7 +26,7 @@ public class Wilderness {
 
         // Enemy type => Needs to be looked up in a terrain (i.e. Grass)
 //        int rolledEnemyTypeDice = diceD8.role();
-        int rolledEnemyTypeDice = 7;
+        int rolledEnemyTypeDice = 5;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
