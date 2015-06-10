@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * Created by saskyrar on 25/01/15.
  */
-public class Boar extends Npc {
+public class GiantBoar extends Npc {
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role()+1;
         return createMonster(groupSize);
     }
 
@@ -19,9 +19,9 @@ public class Boar extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Boar monster = new Boar();
+            GiantBoar monster = new GiantBoar();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Tusk 2D4");
+            monster.setAttackRoutine("Tusk 3D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -33,16 +33,16 @@ public class Boar extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 2;
-    }
-
-    @Override
-    public int getDefaultHitDice() {
         return 3;
     }
 
     @Override
-    public int getDefaultMovement(){return 150;}
+    public int getDefaultHitDice() {
+        return 5;
+    }
+
+    @Override
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -57,6 +57,6 @@ public class Boar extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F2";
+        return "F5";
     }
 }

@@ -67,13 +67,20 @@ public class AnimalType implements IsCreatureType {
     public IsNpcType getNpcType(IsTerrain terrain, int number) {
         IsNpcType npc = null;
 
-        boolean isClear = terrain instanceof Clear;
-        boolean isGrass = terrain instanceof Grass;
-        boolean isScrub = terrain instanceof Scrub;
+        String terrainName = terrain.getTerrainName();
+        boolean isClear = terrainName.equals("Clear");
+        boolean isGrass = terrainName.equals("Grass");
+        boolean isScrub = terrainName.equals("Scrub");
+        boolean isRiver = terrainName.equals("River");
+        boolean isWoods = terrainName.equals("Woods");
+        boolean isBarren = terrainName.equals("Barren");
+        boolean isMountains = terrainName.equals("Mountains");
+        boolean isHills = terrainName.equals("Hills");
+        boolean isDesert = terrainName.equals("Desert");
+        boolean isInhabited = terrainName.equals("Inhabited");
+        boolean isJungle = terrainName.equals("Jungle");
 
-        boolean isBarren = terrain instanceof Barren;
-        boolean isMountains = terrain instanceof Mountains;
-        boolean isHills = terrain instanceof Hills;
+
 
         if (isClear || isGrass || isScrub) {
             switch (number) {
@@ -115,7 +122,7 @@ public class AnimalType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Woods) {
+        else if (isWoods) {
             switch (number) {
                 case 1:
                     npc = new AntelopeType();
@@ -155,7 +162,7 @@ public class AnimalType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof River) {
+        else if (isRiver) {
             switch (number) {
                 case 1:
                     npc = new AntelopeType();
@@ -315,7 +322,7 @@ public class AnimalType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Desert) {
+        else if (isDesert) {
             switch (number) {
                 case 1:
                     npc = new AntelopeType();
@@ -355,7 +362,7 @@ public class AnimalType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Inhabited) {
+        else if (isInhabited) {
             switch (number) {
                 case 1:
                     npc = new AntelopeType();
@@ -395,7 +402,7 @@ public class AnimalType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Jungle) {
+        else if (isJungle) {
             switch (number) {
                 case 1:
                     npc = new AntelopeType();

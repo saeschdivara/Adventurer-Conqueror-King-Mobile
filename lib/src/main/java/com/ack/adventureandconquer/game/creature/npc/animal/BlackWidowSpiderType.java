@@ -11,12 +11,12 @@ import java.util.List;
 public class BlackWidowSpiderType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 90;
+        return number <= 90;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return BlackWidowSpider.getFlock();
     }
 
     @Override

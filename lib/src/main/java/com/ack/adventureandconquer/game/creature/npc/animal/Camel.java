@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by saskyrar on 25/01/15.
+ * Created by flhuebner on 20.05.2015.
  */
-public class Boar extends Npc {
+public class Camel extends Npc {
+
+
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role()+d4.role();
         return createMonster(groupSize);
     }
 
@@ -19,9 +21,9 @@ public class Boar extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Boar monster = new Boar();
+            Camel monster = new Camel();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Tusk 2D4");
+            monster.setAttackRoutine("Bite 1HP, Hoof 1D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -38,7 +40,7 @@ public class Boar extends Npc {
 
     @Override
     public int getDefaultHitDice() {
-        return 3;
+        return 2;
     }
 
     @Override
@@ -52,11 +54,11 @@ public class Boar extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return +2;
+        return -1;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F2";
+        return "F1";
     }
 }

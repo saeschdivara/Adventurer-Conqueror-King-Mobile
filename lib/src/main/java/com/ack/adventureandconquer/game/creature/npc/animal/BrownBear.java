@@ -5,14 +5,6 @@ import com.ack.adventureandconquer.game.creature.npc.Npc;
 /**
  * Created by saskyrar on 22/01/15.
  */
-public class BrownBear extends Npc {
-    @Override
-    public int getDefaultArmorClass() {
-        return 3;
-    }
+public class BrownBear extends BlackBear {
 
-    @Override
-    public int getDefaultHitDice() {
-        return 4;
-    }
 }

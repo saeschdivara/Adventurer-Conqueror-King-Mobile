@@ -16,7 +16,7 @@ public class CamelType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Camel.getGroup();
     }
 
     @Override
