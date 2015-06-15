@@ -237,6 +237,10 @@ public abstract class Npc {
             minAttack = 10;
         }
 
+        if (additionalHitPoints > 0){
+            hitDice += 1;
+        }
+
         switch (hitDice) {
             case 1:
                 minAttack = 10;

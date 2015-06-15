@@ -11,12 +11,12 @@ import java.util.List;
 public class EagleType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return false;
+        return number >= 20;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Eagle.getGroup();
     }
 
     @Override

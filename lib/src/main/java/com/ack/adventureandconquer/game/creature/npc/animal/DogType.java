@@ -16,7 +16,7 @@ public class DogType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Dog.getGroup();
     }
 
     @Override

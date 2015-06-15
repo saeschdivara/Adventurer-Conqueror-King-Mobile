@@ -8,29 +8,6 @@ import java.util.List;
 /**
  * Created by saskyrar on 17/01/15.
  */
-public class HawkType implements IsNpcType {
-    @Override
-    public boolean isLair(int number) {
-        return number >= 20;
-    }
+public class HawkType extends EagleType {
 
-    @Override
-    public List<Npc> getNormalWildnessEncounter() {
-        return null;
-    }
-
-    @Override
-    public String getNormalWildnessEncounterName() {
-        return null;
-    }
-
-    @Override
-    public List<Npc> getLairWildnessEncounter() {
-        return null;
-    }
-
-    @Override
-    public String getLairWildnessEncounterName() {
-        return null;
-    }
 }

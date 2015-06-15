@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Dog extends Npc {
+public class Donkey extends Npc {
 
 
     public static List<Npc> getGroup() {
@@ -21,10 +21,10 @@ public class Dog extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Dog monster = new Dog();
+            Donkey monster = new Donkey();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D4");
-            monster.setAdditionalHitPoints(1);
+            monster.setAttackRoutine("Kick 1D4 or Bite 1D3");
+//            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -40,11 +40,11 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 2;
     }
 
     @Override
-    public int getDefaultMovement(){return 210;}
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -59,6 +59,6 @@ public class Dog extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F0";
     }
 }

@@ -2,30 +2,29 @@ package com.ack.adventureandconquer.game.creature.npc.animal;
 
 import com.ack.adventureandconquer.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.game.creature.npc.Npc;
-import com.ack.adventureandconquer.game.creature.npc.NpcFactory;
+import com.ack.adventureandconquer.game.dice.D8;
+import com.ack.adventureandconquer.game.dice.IsDice;
 
 import java.util.List;
 
 /**
  * Created by saskyrar on 17/01/15.
  */
-public class CrocodileType extends NpcFactory<Crocodile> implements IsNpcType {
+public class CrocodileType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
         return false;
     }
+    protected static IsDice d8 = new D8();
 
-    @Override
-    protected Crocodile createMonster() {
-        Crocodile monster = new Crocodile();
-        monster.roleHitPoints();
-
-        return monster;
-    }
-
-    @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return getMonsterList( d8.role() );
+        if (d8.role()<=4) {
+            return Crocodile.getGroup();
+        } if (d8.role()>7) {
+            return GiantCrocodile.getGroup();
+        }else {
+            return LargeCrocodile.getGroup();
+        }
     }
 
     @Override

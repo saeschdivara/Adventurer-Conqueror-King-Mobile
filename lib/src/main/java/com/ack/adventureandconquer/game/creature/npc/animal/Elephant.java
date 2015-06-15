@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Dog extends Npc {
+public class Elephant extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role()+d6.role();
+        int groupSize = d20.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Dog extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Dog monster = new Dog();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D4");
-            monster.setAdditionalHitPoints(1);
+            Elephant monster = new Elephant();
+            monster.setExtraInformation("Trample attacks get +4 on Man-Sized or smaller, can charge with tusks");
+            monster.setAttackRoutine("(Tusks 2D4, Tusks 2D4) or Trample 4D8");
+//            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,16 +35,16 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 2;
+        return 4;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 9;
     }
 
     @Override
-    public int getDefaultMovement(){return 210;}
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -59,6 +59,6 @@ public class Dog extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F5";
     }
 }

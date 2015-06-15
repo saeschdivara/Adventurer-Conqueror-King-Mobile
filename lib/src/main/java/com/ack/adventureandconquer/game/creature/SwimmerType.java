@@ -5,18 +5,16 @@ import com.ack.adventureandconquer.game.adventure.Ocean;
 import com.ack.adventureandconquer.game.adventure.River;
 import com.ack.adventureandconquer.game.adventure.Swamp;
 import com.ack.adventureandconquer.game.creature.npc.IsNpcType;
-import com.ack.adventureandconquer.game.creature.npc.animal.CrocodileType;
 import com.ack.adventureandconquer.game.creature.npc.animal.GiantCrabType;
+import com.ack.adventureandconquer.game.creature.npc.animal.CrocodileType;
 import com.ack.adventureandconquer.game.creature.npc.animal.GiantLeechType;
 import com.ack.adventureandconquer.game.creature.npc.humanoid.LizardManType;
 import com.ack.adventureandconquer.game.creature.npc.humanoid.NaiadType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.CatfishType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.DragonTurtleType;
-import com.ack.adventureandconquer.game.creature.npc.swimmer.GiantCrocodile;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.GiantOctopusType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.GiantSquidType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.InsectSwarmType;
-import com.ack.adventureandconquer.game.creature.npc.swimmer.LargeCrocodileType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.MermanType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.PiranhaFishType;
 import com.ack.adventureandconquer.game.creature.npc.dragon.SeaDragonType;
@@ -48,7 +46,7 @@ public class SwimmerType implements IsCreatureType {
                     npc = new CrocodileType();
                     break;
                 case 4:
-                    npc = new LargeCrocodileType();
+                    npc = new CrocodileType();
                     break;
                 case 5:
                     npc = new CatfishType();
@@ -125,10 +123,10 @@ public class SwimmerType implements IsCreatureType {
                     npc = new CrocodileType();
                     break;
                 case 3:
-                    npc = new LargeCrocodileType();
+                    npc = new CrocodileType();
                     break;
                 case 4:
-                    npc = new GiantCrocodile();
+                    npc = new CrocodileType(); //Should be "Giant Crocodile". Lucky adventurers...
                     break;
                 case 5:
                     npc = new CatfishType();
