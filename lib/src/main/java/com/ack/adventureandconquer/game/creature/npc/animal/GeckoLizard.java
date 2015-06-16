@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class GiantCrab extends Npc {
+public class GeckoLizard extends Npc {
 
 
     public static List<Npc> getGroup() {
@@ -21,10 +21,10 @@ public class GiantCrab extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            GiantCrab monster = new GiantCrab();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Pincer 2D6,Pincer 2D6");
-//            monster.setAdditionalHitPoints(0);
+            GeckoLizard monster = new GeckoLizard();
+            monster.setExtraInformation("Can climb on walls and ceiling");
+            monster.setAttackRoutine("Bite D8");
+            monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,7 +35,7 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 7;
+        return 4;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class GiantCrab extends Npc {
     }
 
     @Override
-    public int getDefaultMovement(){return 60;}
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}

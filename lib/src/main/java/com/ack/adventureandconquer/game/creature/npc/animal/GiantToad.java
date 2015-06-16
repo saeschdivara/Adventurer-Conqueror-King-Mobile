@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class GiantCrab extends Npc {
+public class GiantToad extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class GiantCrab extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            GiantCrab monster = new GiantCrab();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Pincer 2D6,Pincer 2D6");
-//            monster.setAdditionalHitPoints(0);
+            GiantToad monster = new GiantToad();
+            monster.setExtraInformation("Stealthy Hide, -1 to surprise, swallows dwarves and smaller on a 20");
+            monster.setAttackRoutine("Bite 1D4");
+            monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,16 +35,16 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 7;
+        return 2;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 3;
+        return 2;
     }
 
     @Override
-    public int getDefaultMovement(){return 60;}
+    public int getDefaultMovement(){return 90;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -54,11 +54,11 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return -1;
+        return -2;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F2";
+        return "F1";
     }
 }

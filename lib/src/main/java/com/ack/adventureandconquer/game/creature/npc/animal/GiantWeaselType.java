@@ -11,17 +11,17 @@ import java.util.List;
 public class GiantWeaselType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return false;
+        return number >= 25;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantWeasel.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Sneak";
     }
 
     @Override

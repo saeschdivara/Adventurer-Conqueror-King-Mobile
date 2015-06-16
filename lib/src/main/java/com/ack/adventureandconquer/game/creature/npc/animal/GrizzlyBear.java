@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class GiantCrab extends Npc {
+public class GrizzlyBear extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class GiantCrab extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            GiantCrab monster = new GiantCrab();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Pincer 2D6,Pincer 2D6");
+            GrizzlyBear monster = new GrizzlyBear();
+            monster.setExtraInformation("If both claws hit do a +2D8 damage Bear Hug!");
+            monster.setAttackRoutine("Claw 1D4,Claw 1D4,Bite 1D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,16 +35,16 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 7;
-    }
-
-    @Override
-    public int getDefaultHitDice() {
         return 3;
     }
 
     @Override
-    public int getDefaultMovement(){return 60;}
+    public int getDefaultHitDice() {
+        return 5;
+    }
+
+    @Override
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -54,7 +54,7 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return -1;
+        return 0;
     }
 
     @Override

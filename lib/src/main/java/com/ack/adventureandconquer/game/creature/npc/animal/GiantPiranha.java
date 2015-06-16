@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class GiantCrab extends Npc {
+public class GiantPiranha extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role()+d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class GiantCrab extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            GiantCrab monster = new GiantCrab();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Pincer 2D6,Pincer 2D6");
-//            monster.setAdditionalHitPoints(0);
+            GiantPiranha monster = new GiantPiranha();
+            monster.setExtraInformation("8 can attack one victim!");
+            monster.setAttackRoutine("Bite 1D8");
+            monster.setAdditionalHitPoints(3);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,7 +35,7 @@ public class GiantCrab extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 7;
+        return 3;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class GiantCrab extends Npc {
     }
 
     @Override
-    public int getDefaultMovement(){return 60;}
+    public int getDefaultMovement(){return 150;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}

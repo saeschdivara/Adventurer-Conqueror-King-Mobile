@@ -16,7 +16,7 @@ public class GeckoLizardType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GeckoLizard.getGroup();
     }
 
     @Override

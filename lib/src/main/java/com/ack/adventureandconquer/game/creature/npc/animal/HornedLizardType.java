@@ -16,12 +16,12 @@ public class HornedLizardType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return HornedLizard.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Lounge";
     }
 
     @Override

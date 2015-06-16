@@ -16,12 +16,12 @@ public class GiantFerretType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantFerret.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Fesnying";
     }
 
     @Override
