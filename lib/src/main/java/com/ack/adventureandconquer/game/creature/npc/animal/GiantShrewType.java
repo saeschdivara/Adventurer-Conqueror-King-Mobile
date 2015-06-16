@@ -11,17 +11,17 @@ import java.util.List;
 public class GiantShrewType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return false;
+        return number <= 40;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantShrew.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Drove";
     }
 
     @Override

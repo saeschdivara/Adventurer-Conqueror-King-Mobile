@@ -16,12 +16,12 @@ public class GiantToadType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantToad.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Knot";
     }
 
     @Override

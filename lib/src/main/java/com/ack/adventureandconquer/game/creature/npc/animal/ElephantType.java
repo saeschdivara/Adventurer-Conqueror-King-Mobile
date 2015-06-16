@@ -16,12 +16,12 @@ public class ElephantType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Elephant.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+         return "Herd";
     }
 
     @Override

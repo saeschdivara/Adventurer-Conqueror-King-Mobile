@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Dog extends Npc {
+public class CrabSpider extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role()+d6.role();
+        int groupSize = d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Dog extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Dog monster = new Dog();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D4");
-            monster.setAdditionalHitPoints(1);
+            CrabSpider monster = new CrabSpider();
+            monster.setExtraInformation("Hidden, -2 to suprise Rolls, Poison kills in 1D4 turns (Save bonus +2)");
+            monster.setAttackRoutine("Bite 1D8, poison");
+//            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -40,11 +40,11 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 2;
     }
 
     @Override
-    public int getDefaultMovement(){return 210;}
+    public int getDefaultMovement(){return 120;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -54,7 +54,7 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return -1;
     }
 
     @Override

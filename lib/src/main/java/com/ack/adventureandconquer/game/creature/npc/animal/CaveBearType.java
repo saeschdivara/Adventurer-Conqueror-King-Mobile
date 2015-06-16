@@ -16,7 +16,7 @@ public class CaveBearType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return CaveBear.getGroup();
     }
 
     @Override

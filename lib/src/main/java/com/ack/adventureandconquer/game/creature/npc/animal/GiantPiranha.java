@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Dog extends Npc {
+public class GiantPiranha extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role()+d6.role();
+        int groupSize = d4.role()+d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Dog extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Dog monster = new Dog();
-//            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D4");
-            monster.setAdditionalHitPoints(1);
+            GiantPiranha monster = new GiantPiranha();
+            monster.setExtraInformation("8 can attack one victim!");
+            monster.setAttackRoutine("Bite 1D8");
+            monster.setAdditionalHitPoints(3);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,16 +35,16 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 2;
+        return 3;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 3;
     }
 
     @Override
-    public int getDefaultMovement(){return 210;}
+    public int getDefaultMovement(){return 150;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -54,11 +54,11 @@ public class Dog extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return -1;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F2";
     }
 }

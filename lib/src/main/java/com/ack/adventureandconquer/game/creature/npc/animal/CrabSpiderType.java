@@ -16,12 +16,12 @@ public class CrabSpiderType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return CrabSpider.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Clutter";
     }
 
     @Override

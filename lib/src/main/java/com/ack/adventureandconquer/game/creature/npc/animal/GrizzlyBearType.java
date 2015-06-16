@@ -16,12 +16,12 @@ public class GrizzlyBearType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GrizzlyBear.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Sloth";
     }
 
     @Override
