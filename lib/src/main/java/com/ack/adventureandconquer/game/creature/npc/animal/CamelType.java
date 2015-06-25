@@ -21,7 +21,7 @@ public class CamelType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Caravan";
     }
 
     @Override

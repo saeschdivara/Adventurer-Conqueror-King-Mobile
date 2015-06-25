@@ -11,17 +11,17 @@ import java.util.List;
 public class PantherCatType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 10;
+        return number <= 10;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return PantherCat.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Pride";
     }
 
     @Override

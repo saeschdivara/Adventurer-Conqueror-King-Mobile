@@ -16,12 +16,12 @@ public class MountainLionCatType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return MountainLionCat.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Litter";
     }
 
     @Override

@@ -16,12 +16,12 @@ public class PythonSnakeType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return PythonSnake.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Den";
     }
 
     @Override

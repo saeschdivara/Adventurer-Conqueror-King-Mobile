@@ -21,7 +21,7 @@ public class MonkeyType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Just some monkeys!";
     }
 
     @Override

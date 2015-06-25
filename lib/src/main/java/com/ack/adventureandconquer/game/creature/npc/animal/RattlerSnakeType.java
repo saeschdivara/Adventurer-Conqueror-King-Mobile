@@ -16,12 +16,12 @@ public class RattlerSnakeType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return RattlerSnake.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Den";
     }
 
     @Override

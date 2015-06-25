@@ -16,12 +16,12 @@ public class RidingHorseType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return RidingHorse.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Herd";
     }
 
     @Override
