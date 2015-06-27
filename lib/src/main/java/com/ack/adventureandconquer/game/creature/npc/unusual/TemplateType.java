@@ -2,6 +2,8 @@ package com.ack.adventureandconquer.game.creature.npc.unusual;
 
 import com.ack.adventureandconquer.game.creature.npc.IsNpcType;
 import com.ack.adventureandconquer.game.creature.npc.Npc;
+import com.ack.adventureandconquer.game.dice.D6;
+import com.ack.adventureandconquer.game.dice.IsDice;
 
 import java.util.List;
 

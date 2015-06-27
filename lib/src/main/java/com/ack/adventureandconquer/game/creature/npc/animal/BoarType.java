@@ -28,7 +28,7 @@ public class BoarType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Sounder";
     }
 
     @Override

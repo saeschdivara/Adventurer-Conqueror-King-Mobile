@@ -16,12 +16,12 @@ public class UnicornType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Unicorn.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Blessing";
     }
 
     @Override

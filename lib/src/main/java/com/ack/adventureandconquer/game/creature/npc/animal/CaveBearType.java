@@ -21,7 +21,7 @@ public class CaveBearType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Sloth";
     }
 
     @Override

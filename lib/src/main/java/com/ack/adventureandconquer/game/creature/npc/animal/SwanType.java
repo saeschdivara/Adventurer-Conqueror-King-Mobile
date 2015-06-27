@@ -21,7 +21,7 @@ public class SwanType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "A beutiful pair of swans";
     }
 
     @Override

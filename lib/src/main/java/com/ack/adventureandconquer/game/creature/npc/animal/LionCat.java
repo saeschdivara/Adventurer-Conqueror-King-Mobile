@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class PolarBear extends Npc {
+public class LionCat extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d2.role();
+        int groupSize = d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class PolarBear extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            PolarBear monster = new PolarBear();
+            LionCat monster = new LionCat();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw 1D8,Claw 1D8,Bite 2D6");
+            monster.setAttackRoutine("Claw 1D4+1,Claw 1D4+,Bite 1D10");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,16 +35,16 @@ public class PolarBear extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 4;
+        return 3;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 7;
+        return 5;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 150;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}

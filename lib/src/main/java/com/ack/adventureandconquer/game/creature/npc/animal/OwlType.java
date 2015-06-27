@@ -21,7 +21,7 @@ public class OwlType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "An owl is watching the group.";
     }
 
     @Override

@@ -16,12 +16,12 @@ public class RockBaboonType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Rockbaboon.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Band";
     }
 
     @Override

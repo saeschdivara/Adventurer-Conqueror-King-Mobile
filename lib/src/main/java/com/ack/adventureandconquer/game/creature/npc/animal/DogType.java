@@ -21,7 +21,7 @@ public class DogType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Route";
     }
 
     @Override

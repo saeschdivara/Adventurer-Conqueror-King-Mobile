@@ -21,7 +21,7 @@ public class VultureType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Vultures circle overhead";
     }
 
     @Override

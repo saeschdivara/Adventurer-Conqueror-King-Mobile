@@ -11,17 +11,17 @@ import java.util.List;
 public class PitViperSnakeType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return false;
+        return number <= 10;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return PitViperSnake.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Nest";
     }
 
     @Override

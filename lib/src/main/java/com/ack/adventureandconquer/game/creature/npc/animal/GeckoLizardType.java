@@ -21,7 +21,7 @@ public class GeckoLizardType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Lounge";
     }
 
     @Override

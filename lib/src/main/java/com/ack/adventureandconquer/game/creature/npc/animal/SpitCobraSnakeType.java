@@ -16,12 +16,12 @@ public class SpitCobraSnakeType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return SpitCobraSnake.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Quiver";
     }
 
     @Override
