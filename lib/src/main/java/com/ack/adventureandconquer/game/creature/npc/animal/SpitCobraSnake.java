@@ -23,7 +23,7 @@ public class SpitCobraSnake extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             SpitCobraSnake monster = new SpitCobraSnake();
             monster.setExtraInformation("If hit by spit:Save or blind, If bitten: Save or die");
-            monster.setAttackRoutine("Bite D3 or Spit,poison");
+            monster.addToAttackRoutine("Bite D3 or Spit,poison");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

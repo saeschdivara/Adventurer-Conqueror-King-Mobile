@@ -23,7 +23,7 @@ public class GiantWeasel extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantWeasel monster = new GiantWeasel();
             monster.setExtraInformation("Latch on after successful attack to deal damage every round, 30' Infravision, Can track prey");
-            monster.setAttackRoutine("Bite 2D4");
+            monster.addToAttackRoutine("Bite 2D4");
             monster.setAdditionalHitPoints(4);
             monster.roleHitPoints();
             pack.add(monster);

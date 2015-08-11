@@ -23,7 +23,7 @@ public class GiantToad extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantToad monster = new GiantToad();
             monster.setExtraInformation("Stealthy Hide, -1 to surprise, swallows dwarves and smaller on a 20");
-            monster.setAttackRoutine("Bite 1D4");
+            monster.addToAttackRoutine("Bite 1D4");
             monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);

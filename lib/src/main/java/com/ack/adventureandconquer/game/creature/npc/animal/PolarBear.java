@@ -23,7 +23,7 @@ public class PolarBear extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             PolarBear monster = new PolarBear();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw 1D8,Claw 1D8,Bite 2D6");
+            monster.addToAttackRoutine("Claw 1D8,Claw 1D8,Bite 2D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

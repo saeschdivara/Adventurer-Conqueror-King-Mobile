@@ -23,7 +23,7 @@ public class Dog extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Dog monster = new Dog();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D4");
+            monster.addToAttackRoutine("Bite 1D4");
             monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);

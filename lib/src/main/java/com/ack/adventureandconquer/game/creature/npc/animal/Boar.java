@@ -21,7 +21,7 @@ public class Boar extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Boar monster = new Boar();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Tusk 2D4");
+            monster.addToAttackRoutine("Tusk 2D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

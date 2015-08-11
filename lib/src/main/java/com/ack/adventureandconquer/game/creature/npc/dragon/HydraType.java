@@ -16,7 +16,7 @@ public class HydraType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Hydra.getGroup();
     }
 
     @Override

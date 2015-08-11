@@ -23,7 +23,7 @@ public class CrabSpider extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             CrabSpider monster = new CrabSpider();
             monster.setExtraInformation("Hidden, -2 to suprise Rolls, Poison kills in 1D4 turns (Save bonus +2)");
-            monster.setAttackRoutine("Bite 1D8, poison");
+            monster.addToAttackRoutine("Bite 1D8, poison");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

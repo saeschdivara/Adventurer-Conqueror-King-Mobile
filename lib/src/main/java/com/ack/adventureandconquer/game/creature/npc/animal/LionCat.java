@@ -23,7 +23,7 @@ public class LionCat extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             LionCat monster = new LionCat();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw 1D4+1,Claw 1D4+,Bite 1D10");
+            monster.addToAttackRoutine("Claw 1D4+1,Claw 1D4+,Bite 1D10");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

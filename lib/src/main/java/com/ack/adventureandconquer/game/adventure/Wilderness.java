@@ -27,18 +27,20 @@ public class Wilderness {
         // Enemy type => Needs to be looked up in a terrain (i.e. Grass)
         // Android Studio debug Watches: Shift+Strg+i then F2
 //        int rolledEnemyTypeDice = diceD8.role();
-        int rolledEnemyTypeDice = 7;
+        int rolledEnemyTypeDice = 8;
         IsCreatureType creatureType = terrain.getEnemyType(rolledEnemyTypeDice);
         encounter.setCreatureType(creatureType);
 
         // Npc type => Needs to be looked up in a npc type (i.e. Humanoid)
 //        int rolledNpcTypeDice = diceD12.role();
-        int rolledNpcTypeDice = 2;
+        int rolledNpcTypeDice = 4;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 
         // Is monster lair
         int rolledLairDice = diceD100.role();
+        rolledLairDice = 13;
+        System.out.println(rolledLairDice);
         boolean isLair = npcType.isLair(rolledLairDice);
         encounter.setLair(isLair);
 

@@ -23,7 +23,7 @@ public class CaveBear extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             CaveBear monster = new CaveBear();
             monster.setExtraInformation("If both claws hit do a +2D8 damage Bear Hug!");
-            monster.setAttackRoutine("Claw 1D6,Claw 1D6,Bite 1D10");
+            monster.addToAttackRoutine("Claw 1D6,Claw 1D6,Bite 1D10");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

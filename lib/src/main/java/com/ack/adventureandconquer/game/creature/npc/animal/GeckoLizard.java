@@ -23,7 +23,7 @@ public class GeckoLizard extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GeckoLizard monster = new GeckoLizard();
             monster.setExtraInformation("Can climb on walls and ceiling");
-            monster.setAttackRoutine("Bite D8");
+            monster.addToAttackRoutine("Bite D8");
             monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);

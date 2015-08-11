@@ -23,7 +23,7 @@ public class BlackWidowSpider extends Npc {
         for (int i = 1; i <= packSize; i++) {
             BlackWidowSpider spider = new BlackWidowSpider();
             spider.setExtraInformation("Her web acts like the spell, her poison kills in 1 turn");
-            spider.setAttackRoutine("Bite 2D6,poison");
+            spider.addToAttackRoutine("Bite 2D6,poison");
             spider.roleHitPoints();
             pack.add(spider);
         }

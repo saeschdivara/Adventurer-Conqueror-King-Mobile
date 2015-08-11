@@ -23,7 +23,7 @@ public class PitViperSnake extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             PitViperSnake monster = new PitViperSnake();
             monster.setExtraInformation("Poison: Save or die 1D4+2 turns later!");
-            monster.setAttackRoutine("Bite 1D4,poison");
+            monster.addToAttackRoutine("Bite 1D4,poison");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

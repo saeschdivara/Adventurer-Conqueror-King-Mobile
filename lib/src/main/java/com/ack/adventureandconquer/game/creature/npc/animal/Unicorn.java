@@ -23,7 +23,7 @@ public class Unicorn extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Unicorn monster = new Unicorn();
             monster.setExtraInformation("Can cast cure light 3 times per day. Can cast dimension door once per day.");
-            monster.setAttackRoutine("Hoove 1D8,Hoove 1D8,Horn 1D8");
+            monster.addToAttackRoutine("Hoove 1D8,Hoove 1D8,Horn 1D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

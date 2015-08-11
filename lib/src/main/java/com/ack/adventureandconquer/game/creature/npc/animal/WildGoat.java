@@ -25,9 +25,9 @@ public class WildGoat extends Npc {
             Antelope ant = new Antelope();
             if (d10.role()<=2){
                 ant.setAdditionalHitPoints(d4.role());
-                ant.setAttackRoutine("Butt 1D4");
+                ant.addToAttackRoutine("Butt 1D4");
             }else{
-                ant.setAttackRoutine("Doesn't Fight");
+                ant.addToAttackRoutine("Doesn't Fight");
                 if (d10.role()<=4){
                     ant.setExtraInformation("Young animal, reduce HP by 50%");
                 }

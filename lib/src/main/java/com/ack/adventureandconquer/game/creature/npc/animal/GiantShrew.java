@@ -23,7 +23,7 @@ public class GiantShrew extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantShrew monster = new GiantShrew();
             monster.setExtraInformation("Can see like a bat, wins initiative at first round!");
-            monster.setAttackRoutine("Bite 1D6,Bite 1D6");
+            monster.addToAttackRoutine("Bite 1D6,Bite 1D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

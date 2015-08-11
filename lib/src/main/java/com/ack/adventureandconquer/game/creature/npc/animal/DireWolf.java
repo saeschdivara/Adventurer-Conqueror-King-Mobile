@@ -23,7 +23,7 @@ public class DireWolf extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             DireWolf monster = new DireWolf();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 2D4");
+            monster.addToAttackRoutine("Bite 2D4");
             monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);

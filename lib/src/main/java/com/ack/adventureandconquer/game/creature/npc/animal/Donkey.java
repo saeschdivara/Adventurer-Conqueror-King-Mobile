@@ -23,7 +23,7 @@ public class Donkey extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Donkey monster = new Donkey();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Kick 1D4 or Bite 1D3");
+            monster.addToAttackRoutine("Kick 1D4 or Bite 1D3");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

@@ -23,7 +23,7 @@ public class PantherCat extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             PantherCat monster = new PantherCat();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw 1D4,Claw 1D4,Bite 1D8");
+            monster.addToAttackRoutine("Claw 1D4,Claw 1D4,Bite 1D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

@@ -23,7 +23,7 @@ public class Rockbaboon extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Rockbaboon monster = new Rockbaboon();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D3, Club D6");
+            monster.addToAttackRoutine("Bite 1D3, Club D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

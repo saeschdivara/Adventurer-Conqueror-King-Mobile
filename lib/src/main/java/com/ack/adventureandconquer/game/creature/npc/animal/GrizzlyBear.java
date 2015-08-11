@@ -23,7 +23,7 @@ public class GrizzlyBear extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GrizzlyBear monster = new GrizzlyBear();
             monster.setExtraInformation("If both claws hit do a +2D8 damage Bear Hug!");
-            monster.setAttackRoutine("Claw 1D4,Claw 1D4,Bite 1D8");
+            monster.addToAttackRoutine("Claw 1D4,Claw 1D4,Bite 1D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

@@ -23,7 +23,7 @@ public class GiantPiranha extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantPiranha monster = new GiantPiranha();
             monster.setExtraInformation("8 can attack one victim!");
-            monster.setAttackRoutine("Bite 1D8");
+            monster.addToAttackRoutine("Bite 1D8");
             monster.setAdditionalHitPoints(3);
             monster.roleHitPoints();
             pack.add(monster);

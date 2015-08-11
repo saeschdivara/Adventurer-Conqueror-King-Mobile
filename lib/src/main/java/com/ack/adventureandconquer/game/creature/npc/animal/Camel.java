@@ -23,7 +23,7 @@ public class Camel extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Camel monster = new Camel();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1HP, Hoof 1D4");
+            monster.addToAttackRoutine("Bite 1HP, Hoof 1D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

@@ -23,7 +23,7 @@ public class Template extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Template monster = new Template();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw D6");
+            monster.addToAttackRoutine("Claw D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

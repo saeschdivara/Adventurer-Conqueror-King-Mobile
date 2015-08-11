@@ -23,7 +23,7 @@ public class DracoLizard extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             DracoLizard monster = new DracoLizard();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite 1D10");
+            monster.addToAttackRoutine("Bite 1D10");
             monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);

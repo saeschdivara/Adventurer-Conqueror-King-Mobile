@@ -23,7 +23,7 @@ public class Eagle extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Eagle monster = new Eagle();
             monster.setExtraInformation("Can make a dive attack for double damage");
-            monster.setAttackRoutine("Claw D6");
+            monster.addToAttackRoutine("Claw D6");
             monster.setAdditionalHitPoints(d4.role());
             monster.roleHitPoints();
             pack.add(monster);

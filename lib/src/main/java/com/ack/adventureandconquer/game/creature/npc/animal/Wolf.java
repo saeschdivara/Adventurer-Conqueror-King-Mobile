@@ -23,7 +23,7 @@ public class Wolf extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Wolf monster = new Wolf();
             monster.setExtraInformation("Morale -1 if group smaller then 4 or 50% lost!");
-            monster.setAttackRoutine("Bite 1D6");
+            monster.addToAttackRoutine("Bite 1D6");
             monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);
