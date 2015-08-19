@@ -16,12 +16,12 @@ public class PurpleWormType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return PurpleWorm.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Clew";
     }
 
     @Override

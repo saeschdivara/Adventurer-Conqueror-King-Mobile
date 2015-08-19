@@ -33,14 +33,12 @@ public class Wilderness {
 
         // Npc type => Needs to be looked up in a npc type (i.e. Humanoid)
 //        int rolledNpcTypeDice = diceD12.role();
-        int rolledNpcTypeDice = 4;
+        int rolledNpcTypeDice = 11;
         IsNpcType npcType = creatureType.getNpcType(terrain, rolledNpcTypeDice);
         encounter.setNpcType(npcType);
 
         // Is monster lair
         int rolledLairDice = diceD100.role();
-        rolledLairDice = 13;
-        System.out.println(rolledLairDice);
         boolean isLair = npcType.isLair(rolledLairDice);
         encounter.setLair(isLair);
 

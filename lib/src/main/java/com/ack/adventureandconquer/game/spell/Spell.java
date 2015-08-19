@@ -99,14 +99,14 @@ public class Spell {
     public static final String GIANT_STRENGTH = "Giant Strength";
     public static final String GLITTERDUST = "Glitterdust";
     public static final String GEAS = "Geas";
-    public static final String FLYPH_OF_WARDIN = "Glyph of Warding";
+    public static final String GLYPH_OF_WARDING = "Glyph of Warding";
     public static final String GLOBE_OF_INVULNERABILITY = "Globe of Invulnerability";
     public static final String GROWTH = "Growth";
     public static final String GROWTH_OF_ANIMALS = "Growth of Animals";
-    public static final String GROWTH_OF_PLANTS= "Growth of Plants";
+    public static final String GROWTH_OF_PLANTS = "Growth of Plants";
     public static final String GUST_OF_WIND = "Gust of Wind";
     public static final String HYPNOTIC_PATTERN = "Hypnotic Pattern";
-    public static final String HALLUCINATORY_TERRAIN= "Hallucinatory Terrain";
+    public static final String HALLUCINATORY_TERRAIN = "Hallucinatory Terrain";
     public static final String HASTE = "Haste";
     public static final String HOLD_MONSTER = "Hold Monster";
     public static final String HOLD_PERSON = "Hold Person";
@@ -274,18 +274,18 @@ public class Spell {
     public static final ArrayList<String> WITCH4;
     public static final ArrayList<String> WITCH5;
 
-    private  ArrayList<String> spells1 = new ArrayList<String>();
-    private  ArrayList<String> spells2 = new ArrayList<String>();
-    private  ArrayList<String> spells3 = new ArrayList<String>();
-    private  ArrayList<String> spells4 = new ArrayList<String>();
-    private  ArrayList<String> spells5 = new ArrayList<String>();
-    private  ArrayList<String> spells6 = new ArrayList<String>();
-    private  ArrayList<String> level1spells = new ArrayList<String>();
-    private  ArrayList<String> level2spells = new ArrayList<String>();
-    private  ArrayList<String> level3spells = new ArrayList<String>();
-    private  ArrayList<String> level4spells = new ArrayList<String>();
-    private  ArrayList<String> level5spells = new ArrayList<String>();
-    private  ArrayList<String> level6spells = new ArrayList<String>();
+    private ArrayList<String> spells1 = new ArrayList<String>();
+    private ArrayList<String> spells2 = new ArrayList<String>();
+    private ArrayList<String> spells3 = new ArrayList<String>();
+    private ArrayList<String> spells4 = new ArrayList<String>();
+    private ArrayList<String> spells5 = new ArrayList<String>();
+    private ArrayList<String> spells6 = new ArrayList<String>();
+    private ArrayList<String> level1spells = new ArrayList<String>();
+    private ArrayList<String> level2spells = new ArrayList<String>();
+    private ArrayList<String> level3spells = new ArrayList<String>();
+    private ArrayList<String> level4spells = new ArrayList<String>();
+    private ArrayList<String> level5spells = new ArrayList<String>();
+    private ArrayList<String> level6spells = new ArrayList<String>();
 
     private ArrayList<String> spellList = new ArrayList<String>();
 
@@ -306,15 +306,15 @@ public class Spell {
 //        level6spells = new ArrayList<String>();
 //    }
 
-    public void addFavoriteSpell(int level, String spellName, int amount){
+    public void addFavoriteSpell(int level, String spellName, int amount) {
         ArrayList<String> templist = new ArrayList<String>();
         for (int i = 0; i < amount; i++) {
             templist.add(spellName);
         }
-        this.addSpells(level,templist);
+        this.addSpells(level, templist);
     }
 
-    public void addSpells(int level,ArrayList spells) {
+    public void addSpells(int level, ArrayList spells) {
         switch (level) {
             case 1:
                 spells1.addAll(spells);
@@ -358,38 +358,53 @@ public class Spell {
         if (!level6spells.isEmpty())
             result += "Level 6: " + level6spells;
 
-        return "SPELLS: " +result;
+        return "SPELLS: " + result;
     }
 
-    public void setSpellsMemmorized(int level, int amount, boolean divine) {
-        if (divine){
-            switch (level){
-                case 1:
-                    amount = spells1.size();
-                    break;
-                case 2:
-                    amount = spells2.size();
-                    break;
-                case 3:
-                    amount = spells3.size();
-                    break;
-                case 4:
-                    amount = spells4.size();
-                    break;
-                case 5:
-                    amount = spells5.size();
-                    break;
-                case 6:
-                    amount = spells6.size();
-                    break;
-            }
-        }
+    public String getSpellLevelString(int level1,int level2,int level3,int level4,int level5) {
+        String result = "none";
+
+        if (!level1spells.isEmpty())
+            result = "Level 1 ("+level1+"x): " + level1spells;
+
+        if (!level2spells.isEmpty())
+            result += "Level 2 ("+level2+"x): " + level2spells;
+
+        if (!level3spells.isEmpty())
+            result += "Level 3 ("+level3+"x): " + level3spells;
+
+        if (!level4spells.isEmpty())
+            result += "Level 4 ("+level4+"x): " + level4spells;
+
+        if (!level5spells.isEmpty())
+            result += "Level 5 ("+level5+"x): " + level5spells;
+
+        return "SPELLS: " + result;
+    }
+
+    public void setSpellsMemmorizedClerical() {
+        if (!spells1.isEmpty())
+            level1spells.addAll(spells1);
+        if (!spells2.isEmpty())
+            level2spells.addAll(spells2);
+        if (!spells3.isEmpty())
+            level3spells.addAll(spells3);
+        if (!spells4.isEmpty())
+            level4spells.addAll(spells4);
+        if (!spells5.isEmpty())
+            level5spells.addAll(spells5);
+
+    }
+
+
+
+    public void setSpellsMemmorizedArcane(int level, int amount) {
 
         switch (level) {
             case 1:
                 while (level1spells.size() < amount) {
                     RangeDice rand = new RangeDice(1, spells1.size());
-                    String newspell = spells1.get(rand.role()-1);
+                    String newspell = spells1.get(rand.role() - 1);
                     if (!level1spells.contains(newspell))
                         level1spells.add(newspell);
                 }
@@ -605,10 +620,64 @@ public class Spell {
         BLADEDANCER5 = new ArrayList<>();
 
         CLERIC1 = new ArrayList<>();
+        CLERIC1.add(COMMAND_WORD);
+        CLERIC1.add(CURE_LIGHT_WOUNDS);
+        CLERIC1.add(DETECT_EVIL);
+        CLERIC1.add(DETECT_MAGIC);
+        CLERIC1.add(LIGHT);
+        CLERIC1.add(PROTECTION_FROM_EVIL);
+        CLERIC1.add(PURIFY_FOOD_AND_WATER);
+        CLERIC1.add(REMOVE_FEAR);
+        CLERIC1.add(RESIST_COLD);
+        CLERIC1.add(SANCTUARY);
+
         CLERIC2 = new ArrayList<>();
+        CLERIC2.add(AUGURY);
+        CLERIC2.add(BLESS);
+        CLERIC2.add(DELAY_POISON);
+        CLERIC2.add(FIND_TRAPS);
+        CLERIC2.add(HOLD_PERSON);
+        CLERIC2.add(RESIST_FIRE);
+        CLERIC2.add(RIGHTEOUS_WRATH);
+        CLERIC2.add(SILENCE_15FT_RADIUS);
+        CLERIC2.add(SPEAK_WITH_ANIMALS);
+        CLERIC2.add(SPIRITUAL_WEAPON);
+
         CLERIC3 = new ArrayList<>();
+        CLERIC3.add(CONTINUAL_LIGHT);
+        CLERIC3.add(CURE_BLINDNESS);
+        CLERIC3.add(CURE_DISEASE);
+        CLERIC3.add(FEIGN_DEATH);
+        CLERIC3.add(GLYPH_OF_WARDING);
+        CLERIC3.add(GROWTH_OF_ANIMALS);
+        CLERIC3.add(LOCATE_OBJECT);
+        CLERIC3.add(REMOVE_CURSE);
+        CLERIC3.add(SPEAK_WITH_ANIMALS);
+        CLERIC3.add(STRIKING);
+
         CLERIC4 = new ArrayList<>();
+        CLERIC4.add(CREATE_WATER);
+        CLERIC4.add(CURE_SERIOUS_WOUNDS);
+        CLERIC4.add(DISPEL_MAGIC);
+        CLERIC4.add(DIVINATION);
+        CLERIC4.add(NEUTRALIZE_POISON);
+        CLERIC4.add(PROTECTION_FROM_EVIL_SUSTAINED);
+        CLERIC4.add(SMITE_UNDEAD);
+        CLERIC4.add(SPEAK_WITH_PLANTS);
+        CLERIC4.add(STICKS_TO_SNAKES);
+        CLERIC4.add(TONGUES);
+
         CLERIC5 = new ArrayList<>();
+        CLERIC5.add(ATONEMENT);
+        CLERIC5.add(COMMUNE);
+        CLERIC5.add(CREATE_FOOD);
+        CLERIC5.add(DISPEL_EVIL);
+        CLERIC5.add(FLAMESTRIKE);
+        CLERIC5.add(INSECT_PLAGUE);
+        CLERIC5.add(QUEST);
+        CLERIC5.add(RESTORE_LIFE_AND_LIMB);
+        CLERIC5.add(STRENGTH_OF_MIND);
+        CLERIC5.add(TRUE_SEEING);
 
         PRIESTESS1 = new ArrayList<>();
         PRIESTESS2 = new ArrayList<>();

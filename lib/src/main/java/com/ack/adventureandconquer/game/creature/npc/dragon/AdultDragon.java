@@ -1,14 +1,10 @@
 package com.ack.adventureandconquer.game.creature.npc.dragon;
 
-import com.ack.adventureandconquer.game.Proficiency;
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 import com.ack.adventureandconquer.game.dice.RangeDice;
 import com.ack.adventureandconquer.game.spell.Spell;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -176,11 +172,11 @@ public class AdultDragon extends Npc {
             dragonspell.addFavoriteSpell(2, Spell.INVISIBILITY, 10);
             dragonspell.addFavoriteSpell(1, Spell.CHARM_PERSON, 10);
             dragonspell.addSpells(1, Spell.ARCANE1);
-            dragonspell.setSpellsMemmorized(1, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(1, 2);
             dragonspell.addSpells(2, Spell.ARCANE2);
-            dragonspell.setSpellsMemmorized(2, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(2, 2);
             dragonspell.addSpells(3, Spell.ARCANE3);
-            dragonspell.setSpellsMemmorized(3, 1, false);
+            dragonspell.setSpellsMemmorizedArcane(3, 1);
             return dragonspell.getSpellLevelString();
     }
 

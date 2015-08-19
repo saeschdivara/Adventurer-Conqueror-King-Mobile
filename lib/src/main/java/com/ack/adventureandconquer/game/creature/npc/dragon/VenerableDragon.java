@@ -176,15 +176,15 @@ public class VenerableDragon extends Npc {
             dragonspell.addFavoriteSpell(2, Spell.INVISIBILITY, 10);
             dragonspell.addFavoriteSpell(1, Spell.CHARM_PERSON, 10);
             dragonspell.addSpells(1, Spell.ARCANE1);
-            dragonspell.setSpellsMemmorized(1, 3, false);
+            dragonspell.setSpellsMemmorizedArcane(1, 3);
             dragonspell.addSpells(2, Spell.ARCANE2);
-            dragonspell.setSpellsMemmorized(2, 3, false);
+            dragonspell.setSpellsMemmorizedArcane(2, 3);
             dragonspell.addSpells(3, Spell.ARCANE3);
-            dragonspell.setSpellsMemmorized(3, 3, false);
+            dragonspell.setSpellsMemmorizedArcane(3, 3);
             dragonspell.addSpells(4, Spell.ARCANE4);
-            dragonspell.setSpellsMemmorized(4, 3, false);
+            dragonspell.setSpellsMemmorizedArcane(4, 3);
             dragonspell.addSpells(5, Spell.ARCANE5);
-            dragonspell.setSpellsMemmorized(5, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(5, 2);
             return dragonspell.getSpellLevelString();
     }
 

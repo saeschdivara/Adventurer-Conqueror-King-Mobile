@@ -171,9 +171,9 @@ public class JuvenileDragon extends Npc {
             dragonspell.addFavoriteSpell(2, Spell.INVISIBILITY, 10);
             dragonspell.addFavoriteSpell(1, Spell.CHARM_PERSON, 10);
             dragonspell.addSpells(1, Spell.ARCANE1);
-            dragonspell.setSpellsMemmorized(1, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(1, 2);
             dragonspell.addSpells(2, Spell.ARCANE2);
-            dragonspell.setSpellsMemmorized(2, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(2, 2);
             return dragonspell.getSpellLevelString();
     }
 

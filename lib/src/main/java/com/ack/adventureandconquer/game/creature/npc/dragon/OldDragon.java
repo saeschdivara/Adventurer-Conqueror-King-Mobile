@@ -172,13 +172,13 @@ public class OldDragon extends Npc {
             dragonspell.addFavoriteSpell(2, Spell.INVISIBILITY, 10);
             dragonspell.addFavoriteSpell(1, Spell.CHARM_PERSON, 10);
             dragonspell.addSpells(1, Spell.ARCANE1);
-            dragonspell.setSpellsMemmorized(1, 3, false);
+            dragonspell.setSpellsMemmorizedArcane(1, 3);
             dragonspell.addSpells(2, Spell.ARCANE2);
-            dragonspell.setSpellsMemmorized(2, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(2, 2);
             dragonspell.addSpells(3, Spell.ARCANE3);
-            dragonspell.setSpellsMemmorized(3, 2, false);
+            dragonspell.setSpellsMemmorizedArcane(3, 2);
             dragonspell.addSpells(4, Spell.ARCANE4);
-            dragonspell.setSpellsMemmorized(4, 1, false);
+            dragonspell.setSpellsMemmorizedArcane(4, 1);
             return dragonspell.getSpellLevelString();
     }
 

@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Wyvern extends Npc {
+public class Chimera extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class Wyvern extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Wyvern monster = new Wyvern();
-            monster.setExtraInformation("The poisonous sting kills unless a SvP is made. Can make dive attack with talons for double damage!");
-            monster.addToAttackRoutine("Bite 2D8,Sting 2D8, poison or Talon 2D8, Talon 2D8");
+            Chimera monster = new Chimera();
+            monster.setExtraInformation("Dragon head can breath 30ftx10ft cone of fire for 3D6 damage 50% of the time 3x a day!");
+            monster.addToAttackRoutine("Claw D3,Claw D3,Bite 2D4,Gore 2D4,(Bite 3D4 or Breath)");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,19 +35,19 @@ public class Wyvern extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 6;
+        return 5;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 7;
+        return 9;
     }
 
     @Override
-    public int getDefaultMovement(){return 90;}
+    public int getDefaultMovement(){return 120;}
 
     @Override
-    public int getDefaultExtraMovement(){return 240;}
+    public int getDefaultExtraMovement(){return 180;}
 
     @Override
     public String getExtraMovementType(){return "Fly";}
@@ -59,6 +59,6 @@ public class Wyvern extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F4";
+        return "F9";
     }
 }

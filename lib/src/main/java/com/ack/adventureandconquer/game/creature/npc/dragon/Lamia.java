@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Hydra extends Npc {
+public class Lamia extends Npc {
 
 
     public static List<Npc> getGroup() {
@@ -21,14 +21,9 @@ public class Hydra extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Hydra monster = new Hydra();
-            int heads = d8.role()+4;
-            monster.setHitDice(heads);
-            monster.setSaves("F" + heads);
-            monster.addExtraInformation(heads +" heads! Loses one head per 8 points of damage. ");
-            if (d6.role()>5)
-                monster.addExtraInformation("Regenerates 3hp per round and regrows 2 heads for every cut off one after 1D4 rounds for up to 12 heads.");
-            monster.addToAttackRoutine(heads + "x Bite 1D10");
+            Lamia monster = new Lamia();
+            monster.setExtraInformation("Uses illusions, can cast Charm Person and mirror image once per day and command word at will!");
+            monster.addToAttackRoutine("Hoof D6 + 1 point Wis Drain, or weapon");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -40,16 +35,16 @@ public class Hydra extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 4;
+        return 7;
     }
 
-//    @Override
-//    public int getDefaultHitDice() {
-//        return 1;
-//    }
+    @Override
+    public int getDefaultHitDice() {
+        return 9;
+    }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 240;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -59,11 +54,11 @@ public class Hydra extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return 2;
+        return +1;
     }
 
-//    @Override
-//    public String getDefaultSaves() {
-//        return "F1";
-//    }
+    @Override
+    public String getDefaultSaves() {
+        return "F9";
+    }
 }

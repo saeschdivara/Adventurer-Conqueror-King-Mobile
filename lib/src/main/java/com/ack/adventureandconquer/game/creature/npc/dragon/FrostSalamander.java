@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Hydra extends Npc {
+public class FrostSalamander extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = 1;
+        int groupSize = d3.role();
         return createMonster(groupSize);
     }
 
@@ -21,14 +21,9 @@ public class Hydra extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Hydra monster = new Hydra();
-            int heads = d8.role()+4;
-            monster.setHitDice(heads);
-            monster.setSaves("F" + heads);
-            monster.addExtraInformation(heads +" heads! Loses one head per 8 points of damage. ");
-            if (d6.role()>5)
-                monster.addExtraInformation("Regenerates 3hp per round and regrows 2 heads for every cut off one after 1D4 rounds for up to 12 heads.");
-            monster.addToAttackRoutine(heads + "x Bite 1D10");
+            FrostSalamander monster = new FrostSalamander();
+            monster.setExtraInformation("1D8 cold damage for all within 20ft. Immune against non-magial weapons and ice. Unaffected by sleep and charm spells!");
+            monster.addToAttackRoutine("Claw D6,Claw D6,Claw D6,Claw D6,Bite 2D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -40,13 +35,13 @@ public class Hydra extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 4;
+        return 6;
     }
 
-//    @Override
-//    public int getDefaultHitDice() {
-//        return 1;
-//    }
+    @Override
+    public int getDefaultHitDice() {
+        return 12;
+    }
 
     @Override
     public int getDefaultMovement(){return 120;}
@@ -59,11 +54,11 @@ public class Hydra extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return 2;
+        return 0;
     }
 
-//    @Override
-//    public String getDefaultSaves() {
-//        return "F1";
-//    }
+    @Override
+    public String getDefaultSaves() {
+        return "F12";
+    }
 }

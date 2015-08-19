@@ -41,7 +41,7 @@ public class DragonType implements IsCreatureType {
     @Override
     public IsNpcType getNpcType(IsTerrain terrain, int number) {
         IsNpcType npc = null;
-
+        number=11;
         switch (number) {
             case 1:
                 npc = new BasiliskType();
@@ -59,22 +59,22 @@ public class DragonType implements IsCreatureType {
                 npc = getDragon(terrain);
                 break;
             case 6:
-                npc = new SphinxType();
-                break;
-            case 7:
                 npc = getHydra(terrain);
                 break;
-            case 8:
+            case 7:
                 npc = new LamiaType();
                 break;
-            case 9:
+            case 8:
                 npc = new PurpleWormType();
+                break;
+            case 9:
+                npc = new SalamanderType();
                 break;
             case 10:
                 npc = new PythonSnakeType();
                 break;
             case 11:
-                npc = new SalamanderType();
+                npc = new SphinxType();
                 break;
             case 12:
                 npc = new WyvernType();

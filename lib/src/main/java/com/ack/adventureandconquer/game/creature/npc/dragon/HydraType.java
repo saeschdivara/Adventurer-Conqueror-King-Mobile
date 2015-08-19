@@ -21,7 +21,7 @@ public class HydraType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Solidary";
     }
 
     @Override

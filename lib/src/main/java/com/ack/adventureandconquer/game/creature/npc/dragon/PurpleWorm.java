@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Hydra extends Npc {
+public class PurpleWorm extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = 1;
+        int groupSize = d2.role();
         return createMonster(groupSize);
     }
 
@@ -21,14 +21,9 @@ public class Hydra extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Hydra monster = new Hydra();
-            int heads = d8.role()+4;
-            monster.setHitDice(heads);
-            monster.setSaves("F" + heads);
-            monster.addExtraInformation(heads +" heads! Loses one head per 8 points of damage. ");
-            if (d6.role()>5)
-                monster.addExtraInformation("Regenerates 3hp per round and regrows 2 heads for every cut off one after 1D4 rounds for up to 12 heads.");
-            monster.addToAttackRoutine(heads + "x Bite 1D10");
+            PurpleWorm monster = new PurpleWorm();
+            monster.setExtraInformation("Swallows creatures up to horse size on attack roll > X+4 or 20. Attacks from inside -4, 3d6 damage per round and digested in 6 rounds!");
+            monster.addToAttackRoutine("Bite 2D8,Sting 1D8 + poison");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -40,16 +35,16 @@ public class Hydra extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 4;
+        return 3;
     }
 
-//    @Override
-//    public int getDefaultHitDice() {
-//        return 1;
-//    }
+    @Override
+    public int getDefaultHitDice() {
+        return 15;
+    }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 60;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -62,8 +57,8 @@ public class Hydra extends Npc {
         return 2;
     }
 
-//    @Override
-//    public String getDefaultSaves() {
-//        return "F1";
-//    }
+    @Override
+    public String getDefaultSaves() {
+        return "F8";
+    }
 }
