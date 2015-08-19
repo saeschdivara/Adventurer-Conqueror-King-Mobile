@@ -11,12 +11,12 @@ import java.util.List;
 public class SphinxType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return false;
+        return  number <= 40;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Sphinx.getGroup();
     }
 
     @Override

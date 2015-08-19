@@ -23,7 +23,7 @@ public class HornedLizard extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             HornedLizard monster = new HornedLizard();
             monster.setExtraInformation("-3 to surprise due to skin color, 5ft tongue pulls in and bites after attack, tail sweep knocks down on attack and opponent cant attack this round");
-            monster.setAttackRoutine("Bite 2D4, Horn 1D6,Tongue,Tail");
+            monster.addToAttackRoutine("Bite 2D4, Horn 1D6,Tongue,Tail");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

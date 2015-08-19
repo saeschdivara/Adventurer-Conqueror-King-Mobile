@@ -6,26 +6,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by saskyrar on 21/01/15.
+ * Created by flhuebner on 20.05.2015.
  */
 public class Basilisk extends Npc {
 
-    public static List<Npc> getBask() {
-        List<Npc> basilisks = new ArrayList<>();
-        int baskSize = d6.role();
 
-        for (int index = 0; index < baskSize; index++) {
-            Basilisk basilisk = new Basilisk();
-            basilisk.roleHitPoints();
-
-            basilisks.add(basilisk);
-        }
-
-        return basilisks;
+    public static List<Npc> getGroup() {
+        int groupSize = d6.role();
+        return createMonster(groupSize);
     }
 
-    public static List<Npc> getNest() {
-        return getBask();
+
+    private static List<Npc> createMonster(int groupSize) {
+        List<Npc> pack = new ArrayList<>();
+
+        for (int i = 1; i <= groupSize; i++) {
+            Basilisk monster = new Basilisk();
+            monster.setExtraInformation("Any creature bitten or meeting the gaze has to save or turn to stone!");
+            monster.addToAttackRoutine("Bite 1D10, Gaze");
+            monster.setAdditionalHitPoints(1);
+            monster.roleHitPoints();
+            pack.add(monster);
+        }
+
+        return pack;
+    }
+
+
+    @Override
+    public int getDefaultArmorClass() {
+        return 5;
     }
 
     @Override
@@ -34,12 +44,21 @@ public class Basilisk extends Npc {
     }
 
     @Override
-    public int getDefaultArmorClass() {
-        return 5;
+    public int getDefaultMovement(){return 60;}
+
+//    @Override
+//    public int getDefaultExtraMovement(){return 240;}
+
+//    @Override
+//    public String getExtraMovementType(){return "Fly";}
+
+    @Override
+    public int getDefaultMorale() {
+        return 1;
     }
 
     @Override
-    public int getAdditionalHitPoints() {
-        return 1;
+    public String getDefaultSaves() {
+        return "F6";
     }
 }

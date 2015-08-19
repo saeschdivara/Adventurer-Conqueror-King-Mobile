@@ -23,7 +23,7 @@ public class Elephant extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Elephant monster = new Elephant();
             monster.setExtraInformation("Trample attacks get +4 on Man-Sized or smaller, can charge with tusks");
-            monster.setAttackRoutine("(Tusks 2D4, Tusks 2D4) or Trample 4D8");
+            monster.addToAttackRoutine("(Tusks 2D4, Tusks 2D4) or Trample 4D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

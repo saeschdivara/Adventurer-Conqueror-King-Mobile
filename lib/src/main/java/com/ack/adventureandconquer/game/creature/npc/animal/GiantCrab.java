@@ -23,7 +23,7 @@ public class GiantCrab extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantCrab monster = new GiantCrab();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Pincer 2D6,Pincer 2D6");
+            monster.addToAttackRoutine("Pincer 2D6,Pincer 2D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

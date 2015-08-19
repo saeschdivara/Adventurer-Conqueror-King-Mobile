@@ -11,17 +11,17 @@ import java.util.List;
 public class ChimeraType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 40;
+        return number <= 40;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Chimera.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flock";
     }
 
     @Override

@@ -22,7 +22,7 @@ public class Bat extends Npc {
 
         for (int i = 1; i <= packSize; i++) {
             Bat bat = new Bat();
-            bat.setAttackRoutine("Bite 1hp");
+            bat.addToAttackRoutine("Bite 1hp");
             bat.getAdditionalHitPoints();
             bat.roleHitPoints();
             pack.add(bat);

@@ -16,7 +16,7 @@ public class BasiliskType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return Basilisk.getBask();
+        return Basilisk.getGroup();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class BasiliskType implements IsNpcType {
 
     @Override
     public List<Npc> getLairWildnessEncounter() {
-        return Basilisk.getNest();
+        return null;
     }
 
     @Override

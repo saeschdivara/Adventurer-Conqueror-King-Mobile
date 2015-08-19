@@ -16,7 +16,7 @@ public class CaeciliaType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Caecilia.getGroup();
     }
 
     @Override

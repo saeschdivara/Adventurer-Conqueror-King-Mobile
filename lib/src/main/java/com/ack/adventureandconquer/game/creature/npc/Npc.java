@@ -10,8 +10,11 @@ import com.ack.adventureandconquer.game.dice.D4;
 import com.ack.adventureandconquer.game.dice.D6;
 import com.ack.adventureandconquer.game.dice.D8;
 import com.ack.adventureandconquer.game.dice.IsDice;
+import com.ack.adventureandconquer.game.dice.RangeDice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by saskyrar on 19/01/15.
@@ -25,11 +28,12 @@ public abstract class Npc {
     private int morale = -5;
     private int additionalHitPoints = 0;
     private String saves = "";
-    ArrayList<String> attackRoutine = null;
-    ArrayList<String> alternateAttackRoutine =  null;
+    ArrayList<String> attackRoutine = new ArrayList<String>();
+    ArrayList<String> alternateAttackRoutine = new ArrayList<String>();
     private String extrainformation = "";
     private int movement = -1;
     private int extraMovement = -1;
+    private String alignment = "";
 
     protected static IsDice d2 = new D2();
     protected static IsDice d3 = new D3();
@@ -46,6 +50,25 @@ public abstract class Npc {
 
     public void setExtraInformation(String extrainformation) {
         this.extrainformation = extrainformation;
+    }
+
+    public void addExtraInformation(String extrainformation) {
+        this.extrainformation += extrainformation;
+    }
+
+    public String getDefaultAlignment() {
+        return "neutral";
+    }
+
+    public String getAlignment() {
+        if (alignment == "") {
+            return getDefaultAlignment();
+        } else
+            return alignment;
+    }
+
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
     }
 
     public int getDefaultHitPoints() {
@@ -112,23 +135,29 @@ public abstract class Npc {
         return hitDice;
     }
 
-    public int getMorale(){
+
+    public void setHitDice(int hitDice) {
+        this.hitDice = hitDice;
+    }
+
+
+    public int getMorale() {
         if (morale < -4)
             morale = getDefaultMorale();
         return morale;
     }
 
-    public int getDefaultMorale(){
+    public int getDefaultMorale() {
         return 0;
     }
 
-    public void setMorale (int morale){
+    public void setMorale(int morale) {
         this.morale = morale;
     }
 
     public String getSaves() {
-        if (saves.isEmpty()){
-            saves =  getDefaultSaves();
+        if (saves.isEmpty()) {
+            saves = getDefaultSaves();
         }
         return _findSaves(saves);
     }
@@ -137,35 +166,65 @@ public abstract class Npc {
         return "F1";
     }
 
-    public void setSaves(String saves){this.saves = saves;}
+    public void setSaves(String saves) {
+        this.saves = saves;
+    }
 
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement() {
+        return 120;
+    }
 
-    public String getMovement(){
-        int combat = getDefaultMovement() / 3;
-        String move = getDefaultMovement() +"("+combat+")";
+    public int getMovement() {
+        if (movement < 0) {
+            return getDefaultMovement();
+        } else {
+            return movement;
+        }
+
+    }
+
+    public void setMovement(int mov) {
+        movement = mov;
+    }
+
+    public String getMovementString() {
+        int combat = getMovement() / 3;
+        String move = getMovement() + "(" + combat + ")";
         return move;
     }
 
-    public int getDefaultExtraMovement(){return 120;}
+    public int getDefaultExtraMovement() {
+        return 120;
+    }
 
-    public String getExtraMovement(){
-        int combat = getDefaultExtraMovement() / 3;
-        String move = getDefaultExtraMovement() +"("+combat+")";
+    public int getExtraMovement() {
+        if (movement < 0) {
+            return getDefaultExtraMovement();
+        } else {
+            return movement;
+        }
+
+    }
+
+    public void setExtraMovement(int mov) {
+        movement = mov;
+    }
+
+    public String getExtraMovementString() {
+        int combat = getExtraMovement() / 3;
+        String move = getExtraMovement() + "(" + combat + ")";
         return move;
     }
 
-    public String getExtraMovementType() {return "";}
-
-    public void setHitDice(int hitDice) {
-        this.hitDice = hitDice;
+    public String getExtraMovementType() {
+        return "";
     }
 
     public int getMinAttackThrowValue() {
         int minAttack = 0;
 
 //        if (this instanceof IsMonster) {
-            minAttack = _getMinMonsterAttackThrow();
+        minAttack = _getMinMonsterAttackThrow();
 //        }
 
         // TODO: Implement others
@@ -173,19 +232,22 @@ public abstract class Npc {
         return minAttack;
     }
 
-    public ArrayList getAttackRoutine(){
+    public ArrayList<String> getAttackRoutine() {
         return attackRoutine;
     }
 
-
-    public void setAttackRoutine(String description) {
-        this.attackRoutine = new ArrayList<>();
-        this.attackRoutine.add(description);
+    public void setAttackRoutine(ArrayList attackRoutine) {
+        this.attackRoutine = attackRoutine;
     }
 
-    private String _findSaves(String saveClass){
+    public void addToAttackRoutine(String description) {
+//        this.attackRoutine = new ArrayList<String>();
+        attackRoutine.add(description);
+    }
+
+    private String _findSaves(String saveClass) {
         String saves = "";
-        switch (saveClass){
+        switch (saveClass) {
             case "F0":
                 saves = "Paralysis 16+, Death 15+,  Breath 17+, Wands 17+, Spells 18+";
                 break;
@@ -223,6 +285,24 @@ public abstract class Npc {
             case "F14":
                 saves = "Paralysis 6+, Death 5+,  Breath 7+, Wands 7+, Spells 8+";
                 break;
+            case "F15":
+                saves = "Paralysis 5+, Death 4+,  Breath 6+, Wands 6+, Spells 7+";
+                break;
+            case "F16":
+                saves = "Paralysis 4+, Death 3+,  Breath 5+, Wands 5+, Spells 6+";
+                break;
+            case "F17":
+                saves = "Paralysis 3+, Death 2+,  Breath 4+, Wands 4+, Spells 5+";
+                break;
+            case "F18":
+                saves = "Paralysis 2+, Death 4+,  Breath 3+, Wands 3+, Spells 4+";
+                break;
+            case "F19":
+                saves = "Paralysis 2+, Death 3+,  Breath 2+, Wands 2+, Spells 3+";
+                break;
+            case "F20":
+                saves = "Paralysis 2+, Death 2+,  Breath 2+, Wands 2+, Spells 2+";
+                break;
         }
 
 
@@ -237,7 +317,7 @@ public abstract class Npc {
             minAttack = 10;
         }
 
-        if (additionalHitPoints > 0){
+        if (additionalHitPoints > 0) {
             hitDice += 1;
         }
 

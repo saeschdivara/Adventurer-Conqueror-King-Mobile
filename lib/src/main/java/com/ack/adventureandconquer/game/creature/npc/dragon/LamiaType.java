@@ -16,12 +16,12 @@ public class LamiaType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Lamia.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Solidary";
     }
 
     @Override

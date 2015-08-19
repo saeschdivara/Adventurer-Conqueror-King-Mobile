@@ -539,7 +539,7 @@ abstract public class Proficiency {
         MAGE.add(SOOTHSAYING);
         MAGE.add(UNFLAPPABLE_CASTING);
 
-        // ALL FIGHTER PROFICIENCIES
+        // ALL THIEF PROFICIENCIES
         THIEF = new ArrayList<>();
         THIEF.add(ACROBATICS);
         THIEF.add(ALERTNESS);

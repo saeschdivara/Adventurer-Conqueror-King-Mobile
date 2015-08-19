@@ -23,7 +23,7 @@ public class TuataraLizard extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             TuataraLizard monster = new TuataraLizard();
             monster.setExtraInformation("Infravision 90ft!");
-            monster.setAttackRoutine("Claw 1D4,Claw 1D4,Bite 2D6");
+            monster.addToAttackRoutine("Claw 1D4,Claw 1D4,Bite 2D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

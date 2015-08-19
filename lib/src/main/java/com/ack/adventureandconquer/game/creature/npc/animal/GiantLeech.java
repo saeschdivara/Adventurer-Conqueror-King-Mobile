@@ -23,7 +23,7 @@ public class GiantLeech extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantLeech monster = new GiantLeech();
             monster.setExtraInformation("Attaches itself when hit, dealing damage each round.");
-            monster.setAttackRoutine("Drain Blood 1D6");
+            monster.addToAttackRoutine("Drain Blood 1D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

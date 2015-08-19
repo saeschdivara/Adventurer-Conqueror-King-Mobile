@@ -23,7 +23,7 @@ public class RidingHorse extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             RidingHorse monster = new RidingHorse();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Hooves 1D4");
+            monster.addToAttackRoutine("Hooves 1D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

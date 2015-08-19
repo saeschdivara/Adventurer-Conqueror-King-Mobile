@@ -21,7 +21,7 @@ public class GiantBoar extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantBoar monster = new GiantBoar();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Tusk 3D4");
+            monster.addToAttackRoutine("Tusk 3D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

@@ -17,7 +17,6 @@ import com.ack.adventureandconquer.game.creature.npc.swimmer.GiantSquidType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.InsectSwarmType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.MermanType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.PiranhaFishType;
-import com.ack.adventureandconquer.game.creature.npc.dragon.SeaDragonType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.SeaHydraType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.SeaSerpentType;
 import com.ack.adventureandconquer.game.creature.npc.swimmer.SeaSnakeType;
@@ -89,7 +88,7 @@ public class SwimmerType implements IsCreatureType {
                     npc = new GiantOctopusType();
                     break;
                 case 5:
-                    npc = new SeaDragonType();
+                    npc = new DragonType().getDragon(terrain);
                     break;
                 case 6:
                     npc = new SeaSerpentType();

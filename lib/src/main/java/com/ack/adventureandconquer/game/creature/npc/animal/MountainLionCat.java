@@ -23,7 +23,7 @@ public class MountainLionCat extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             MountainLionCat monster = new MountainLionCat();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Claw 1D3,Claw 1D3,Bite 1D6");
+            monster.addToAttackRoutine("Claw 1D3,Claw 1D3,Bite 1D6");
             monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);

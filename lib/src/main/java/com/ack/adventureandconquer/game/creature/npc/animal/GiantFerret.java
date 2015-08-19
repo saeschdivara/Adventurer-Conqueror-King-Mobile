@@ -23,7 +23,7 @@ public class GiantFerret extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantFerret monster = new GiantFerret();
 //            monster.setExtraInformation("Extra!");
-            monster.setAttackRoutine("Bite D8");
+            monster.addToAttackRoutine("Bite D8");
             monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);

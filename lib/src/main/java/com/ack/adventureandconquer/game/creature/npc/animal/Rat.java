@@ -23,7 +23,7 @@ public class Rat extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             Rat monster = new Rat();
             monster.setExtraInformation("5% chance of catching a disease if character took damage.");
-            monster.setAttackRoutine("Swarm D6, Disease");
+            monster.addToAttackRoutine("Swarm D6, Disease");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

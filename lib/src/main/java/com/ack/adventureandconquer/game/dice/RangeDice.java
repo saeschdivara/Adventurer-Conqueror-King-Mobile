@@ -19,13 +19,13 @@ public class RangeDice implements IsDice {
 
     @Override
     public int role() {
-        final int diceNumber = start;
+        final int diceNumber = end;
         final int randomRoundCounter = _random.nextInt(2) + 1;
 
         for (int i = 0; i < randomRoundCounter; i++) {
             _random.nextInt(diceNumber);
         }
 
-        return _random.nextInt(diceNumber) + 1 + end;
+        return _random.nextInt(diceNumber) + 1 + start;
     }
 }

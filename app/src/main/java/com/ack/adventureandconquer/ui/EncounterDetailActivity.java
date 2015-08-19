@@ -162,6 +162,7 @@ public class EncounterDetailActivity extends ActionBarActivity {
             TextView morale = (TextView) rowView.findViewById(R.id.morale);
             TextView movement = (TextView) rowView.findViewById(R.id.movement);
             TextView extramovement = extramovement = (TextView) rowView.findViewById(R.id.extramovement);
+            TextView alignment = (TextView) rowView.findViewById(R.id.alignment);
 
 
             unitName.setText("Type: " + npc.getClass().getSimpleName());
@@ -173,6 +174,7 @@ public class EncounterDetailActivity extends ActionBarActivity {
             save.setText("Saves: " + String.valueOf(npc.getSaves()));
             morale.setText("Morale: " + String.valueOf(npc.getMorale()));
             extraInformation.setText(npc.getExtraInformation());
+            alignment.setText("Alignment: " + String.valueOf(npc.getAlignment()));
             movement.setText("Movement: " + String.valueOf(npc.getMovement()));
             if (!npc.getExtraMovementType().isEmpty()) {
                 extramovement.setText(String.valueOf("   " + npc.getExtraMovementType()) + ": " + String.valueOf(npc.getExtraMovement()));

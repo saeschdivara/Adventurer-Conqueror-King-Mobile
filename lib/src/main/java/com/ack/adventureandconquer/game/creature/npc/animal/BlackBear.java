@@ -20,7 +20,7 @@ public class BlackBear extends Npc {
 
         for (int i = 1; i <= packSize; i++) {
             BlackBear bear = new BlackBear();
-            bear.setAttackRoutine("Claw 1d3, Claw 1d3, Bite 1D6");
+            bear.addToAttackRoutine("Claw 1d3, Claw 1d3, Bite 1D6");
             bear.setExtraInformation("If both claws hit do a +2D8 damage Bear Hug!");
 
             bear.roleHitPoints();

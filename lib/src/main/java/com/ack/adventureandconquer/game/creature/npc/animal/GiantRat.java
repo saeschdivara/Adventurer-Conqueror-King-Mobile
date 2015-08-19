@@ -23,7 +23,7 @@ public class GiantRat extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             GiantRat monster = new GiantRat();
             monster.setExtraInformation("5% chance per bite to get a disease, Save or die 1D6 days later. 30 day bedrest otherwise");
-            monster.setAttackRoutine("Claw 1D4");
+            monster.addToAttackRoutine("Claw 1D4");
             monster.setAdditionalHitPoints(d4.role());
             monster.roleHitPoints();
             pack.add(monster);

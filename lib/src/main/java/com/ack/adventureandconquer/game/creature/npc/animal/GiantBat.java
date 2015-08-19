@@ -25,7 +25,7 @@ public class GiantBat extends Npc {
             if (d100.role() > 95){
                 bat.setExtraInformation("Vampiric Bat! Save vs Paralysis or paralyzed for 1D10 Rounds while bat drinks for 1D4hp each round. If killed Save vs Spell or become a Vampire");
             }
-            bat.setAttackRoutine("Bite 1D4");
+            bat.addToAttackRoutine("Bite 1D4");
             bat.roleHitPoints();
             pack.add(bat);
         }

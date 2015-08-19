@@ -23,7 +23,7 @@ public class LargeCrocodile extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             LargeCrocodile monster = new LargeCrocodile();
             monster.setExtraInformation("When submerged -2 to surprise");
-            monster.setAttackRoutine("Bite 2D8");
+            monster.addToAttackRoutine("Bite 2D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);

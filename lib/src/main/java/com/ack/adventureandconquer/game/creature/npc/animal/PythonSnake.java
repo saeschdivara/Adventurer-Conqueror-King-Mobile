@@ -23,7 +23,7 @@ public class PythonSnake extends Npc {
         for (int i = 1; i <= groupSize; i++) {
             PythonSnake monster = new PythonSnake();
             monster.setExtraInformation("Constricts its target after a successful bite for 2D8 damage per round!");
-            monster.setAttackRoutine("Claw 1D4");
+            monster.addToAttackRoutine("Claw 1D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
