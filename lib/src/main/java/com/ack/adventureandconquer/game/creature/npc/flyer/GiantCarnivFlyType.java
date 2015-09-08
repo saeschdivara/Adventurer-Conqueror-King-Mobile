@@ -11,17 +11,17 @@ import java.util.List;
 public class GiantCarnivFlyType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 35;
+        return number <= 35;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantCarnivFly.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Swarm";
     }
 
     @Override

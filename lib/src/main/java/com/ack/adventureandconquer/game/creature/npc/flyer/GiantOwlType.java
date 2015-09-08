@@ -21,7 +21,7 @@ public class GiantOwlType implements IsNpcType {
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "A giant owl... What a hoot!";
     }
 
     @Override

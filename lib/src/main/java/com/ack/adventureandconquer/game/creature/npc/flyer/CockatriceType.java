@@ -11,17 +11,17 @@ import java.util.List;
 public class CockatriceType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 30;
+        return number <= 30;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Cockatrice.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flock";
     }
 
     @Override

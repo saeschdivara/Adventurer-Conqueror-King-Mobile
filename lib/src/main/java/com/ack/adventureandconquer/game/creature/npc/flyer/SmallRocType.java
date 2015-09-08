@@ -11,17 +11,17 @@ import java.util.List;
 public class SmallRocType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 10;
+        return number <= 10;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return SmallRoc.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flight";
     }
 
     @Override

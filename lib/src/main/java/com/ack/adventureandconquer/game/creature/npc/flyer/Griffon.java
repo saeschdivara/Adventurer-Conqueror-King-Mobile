@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class Griffon extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d8.role()+d8.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
-//            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
+            Griffon monster = new Griffon();
+            monster.setExtraInformation("Attacks Horses! Dive attack for 2x damage and grabs on double talon hit unless SvP. Dwarves or smaller will be carried off");
+            monster.addToAttackRoutine("Talon 1D4, Talon 1D4, Bite 2D8");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,33 +35,33 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 4;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 7;
     }
 
     @Override
     public int getDefaultMovement(){return 120;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 360;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return 1;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F4";
     }
 
     @Override
-    public String getDefaultAlignment() {return "Neutral";}
+    public String getDefaultAlignment() {return "neutral";}
 }

@@ -16,12 +16,12 @@ public class GiantHawkType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return GiantHawk.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flock";
     }
 
     @Override

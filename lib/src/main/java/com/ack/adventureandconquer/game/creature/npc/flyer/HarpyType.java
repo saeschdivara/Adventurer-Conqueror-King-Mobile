@@ -11,17 +11,17 @@ import java.util.List;
 public class HarpyType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 25;
+        return number <= 25;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Harpy.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Wing";
     }
 
     @Override

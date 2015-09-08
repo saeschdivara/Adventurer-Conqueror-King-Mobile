@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class Pegasus extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d12.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
+            Pegasus monster = new Pegasus();
 //            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
-//            monster.setAdditionalHitPoints(0);
+            monster.addToAttackRoutine("Hoof 1D6,Hoof 1D6");
+            monster.setAdditionalHitPoints(2);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,22 +35,22 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 3;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 2;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 240;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 480;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
@@ -59,9 +59,9 @@ public class Template extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F2";
     }
 
     @Override
-    public String getDefaultAlignment() {return "Neutral";}
+    public String getDefaultAlignment() {return "Lawful";}
 }

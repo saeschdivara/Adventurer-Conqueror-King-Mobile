@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class SmallRoc extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d12.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
-//            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
+            SmallRoc monster = new SmallRoc();
+            monster.setExtraInformation("Dive attacks deal 2x damage. If both talons hit victim is grabbed and carried if smaller without save! SvP -4 to get free in later rounds. Neutals suffer -1 reaction, chaotics -2 ");
+            monster.addToAttackRoutine("Talon 1D4+1, Talon 1D4+1, Bite 2D6");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,22 +35,22 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 5;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 6;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 60;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 480;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
@@ -59,9 +59,9 @@ public class Template extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F3";
     }
 
     @Override
-    public String getDefaultAlignment() {return "Neutral";}
+    public String getDefaultAlignment() {return "Lawful";}
 }

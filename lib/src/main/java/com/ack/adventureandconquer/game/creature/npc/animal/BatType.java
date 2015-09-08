@@ -19,8 +19,11 @@ public class BatType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        if (d6.role()<=4) {
+        int chance = d6.role();
+        if (chance<=2) {
             return Bat.getFlock();
+        }else if (chance<=4) {
+            return BatSwarm.getGroup();
         }else {
             return GiantBat.getFlock();
         }

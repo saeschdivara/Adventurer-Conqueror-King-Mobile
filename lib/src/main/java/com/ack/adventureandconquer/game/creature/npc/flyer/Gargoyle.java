@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class Gargoyle extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d4.role()+ d4.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
+            Gargoyle monster = new Gargoyle();
 //            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
+            monster.addToAttackRoutine("Claw D3,Claw D3,Bite 1D6,Horn 1D4");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,33 +35,33 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 4;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 4;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 90;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 150;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return +3;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F8";
     }
 
     @Override
-    public String getDefaultAlignment() {return "Neutral";}
+    public String getDefaultAlignment() {return "chaotic";}
 }

@@ -11,12 +11,12 @@ import java.util.List;
 public class LammasuType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 30;
+        return number <= 30;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Lammasu.getGroup();
     }
 
     @Override

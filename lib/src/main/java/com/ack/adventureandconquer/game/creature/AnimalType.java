@@ -71,13 +71,16 @@ public class AnimalType implements IsCreatureType {
         boolean isClear = terrainName.equals("Clear");
         boolean isGrass = terrainName.equals("Grass");
         boolean isScrub = terrainName.equals("Scrub");
-        boolean isRiver = terrainName.equals("River");
         boolean isWoods = terrainName.equals("Woods");
-        boolean isBarren = terrainName.equals("Barren");
+        boolean isRiver = terrainName.equals("River");
+        boolean isSwamp = terrainName.equals("Swamp");
         boolean isMountains = terrainName.equals("Mountains");
         boolean isHills = terrainName.equals("Hills");
+        boolean isBarren = terrainName.equals("Barren");
         boolean isDesert = terrainName.equals("Desert");
         boolean isInhabited = terrainName.equals("Inhabited");
+        boolean isCity = terrainName.equals("City");
+        boolean isOcean = terrainName.equals("Ocean");
         boolean isJungle = terrainName.equals("Jungle");
 
 

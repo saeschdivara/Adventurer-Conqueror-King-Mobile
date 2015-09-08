@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class KillerBee extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d6.role()+d6.role()+d6.role()+d6.role()+d6.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
-//            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
-//            monster.setAdditionalHitPoints(0);
+            KillerBee monster = new KillerBee();
+            monster.setExtraInformation("Poison: Save or Die! Stinger breaks off, killing bee next round, dealing 1 damage per round until removed which takes also one round.");
+            monster.addToAttackRoutine("Sting 1D3");
+            monster.setAdditionalHitPoints(d4.role());
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,16 +35,16 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 2;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 0;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 150;}
 
 //    @Override
 //    public int getDefaultExtraMovement(){return 240;}
@@ -54,7 +54,7 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return +1;
     }
 
     @Override

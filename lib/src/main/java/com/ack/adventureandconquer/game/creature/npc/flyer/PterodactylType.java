@@ -16,12 +16,12 @@ public class PterodactylType implements IsNpcType {
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Peterodactyl.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flight";
     }
 
     @Override

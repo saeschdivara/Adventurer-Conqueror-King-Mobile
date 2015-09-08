@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class Stirge extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d12.role()+d12.role()+d12.role();
         return createMonster(groupSize);
     }
 
@@ -21,9 +21,9 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
-//            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
+            Stirge monster = new Stirge();
+            monster.setExtraInformation("Gains a +2 to attack throws and latches on once hit doing 1D3 damage per round!");
+            monster.addToAttackRoutine("Blood sucking 1D3");
 //            monster.setAdditionalHitPoints(0);
             monster.roleHitPoints();
             pack.add(monster);
@@ -35,7 +35,7 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 2;
     }
 
     @Override
@@ -44,22 +44,22 @@ public class Template extends Npc {
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 30;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 180;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
-        return 0;
+        return +1;
     }
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F2";
     }
 
     @Override
