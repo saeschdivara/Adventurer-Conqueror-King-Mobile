@@ -11,17 +11,17 @@ import java.util.List;
 public class PegasusType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 15;
+        return number <= 15;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Pegasus.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Flock";
     }
 
     @Override

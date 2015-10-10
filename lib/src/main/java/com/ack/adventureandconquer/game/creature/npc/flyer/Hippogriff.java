@@ -1,4 +1,4 @@
-package com.ack.adventureandconquer.game.creature.npc.unusual;
+package com.ack.adventureandconquer.game.creature.npc.flyer;
 
 import com.ack.adventureandconquer.game.creature.npc.Npc;
 
@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * Created by flhuebner on 20.05.2015.
  */
-public class Template extends Npc {
+public class Hippogriff extends Npc {
 
 
     public static List<Npc> getGroup() {
-        int groupSize = d6.role();
+        int groupSize = d8.role()+d8.role();
         return createMonster(groupSize);
     }
 
@@ -21,10 +21,10 @@ public class Template extends Npc {
         List<Npc> pack = new ArrayList<>();
 
         for (int i = 1; i <= groupSize; i++) {
-            Template monster = new Template();
+            Hippogriff monster = new Hippogriff();
 //            monster.setExtraInformation("Extra!");
-            monster.addToAttackRoutine("Claw D6");
-//            monster.setAdditionalHitPoints(0);
+            monster.addToAttackRoutine("Talon 1D6,Talon 1D6, Bite 1D10");
+            monster.setAdditionalHitPoints(1);
             monster.roleHitPoints();
             pack.add(monster);
         }
@@ -35,22 +35,22 @@ public class Template extends Npc {
 
     @Override
     public int getDefaultArmorClass() {
-        return 0;
+        return 4;
     }
 
     @Override
     public int getDefaultHitDice() {
-        return 1;
+        return 3;
     }
 
     @Override
-    public int getDefaultMovement(){return 120;}
+    public int getDefaultMovement(){return 180;}
 
-//    @Override
-//    public int getDefaultExtraMovement(){return 240;}
+    @Override
+    public int getDefaultExtraMovement(){return 360;}
 
-//    @Override
-//    public String getExtraMovementType(){return "Fly";}
+    @Override
+    public String getExtraMovementType(){return "Fly";}
 
     @Override
     public int getDefaultMorale() {
@@ -59,7 +59,7 @@ public class Template extends Npc {
 
     @Override
     public String getDefaultSaves() {
-        return "F1";
+        return "F2";
     }
 
     @Override

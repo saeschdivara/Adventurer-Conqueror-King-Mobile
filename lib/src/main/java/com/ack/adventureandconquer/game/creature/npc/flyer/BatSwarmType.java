@@ -11,17 +11,17 @@ import java.util.List;
 public class BatSwarmType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 50;
+        return number <= 50;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return com.ack.adventureandconquer.game.creature.npc.animal.BatSwarm.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Cloud";
     }
 
     @Override

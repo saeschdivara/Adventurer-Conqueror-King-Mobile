@@ -39,7 +39,21 @@ public class FlyerType implements IsCreatureType {
     public IsNpcType getNpcType(IsTerrain terrain, int number) {
         IsNpcType npc = null;
 
-        boolean isBarren = terrain instanceof Barren;
+        String terrainName = terrain.getTerrainName();
+        boolean isClear = terrainName.equals("Clear");
+        boolean isGrass = terrainName.equals("Grass");
+        boolean isScrub = terrainName.equals("Scrub");
+        boolean isWoods = terrainName.equals("Woods");
+        boolean isRiver = terrainName.equals("River");
+        boolean isSwamp = terrainName.equals("Swamp");
+        boolean isMountains = terrainName.equals("Mountains");
+        boolean isHills = terrainName.equals("Hills");
+        boolean isBarren = terrainName.equals("Barren");
+        boolean isDesert = terrainName.equals("Desert");
+        boolean isInhabited = terrainName.equals("Inhabited");
+        boolean isCity = terrainName.equals("City");
+        boolean isOcean = terrainName.equals("Ocean");
+        boolean isJungle = terrainName.equals("Jungle");
 
         if (isBarren) {
             switch (number) {
@@ -81,7 +95,7 @@ public class FlyerType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Desert) {
+        else if (isDesert) {
             switch (number) {
                 case 1:
                     npc = new ChimeraType();
@@ -121,7 +135,7 @@ public class FlyerType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Mountains) {
+        else if (isMountains) {
             switch (number) {
                 case 1:
                     npc = new BatSwarmType();
@@ -161,7 +175,7 @@ public class FlyerType implements IsCreatureType {
                     break;
             }
         }
-        else if (terrain instanceof Woods) {
+        else if (isWoods) {
             switch (number) {
                 case 1:
                     npc = new GiantBatType();

@@ -11,17 +11,17 @@ import java.util.List;
 public class GargoyleType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 20;
+        return number <= 20;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return Gargoyle.getGroup();
     }
 
     @Override
     public String getNormalWildnessEncounterName() {
-        return null;
+        return "Wing";
     }
 
     @Override

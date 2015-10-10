@@ -11,12 +11,13 @@ import java.util.List;
 public class GiantBatType implements IsNpcType {
     @Override
     public boolean isLair(int number) {
-        return number >= 35;
+        return number <= 35;
     }
 
     @Override
     public List<Npc> getNormalWildnessEncounter() {
-        return null;
+        return com.ack.adventureandconquer.game.creature.npc.animal.GiantBat.getFlock();
+
     }
 
     @Override
